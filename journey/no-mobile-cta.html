@@ -1,0 +1,63 @@
+<!--
+  SCENARIO: no-mobile-cta
+  CATEGORY: journey
+  SIGNALS TRIGGERED: ctaVisibleAtMobileViewport=false
+  EXPECTED FINDINGS: [no_mobile_cta]
+  EXPECTED GRADE: P2
+  NOTES: Hero CTA button is visible at desktop width (>480px) but hidden via CSS at <=480px.
+         A headless probe at mobile viewport finds no actionable CTA in the hero.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pioneer Home Services — Northampton, MA</title>
+  <meta name="description" content="Reliable home services in Northampton, MA. Call (413) 555-0100.">
+  <meta property="og:title" content="Pioneer Home Services">
+  <meta property="og:description" content="Reliable home services in Northampton, MA.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../styles.css">
+  <!-- Intentionally hides hero CTA on mobile -->
+  <style>
+    @media (max-width: 480px) {
+      .hero .btn { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="site-name">Pioneer Home Services</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu"
+        onclick="document.getElementById('nav-links').classList.toggle('open')">☰</button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Pioneer Home Services</h1>
+      <p>Serving Northampton and the Pioneer Valley since 2005.</p>
+      <!-- Visible on desktop, hidden on mobile via the stylesheet above -->
+      <a href="tel:+14135550100" class="btn">Call (413) 555-0100</a>
+    </section>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p class="phone-cta">Call: <a href="tel:+14135550100">(413) 555-0100</a></p>
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your name">
+        <label for="message">How can we help?</label>
+        <textarea id="message" name="message" placeholder="Describe what you need..."></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Pioneer Home Services &mdash; Northampton, MA</p>
+  </footer>
+</body>
+</html>

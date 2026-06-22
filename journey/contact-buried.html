@@ -1,0 +1,134 @@
+<!--
+  SCENARIO: contact-buried
+  CATEGORY: journey
+  SIGNALS TRIGGERED: contactScrollDepthPx>2000, noContactAnchorInNav=true
+  EXPECTED FINDINGS: [contact_buried]
+  EXPECTED GRADE: P2
+  NOTES: Contact section is ~3200px below the fold. Nav links go to #services and #about
+         but not #contact. A probe must scroll past the entire page to find the form.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pioneer Home Services — Northampton, MA</title>
+  <meta name="description" content="Reliable home services in Northampton, MA. Call (413) 555-0100.">
+  <meta property="og:title" content="Pioneer Home Services">
+  <meta property="og:description" content="Reliable home services in Northampton, MA.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="site-name">Pioneer Home Services</a>
+      <!-- Intentionally missing: no #contact anchor in nav -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu"
+        onclick="document.getElementById('nav-links').classList.toggle('open')">☰</button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Pioneer Home Services</h1>
+      <p>Serving Northampton and the Pioneer Valley since 2005.</p>
+    </section>
+
+    <section id="services">
+      <h2>Our Services</h2>
+      <p>We offer a full range of home services throughout Hampshire County.</p>
+      <ul>
+        <li>Plumbing repairs and installation — leaks, clogs, pipe replacement</li>
+        <li>Water heater installation and replacement</li>
+        <li>Drain cleaning and hydro-jetting</li>
+        <li>Toilet, sink, and faucet installation</li>
+        <li>Sump pump installation and service</li>
+        <li>Emergency service available 24/7</li>
+      </ul>
+      <p>All technicians are Massachusetts-licensed and carry full liability insurance. We serve Northampton, Florence, Easthampton, Amherst, and all surrounding Pioneer Valley communities.</p>
+      <p>Whether you need a dripping faucet fixed or an entire bathroom repiped, Pioneer Home Services has the experience and equipment to get it done right the first time. Our trucks are fully stocked so most jobs are completed in a single visit.</p>
+    </section>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <p>Pioneer Home Services has been locally owned and operated since 2005. We started as a one-truck operation and have grown to a team of eight licensed technicians — all of them background-checked, drug-tested, and committed to treating your home with respect.</p>
+      <p>We don't use subcontractors. Every job is handled by a Pioneer employee who takes personal pride in the work. That's why we can stand behind every job with a 90-day labor warranty.</p>
+      <p>Owner Mike Pelletier has been in the trades since 1998 and still takes service calls himself. He built this company on the belief that honest pricing and showing up on time is all it takes to earn a customer for life.</p>
+      <p>We're proud members of the Northampton Area Chamber of Commerce and the Western Massachusetts Plumbing Contractors Association. We carry a $2 million general liability policy and all required workers' compensation coverage.</p>
+    </section>
+
+    <section>
+      <h2>Why Choose Pioneer?</h2>
+      <p>There are a lot of plumbers in Hampshire County. Here's why customers keep calling us back:</p>
+      <ul>
+        <li><strong>Upfront pricing</strong> — We give you a price before we start. No surprises on the invoice.</li>
+        <li><strong>On-time arrival</strong> — We call ahead if we're running late. Your time matters.</li>
+        <li><strong>Fully stocked trucks</strong> — Most jobs done same day. We carry the parts.</li>
+        <li><strong>Licensed and insured</strong> — MA License #12345. $2M liability coverage.</li>
+        <li><strong>90-day labor warranty</strong> — If something we fixed breaks again, we come back at no charge.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>What Our Customers Say</h2>
+      <blockquote>
+        <p>"Mike and his crew fixed a major pipe leak in our basement on a Sunday evening. Fair price, great work. Can't recommend them enough."</p>
+        <cite>— Dave H., Northampton</cite>
+      </blockquote>
+      <blockquote>
+        <p>"Called at 7am with no hot water. Pioneer was at my door by 9. New water heater installed by noon. Outstanding service."</p>
+        <cite>— Linda C., Easthampton</cite>
+      </blockquote>
+      <blockquote>
+        <p>"They fixed a slow drain problem that two other plumbers couldn't solve. Polite, fast, and cleaned up after themselves."</p>
+        <cite>— Ryan S., Florence</cite>
+      </blockquote>
+      <blockquote>
+        <p>"Honest pricing, showed up on time, did exactly what they said they would. I've found my plumber for life."</p>
+        <cite>— Teri M., Amherst</cite>
+      </blockquote>
+    </section>
+
+    <section id="faq">
+      <h2>Frequently Asked Questions</h2>
+      <h3>Do you offer emergency service?</h3>
+      <p>Yes. We have a technician on call 24 hours a day, 7 days a week. Emergency rates apply after 6pm and on weekends. Call (413) 555-0100 and press 1 for emergency dispatch.</p>
+      <h3>How much does a service call cost?</h3>
+      <p>Our standard diagnostic fee is $75, which is waived if you proceed with the repair. We provide a written estimate before any work begins — no surprises.</p>
+      <h3>Do you offer financing?</h3>
+      <p>Yes, we offer 0% financing for 12 months on jobs over $1,000 through our lending partner. Ask your technician for details.</p>
+      <h3>Are your technicians licensed?</h3>
+      <p>Yes. All Pioneer technicians hold current Massachusetts plumbing licenses. Our company license number is MA #12345. We carry $2 million in general liability coverage and full workers' compensation insurance.</p>
+      <h3>What areas do you serve?</h3>
+      <p>We serve Northampton, Florence, Easthampton, Amherst, Hadley, South Hadley, Belchertown, Ware, and surrounding Pioneer Valley communities. If you're unsure whether we cover your area, just call.</p>
+      <h3>How soon can you come out?</h3>
+      <p>For non-emergencies, we typically schedule within 1–2 business days. For urgent situations during business hours, we often have same-day availability. Emergency calls are dispatched immediately.</p>
+    </section>
+
+    <!-- Intentionally buried: contact section has no nav anchor pointing to it -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p class="phone-cta">Call us: <a href="tel:+14135550100">(413) 555-0100</a></p>
+      <p style="margin-bottom:1.5rem">Or fill out the form and we'll get back to you within one business day.</p>
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your name">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="(413) 555-xxxx">
+        <label for="message">How can we help?</label>
+        <textarea id="message" name="message" placeholder="Describe the work you need..."></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Pioneer Home Services &mdash; Northampton, MA &mdash;
+      <a href="tel:+14135550100">(413) 555-0100</a></p>
+  </footer>
+</body>
+</html>
