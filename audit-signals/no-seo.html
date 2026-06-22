@@ -1,0 +1,63 @@
+<!--
+  SCENARIO: no-seo
+  CATEGORY: audit-signals
+  SIGNALS TRIGGERED: hasSeoDesc=false, hasSeoH1=false, hasOg=false
+  EXPECTED FINDINGS: [seo_desc, seo_h1, no_og]
+  EXPECTED GRADE: P2
+  NOTES: SEO cluster only. All other signals match clean.html.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pioneer Home Services — Northampton, MA</title>
+  <!-- no meta description -->
+  <!-- no OG tags -->
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="site-name">Pioneer Home Services</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu"
+        onclick="document.getElementById('nav-links').classList.toggle('open')">☰</button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <!-- no h1 — deliberate: hasSeoH1=false -->
+      <p style="font-size:2rem;font-weight:700;margin-bottom:0.5rem">Pioneer Home Services</p>
+      <p>Serving Northampton and the Pioneer Valley since 2005.</p>
+      <a href="tel:+14135550100" class="btn">Call (413) 555-0100</a>
+    </section>
+    <section>
+      <h2>Our Services</h2>
+      <p>We offer a full range of home services for residential and commercial customers throughout Hampshire County.</p>
+      <ul>
+        <li>Plumbing repairs and installation</li>
+        <li>Water heater replacement</li>
+        <li>Drain cleaning</li>
+      </ul>
+    </section>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p class="phone-cta">Call us: <a href="tel:+14135550100">(413) 555-0100</a></p>
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+        <label for="message">How can we help?</label>
+        <textarea id="message" name="message"></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Pioneer Home Services &mdash; Northampton, MA</p>
+  </footer>
+</body>
+</html>

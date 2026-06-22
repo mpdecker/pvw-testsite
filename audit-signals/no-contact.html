@@ -1,0 +1,51 @@
+<!--
+  SCENARIO: no-contact
+  CATEGORY: audit-signals
+  SIGNALS TRIGGERED: hasPhone=false, hasContactForm=false, contactPathTypes=[],
+    contactCtaCount=0, hasClickToCall=false
+  EXPECTED FINDINGS: [no_contact_info, no_call_path, no_lead_form]
+  EXPECTED GRADE: P1
+  NOTES: Thin brochure — no contact path exists anywhere on the page.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pioneer Home Services — Northampton, MA</title>
+  <meta name="description" content="Reliable home services in Northampton, MA.">
+  <meta property="og:title" content="Pioneer Home Services">
+  <meta property="og:description" content="Reliable home services in Northampton, MA.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="site-name">Pioneer Home Services</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Pioneer Home Services</h1>
+      <p>Serving Northampton and the Pioneer Valley since 2005.</p>
+      <!-- no CTA, no phone — deliberate -->
+    </section>
+    <section>
+      <h2>Our Services</h2>
+      <p>We offer plumbing, electrical, and HVAC services for residential customers throughout Hampshire County.</p>
+      <ul>
+        <li>Plumbing repairs and installation</li>
+        <li>Water heater replacement</li>
+        <li>Drain cleaning</li>
+        <li>Emergency service available 24/7</li>
+      </ul>
+      <p>All technicians are licensed, insured, and background-checked.</p>
+    </section>
+    <!-- no contact section, no phone, no form, no email — deliberate -->
+  </main>
+  <footer>
+    <p>&copy; 2025 Pioneer Home Services &mdash; Northampton, MA</p>
+  </footer>
+</body>
+</html>
