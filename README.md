@@ -42,3 +42,7 @@ const signals = { ...http, ...headless };
 console.log(buildFindings(signals, []));
 "
 ```
+
+## Maintenance
+
+**`audit-signals/clean.html` copyright year** — The footer reads `&copy; YEAR`. The `stale_year` auditor signal fires when the copyright year is more than 2 years behind the current year. Update this value each calendar year to keep the clean baseline genuinely signal-free.
