@@ -1,0 +1,91 @@
+<!--
+  SCENARIO: landscaper
+  CATEGORY: outreach
+  INTENTIONAL FLAWS:
+    1. No <h1> — hero title is a <p>  →  FindingCode: seo_h1
+    2. Nav links use .tiny-link        →  FindingCode: small_tap_targets
+  EXPECTED GRADE: P2
+  OUTREACH ANGLE: Your site is missing the main heading Google looks for, and
+    several nav links are hard to tap on a phone — both affect how many customers
+    find and contact you.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Valley Landscapes — Northampton, MA</title>
+  <meta name="description" content="Professional landscaping and lawn care in the Pioneer Valley. Call (413) 555-0100.">
+  <meta property="og:title" content="Valley Landscapes">
+  <meta property="og:description" content="Professional landscaping in the Pioneer Valley.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="site-name">Valley Landscapes</a>
+      <ul class="nav-links" id="nav-links">
+        <!-- Intentionally tiny tap targets -->
+        <li><a href="#" class="tiny-link">Lawn Care</a></li>
+        <li><a href="#" class="tiny-link">Design</a></li>
+        <li><a href="#" class="tiny-link">Snow</a></li>
+        <li><a href="#contact" class="tiny-link">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu"
+        onclick="document.getElementById('nav-links').classList.toggle('open')">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <!-- Intentionally not an h1 — deliberate: seo_h1 -->
+      <p style="font-size:2rem;font-weight:700;margin-bottom:0.5rem">Valley Landscapes</p>
+      <p>Lawn care, landscape design, and seasonal cleanup for Pioneer Valley homeowners.</p>
+      <a href="tel:+14135550100" class="btn">Call (413) 555-0100</a>
+    </section>
+
+    <section>
+      <h2>Our Services</h2>
+      <p>Valley Landscapes has been beautifying Pioneer Valley properties since 2010. From weekly mowing to full landscape overhauls, our crew shows up on schedule and leaves every job looking sharp.</p>
+      <ul>
+        <li>Weekly and bi-weekly lawn mowing</li>
+        <li>Spring and fall cleanup</li>
+        <li>Mulching and edging</li>
+        <li>Garden bed design and planting</li>
+        <li>Shrub trimming and pruning</li>
+        <li>Irrigation system installation</li>
+        <li>Winter snow plowing and salting</li>
+      </ul>
+      <p>We serve residential and commercial properties in Northampton, Amherst, Easthampton, and Hadley. All crews are insured and trained. Free estimates for new clients.</p>
+    </section>
+
+    <section>
+      <h2>Seasonal Packages</h2>
+      <p>Our spring package includes cleanup, fresh mulch, bed edging, and first mow — everything you need to start the season right. Our fall package covers leaf removal, final mow, shrub protection, and winterizing your irrigation system.</p>
+      <p>Bundle spring and fall services for a 10% discount. Monthly lawn care plans starting at $85/visit.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Get a Free Estimate</h2>
+      <p class="phone-cta">Call: <a href="tel:+14135550100">(413) 555-0100</a></p>
+      <p style="margin-bottom:1.5rem">Tell us about your property and we'll schedule a free on-site estimate.</p>
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your name">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="(413) 555-xxxx">
+        <label for="message">Tell us about your property</label>
+        <textarea id="message" name="message"
+          placeholder="e.g. Half-acre yard, need weekly mowing and fall cleanup..."></textarea>
+        <button type="submit" class="btn">Request Estimate</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Valley Landscapes &mdash; Northampton, MA &mdash;
+      <a href="tel:+14135550100">(413) 555-0100</a></p>
+  </footer>
+</body>
+</html>

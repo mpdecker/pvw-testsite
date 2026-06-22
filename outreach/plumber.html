@@ -1,0 +1,88 @@
+<!--
+  SCENARIO: plumber
+  CATEGORY: outreach
+  INTENTIONAL FLAWS:
+    1. No <meta name="description">  →  FindingCode: seo_desc
+    2. .hamburger has no onclick     →  FindingCode: broken_navigation_path
+  EXPECTED GRADE: P1
+  OUTREACH ANGLE: Google won't show a description under your search listing,
+    and your mobile menu doesn't open — two quick fixes that could mean more
+    calls from people searching on their phones.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pioneer Plumbing Co — Northampton, MA</title>
+  <!-- Intentionally missing: no meta description -->
+  <meta property="og:title" content="Pioneer Plumbing Co">
+  <meta property="og:description" content="Licensed plumbers serving Northampton, MA.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="site-name">Pioneer Plumbing Co</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <!-- Intentionally broken: no onclick -->
+      <button class="hamburger" aria-label="Menu">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Pioneer Plumbing Co</h1>
+      <p>Licensed plumbers serving Northampton, Florence, and Easthampton since 2003.</p>
+      <a href="tel:+14135550100" class="btn">Call (413) 555-0100</a>
+    </section>
+
+    <section>
+      <h2>Plumbing Services</h2>
+      <p>Pioneer Plumbing handles everything from a dripping faucet to a full bathroom remodel. Our licensed plumbers arrive on time, explain the work clearly, and leave your home clean.</p>
+      <ul>
+        <li>Leak detection and repair</li>
+        <li>Water heater installation and replacement</li>
+        <li>Drain cleaning and hydro-jetting</li>
+        <li>Toilet, sink, and faucet installation</li>
+        <li>Pipe replacement and repiping</li>
+        <li>Sump pump service</li>
+        <li>Emergency plumbing — 24/7 response</li>
+      </ul>
+      <p>All work is performed by Massachusetts-licensed plumbers and backed by a 90-day labor warranty. We serve Northampton, Florence, Easthampton, Amherst, and surrounding Pioneer Valley communities.</p>
+    </section>
+
+    <section>
+      <h2>Why Pioneer Plumbing?</h2>
+      <p>Family-owned since 2003. No subcontractors, no upselling — just honest work at fair prices. Our trucks are stocked with parts for the most common jobs, so we get it done in one visit.</p>
+      <p>We're fully licensed (MA License #12345) and carry $2 million in liability coverage. Emergency service is available around the clock.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Get a Free Estimate</h2>
+      <p class="phone-cta">Call now: <a href="tel:+14135550100">(413) 555-0100</a></p>
+      <p style="margin-bottom:1.5rem">Fill out the form and we'll call you back within two hours during business hours.</p>
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required placeholder="Jane Smith">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="(413) 555-xxxx">
+        <label for="message">Describe the problem</label>
+        <textarea id="message" name="message"
+          placeholder="e.g. Slow drain in kitchen, water heater needs replacement..."></textarea>
+        <button type="submit" class="btn">Request Estimate</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Pioneer Plumbing Co &mdash; Northampton, MA &mdash; MA License #12345 &mdash;
+      <a href="tel:+14135550100">(413) 555-0100</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!--
+  SCENARIO: electrician
+  CATEGORY: outreach
+  INTENTIONAL FLAWS:
+    1. No OG meta tags        →  FindingCode: no_og
+    2. Footer copyright 2020  →  FindingCode: stale_year
+  EXPECTED GRADE: P2
+  OUTREACH ANGLE: Your site is missing the preview card data that appears when
+    someone shares your link — and the 2020 copyright makes the business look
+    dormant. Both are easy wins.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Berkshire Electric — Licensed Electricians in Northampton, MA</title>
+  <meta name="description" content="Licensed electricians serving Northampton and the Pioneer Valley. Call (413) 555-0100 for a free estimate.">
+  <!-- Intentionally missing: no OG tags -->
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="site-name">Berkshire Electric</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu"
+        onclick="document.getElementById('nav-links').classList.toggle('open')">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Berkshire Electric</h1>
+      <p>Licensed electricians serving Northampton, Amherst, and the Pioneer Valley since 1998.</p>
+      <a href="tel:+14135550100" class="btn">Call (413) 555-0100</a>
+    </section>
+
+    <section>
+      <h2>Electrical Services</h2>
+      <p>Berkshire Electric handles residential and light commercial electrical work throughout western Massachusetts. Our licensed electricians carry MA Master Electrician credentials and are current on the 2023 NEC.</p>
+      <ul>
+        <li>Panel upgrades and replacements</li>
+        <li>Whole-home rewiring</li>
+        <li>EV charger installation (Level 2)</li>
+        <li>Generator hookup and transfer switch</li>
+        <li>Outlet, switch, and fixture installation</li>
+        <li>Ceiling fan wiring</li>
+        <li>Code violation corrections</li>
+        <li>Emergency electrical service</li>
+      </ul>
+      <p>We pull all required permits and coordinate inspections. Every job comes with a written estimate before work begins — no surprises on the invoice.</p>
+    </section>
+
+    <section>
+      <h2>Why Berkshire Electric?</h2>
+      <p>Family-owned since 1998, we've wired hundreds of homes across Hampshire and Hampden counties. No subcontractors, no corner-cutting on materials. We use commercial-grade wire, breakers, and fixtures on every job.</p>
+      <p>MA Licensed (License #67890), fully insured, emergency service available 24/7. References available on request.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Free Estimates</h2>
+      <p class="phone-cta">Call: <a href="tel:+14135550100">(413) 555-0100</a></p>
+      <p style="margin-bottom:1.5rem">Fill out the form and we'll get back to you within one business day.</p>
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your name">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="(413) 555-xxxx">
+        <label for="message">Describe the work</label>
+        <textarea id="message" name="message"
+          placeholder="e.g. 200A panel upgrade, EV charger installation..."></textarea>
+        <button type="submit" class="btn">Request Estimate</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <!-- Intentionally stale year — deliberate -->
+    <p>&copy; 2020 Berkshire Electric &mdash; Northampton, MA &mdash; MA License #67890 &mdash;
+      <a href="tel:+14135550100">(413) 555-0100</a></p>
+  </footer>
+</body>
+</html>
