@@ -1,0 +1,109 @@
+<!--
+  SCENARIO: cleaning-service
+  CATEGORY: outreach
+  INTENTIONAL FLAWS:
+    1. No testimonials or reviews section          →  FindingCode: no_reviews
+    2. Phone numbers shown as plain text,          →  FindingCode: phone_not_linked
+       not <a href="tel:..."> links
+  EXPECTED GRADE: P3
+  OUTREACH ANGLE: There's no social proof on the site, and the phone number
+    can't be tapped on mobile — small fixes that could meaningfully increase conversions.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spotless Home Cleaning — Northampton, MA</title>
+  <meta name="description" content="Professional home cleaning services in Northampton, MA. Call (413) 555-0900.">
+  <meta property="og:title" content="Spotless Home Cleaning">
+  <meta property="og:description" content="Professional home cleaning in Northampton, MA.">
+  <meta property="og:type" content="website">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Spotless Home Cleaning",
+    "telephone": "+14135550900",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "55 Pleasant Street",
+      "addressLocality": "Northampton",
+      "addressRegion": "MA"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="site-name">Spotless Home Cleaning</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu"
+        onclick="document.getElementById('nav-links').classList.toggle('open')">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Spotless Home Cleaning</h1>
+      <p>Professional residential and commercial cleaning throughout the Pioneer Valley.</p>
+      <!-- Intentionally unlinked: phone as plain text in hero -->
+      <a href="#contact" class="btn">Get a Quote</a>
+    </section>
+
+    <section>
+      <h2>Cleaning Services</h2>
+      <p>Spotless Home Cleaning provides reliable, thorough cleaning for homes and small offices. Our teams are trained, bonded, and insured.</p>
+      <ul>
+        <li>Regular weekly and bi-weekly cleaning</li>
+        <li>Deep cleaning — inside appliances, baseboards, windows</li>
+        <li>Move-in and move-out cleaning</li>
+        <li>Post-construction cleanup</li>
+        <li>Airbnb and vacation rental turnover</li>
+        <li>Small office cleaning</li>
+      </ul>
+      <p>We bring all supplies and equipment. All products are EPA Safer Choice certified — safe for children and pets.</p>
+    </section>
+
+    <section>
+      <h2>About Spotless</h2>
+      <p>Spotless Home Cleaning was founded in 2016 by Maria Reyes, who built the company around one principle: show up reliably and clean thoroughly, every single time. Our teams are W-2 employees — not contractors — fully insured and background-checked.</p>
+      <p>We serve Northampton, Easthampton, Florence, Amherst, and surrounding Pioneer Valley communities.</p>
+    </section>
+
+    <!-- Intentionally missing: no testimonials/reviews section -->
+
+    <section id="contact">
+      <h2>Get a Quote</h2>
+      <p><strong>Address:</strong> 55 Pleasant Street, Northampton, MA 01060</p>
+      <p><strong>Hours:</strong> Mon–Fri 8am–5pm</p>
+      <p><strong>Service area:</strong> Northampton, Easthampton, Florence, Amherst, and surrounding Pioneer Valley towns</p>
+      <!-- Intentionally unlinked: phone as plain text, not tel: href -->
+      <p class="phone-cta">Call us: (413) 555-0900</p>
+      <p style="margin-bottom:1.5rem">Or fill out the form and we'll get back to you within one business day.</p>
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required placeholder="Jane Smith">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="(413) 555-xxxx">
+        <label for="message">Tell us about your home</label>
+        <textarea id="message" name="message"
+          placeholder="e.g. 3-bedroom house, need bi-weekly cleaning, first clean on..."></textarea>
+        <button type="submit" class="btn">Request Quote</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <!-- Intentionally unlinked: phone in footer as plain text -->
+    <p>&copy; 2025 Spotless Home Cleaning &mdash; 55 Pleasant Street, Northampton, MA &mdash;
+      (413) 555-0900</p>
+  </footer>
+</body>
+</html>
