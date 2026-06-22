@@ -1,0 +1,60 @@
+<!--
+  SCENARIO: sticky-overlay
+  CATEGORY: journey
+  SIGNALS TRIGGERED: stickyOverlayBlockerCount=1, primaryCtaBlocked=true
+  EXPECTED FINDINGS: [primary_cta_blocked]
+  EXPECTED GRADE: P1
+  NOTES: A fixed overlay covers the entire viewport. It has no close button —
+    the journey probe cannot dismiss it. Primary CTA is behind the overlay and
+    inaccessible. Uses .hard-overlay + .hard-overlay-inner from styles.css.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pioneer Home Services — Northampton, MA</title>
+  <meta name="description" content="Reliable home services in Northampton, MA. Call (413) 555-0100.">
+  <meta property="og:title" content="Pioneer Home Services">
+  <meta property="og:description" content="Reliable home services in Northampton, MA.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <!-- Undismissable overlay — no close button, deliberate -->
+  <div class="hard-overlay">
+    <div class="hard-overlay-inner">
+      <p>This site uses cookies to improve your experience. By continuing to use this site
+        you agree to our cookie policy.</p>
+      <!-- No dismiss button — overlay cannot be closed -->
+    </div>
+  </div>
+
+  <header>
+    <nav>
+      <a href="#" class="site-name">Pioneer Home Services</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Pioneer Home Services</h1>
+      <p>Serving Northampton and the Pioneer Valley since 2005.</p>
+      <a href="tel:+14135550100" class="btn">Call (413) 555-0100</a>
+    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="phone-cta">Call: <a href="tel:+14135550100">(413) 555-0100</a></p>
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+        <label for="message">Message</label>
+        <textarea id="message" name="message"></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Pioneer Home Services &mdash; Northampton, MA</p>
+  </footer>
+</body>
+</html>
