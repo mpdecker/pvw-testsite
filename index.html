@@ -4,9 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PVW Testsite — Scenario Registry</title>
+  <meta name="description" content="Controlled test scenarios for the lead-crm audit engine and outreach pipeline.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>PVW Testsite</h1>
-  <p>Coming soon.</p>
+  <h1 style="margin-bottom:0.5rem">PVW Testsite</h1>
+  <p style="color:#666;margin-bottom:2rem">
+    Controlled test scenarios for lead-crm audit and outreach validation.
+    Each URL represents one known signal or composite business scenario.
+  </p>
+
+  <div class="registry-section">
+    <h2>Audit Signal Pages</h2>
+    <ul>
+      <li><a href="audit-signals/clean.html">clean</a><span>Baseline — zero findings expected</span></li>
+      <li><a href="audit-signals/no-seo.html">no-seo</a><span>FindingCodes: seo_desc, seo_h1, no_og</span></li>
+      <li><a href="audit-signals/no-viewport.html">no-viewport</a><span>FindingCode: no_viewport</span></li>
+      <li><a href="audit-signals/no-contact.html">no-contact</a><span>FindingCode: no_contact_info</span></li>
+      <li><a href="audit-signals/small-tap-targets.html">small-tap-targets</a><span>FindingCode: small_tap_targets</span></li>
+      <li><a href="audit-signals/stale-year.html">stale-year</a><span>FindingCode: stale_year</span></li>
+      <li><a href="audit-signals/broken-images.html">broken-images</a><span>FindingCode: broken_images</span></li>
+      <li><a href="audit-signals/dead-links.html">dead-links</a><span>FindingCode: dead_links</span></li>
+    </ul>
+  </div>
+
+  <div class="registry-section">
+    <h2>Journey Probe Pages</h2>
+    <ul>
+      <li><a href="journey/broken-form.html">broken-form</a><span>FindingCode: interactive_control_failure</span></li>
+      <li><a href="journey/broken-nav.html">broken-nav</a><span>FindingCode: broken_navigation_path</span></li>
+      <li><a href="journey/no-cta.html">no-cta</a><span>FindingCode: no_lead_form (CTA absent above fold)</span></li>
+      <li><a href="journey/sticky-overlay.html">sticky-overlay</a><span>FindingCode: primary_cta_blocked</span></li>
+    </ul>
+  </div>
+
+  <div class="registry-section">
+    <h2>Outreach Composite Pages</h2>
+    <ul>
+      <li><a href="outreach/plumber.html">plumber</a><span>Pioneer Plumbing Co — P1 (seo_desc + broken_navigation_path)</span></li>
+      <li><a href="outreach/landscaper.html">landscaper</a><span>Valley Landscapes — P2 (seo_h1 + small_tap_targets)</span></li>
+      <li><a href="outreach/electrician.html">electrician</a><span>Berkshire Electric — P2 (no_og + stale_year)</span></li>
+    </ul>
+  </div>
 </body>
 </html>
