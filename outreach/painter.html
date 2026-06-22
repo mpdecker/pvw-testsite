@@ -1,0 +1,115 @@
+<!--
+  SCENARIO: painter
+  CATEGORY: outreach
+  INTENTIONAL FLAWS:
+    1. No street address anywhere on page          →  FindingCode: no_address
+    2. Portfolio images have alt=""                →  FindingCode: images_no_alt
+  EXPECTED GRADE: P2
+  OUTREACH ANGLE: Your portfolio photos are invisible to search engines and screen
+    readers, and there's no address on the site — both make it harder for local
+    customers to trust and find you.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Five Star Painting Co — Northampton, MA</title>
+  <meta name="description" content="Interior and exterior painting in Northampton, MA. Call (413) 555-0500 for a free estimate.">
+  <meta property="og:title" content="Five Star Painting Co">
+  <meta property="og:description" content="Interior and exterior painting in Northampton, MA.">
+  <meta property="og:type" content="website">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Five Star Painting Co",
+    "telephone": "+14135550500"
+  }
+  </script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="site-name">Five Star Painting Co</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu"
+        onclick="document.getElementById('nav-links').classList.toggle('open')">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Five Star Painting Co</h1>
+      <p>Interior and exterior painting for homes and businesses throughout the Pioneer Valley.</p>
+      <a href="tel:+14135550500" class="btn">Call (413) 555-0500</a>
+    </section>
+
+    <section>
+      <h2>Painting Services</h2>
+      <p>Five Star Painting handles every painting project from a single accent wall to a full exterior. We use premium paints, prep every surface properly, and clean up completely before we leave.</p>
+      <ul>
+        <li>Interior painting — walls, ceilings, trim, cabinets</li>
+        <li>Exterior painting and staining</li>
+        <li>Deck and fence staining</li>
+        <li>Drywall repair and patching</li>
+        <li>Wallpaper removal</li>
+        <li>Color consultation included with every estimate</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Our Work</h2>
+      <!-- Intentionally missing alt text on portfolio images -->
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg="
+           alt="" width="600" height="1" style="width:100%;max-width:600px;display:block;margin-bottom:0.5rem;">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg="
+           alt="" width="600" height="1" style="width:100%;max-width:600px;display:block;margin-bottom:0.5rem;">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg="
+           alt="" width="600" height="1" style="width:100%;max-width:600px;display:block;">
+    </section>
+
+    <section>
+      <h2>What Our Customers Say</h2>
+      <blockquote>
+        <p>"Best painters we've used. On time, tidy, and the finished rooms look incredible."</p>
+        <cite>— Jennifer M., Northampton</cite>
+      </blockquote>
+      <blockquote>
+        <p>"Painted our entire exterior in two days. Neighbors keep asking who did it."</p>
+        <cite>— Bob L., Easthampton</cite>
+      </blockquote>
+    </section>
+
+    <section id="contact">
+      <h2>Get a Free Estimate</h2>
+      <!-- Intentionally missing: no street address -->
+      <p><strong>Hours:</strong> Mon–Fri 8am–5pm, Sat 9am–2pm</p>
+      <p><strong>Service area:</strong> Northampton, Easthampton, Florence, Amherst, and surrounding Pioneer Valley towns</p>
+      <p class="phone-cta">Call us: <a href="tel:+14135550500">(413) 555-0500</a></p>
+      <p style="margin-bottom:1.5rem">Fill out the form and we'll schedule a free on-site estimate.</p>
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required placeholder="Jane Smith">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="(413) 555-xxxx">
+        <label for="message">Describe the project</label>
+        <textarea id="message" name="message"
+          placeholder="e.g. Interior of 3-bedroom house, exterior repaint, deck staining..."></textarea>
+        <button type="submit" class="btn">Request Estimate</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <!-- Intentionally missing: no street address in footer -->
+    <p>&copy; 2025 Five Star Painting Co &mdash; Northampton, MA &mdash;
+      <a href="tel:+14135550500">(413) 555-0500</a></p>
+  </footer>
+</body>
+</html>
