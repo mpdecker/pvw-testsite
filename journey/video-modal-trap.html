@@ -1,0 +1,95 @@
+<!--
+  SCENARIO: video-modal-trap
+  CATEGORY: journey
+  SIGNALS TRIGGERED: undismissableModalOnLoad=true
+  EXPECTED FINDINGS: [modal_trap]
+  EXPECTED GRADE: P1
+  NOTES: A video modal fires automatically on page load. No close button.
+         Clicking outside the modal does nothing. Page content is unreachable.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pioneer Home Services — Northampton, MA</title>
+  <meta name="description" content="Reliable home services in Northampton, MA. Call (413) 555-0100.">
+  <meta property="og:title" content="Pioneer Home Services">
+  <meta property="og:description" content="Reliable home services in Northampton, MA.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    #video-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+    #video-modal.open { display: flex; }
+    #video-box {
+      background: #000;
+      width: 90%;
+      max-width: 640px;
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.1rem;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Intentionally trapping: modal opens on load, no close path -->
+  <div id="video-modal">
+    <div id="video-box">
+      ▶ Watch our intro video
+      <!-- Intentionally missing: no × close button -->
+    </div>
+  </div>
+
+  <header>
+    <nav>
+      <a href="#" class="site-name">Pioneer Home Services</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu"
+        onclick="document.getElementById('nav-links').classList.toggle('open')">☰</button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Pioneer Home Services</h1>
+      <p>Serving Northampton and the Pioneer Valley since 2005.</p>
+      <a href="tel:+14135550100" class="btn">Call (413) 555-0100</a>
+    </section>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p class="phone-cta">Call: <a href="tel:+14135550100">(413) 555-0100</a></p>
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your name">
+        <label for="message">How can we help?</label>
+        <textarea id="message" name="message" placeholder="Describe what you need..."></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Pioneer Home Services &mdash; Northampton, MA</p>
+  </footer>
+
+  <script>
+    // Intentionally auto-opens on load with no dismiss mechanism
+    window.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('video-modal').classList.add('open');
+    });
+  </script>
+</body>
+</html>
