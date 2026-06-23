@@ -1,0 +1,111 @@
+<!--
+  SCENARIO: towing
+  CATEGORY: outreach
+  INTENTIONAL FLAWS:
+    1. Missing <title> tag                             -> FindingCode: seo_title
+    2. Phone as plain text, no tel: link               -> FindingCode: no_click_to_call
+    3. Two broken image srcs (empty src)               -> FindingCode: broken_images
+  EXPECTED GRADE: P0
+  OUTREACH ANGLE: Three critical issues on an emergency-service site — invisible in
+    search, phone untappable, and images broken.
+  NOTES: P0 = 3+ critical signals. no_click_to_call fires because no tel: link AND
+    no form AND no email (hasStrongAlternateContact=false). broken_images fires when
+    brokenImageCount >= 2 (both img srcs are empty strings or point to nonexistent paths).
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Intentionally missing: no <title> tag -->
+  <meta name="description" content="24/7 towing and roadside assistance in Northampton, MA. Call (413) 555-0500.">
+  <meta property="og:title" content="Pioneer Towing &amp; Recovery">
+  <meta property="og:description" content="24/7 towing and roadside assistance in Northampton, MA.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/favicon.ico">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutomotiveBusiness",
+    "name": "Pioneer Towing & Recovery",
+    "telephone": "+14135550500",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "500 Bridge Road",
+      "addressLocality": "Northampton",
+      "addressRegion": "MA"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="site-name">Pioneer Towing &amp; Recovery</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu"
+        onclick="document.getElementById('nav-links').classList.toggle('open')">&#9776;</button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Pioneer Towing &amp; Recovery</h1>
+      <p>24/7 towing and roadside assistance throughout the Pioneer Valley. Fast response times.</p>
+      <!-- Intentionally plain text: no tel: link anywhere on page -->
+      <p class="phone-cta" style="font-size:1.1rem;font-weight:bold">Call 24/7: (413) 555-0500</p>
+    </section>
+    <section>
+      <h2>Our Services</h2>
+      <!-- Intentionally broken images: src="" fires broken_images when count >= 2 -->
+      <img src="" alt="Tow truck on highway" width="600" height="350"
+           style="width:100%;max-width:600px;display:block;margin-bottom:1rem">
+      <p>Pioneer Towing provides reliable towing and roadside services for passenger vehicles,
+        motorcycles, and light trucks throughout Hampshire County.</p>
+      <ul>
+        <li>Local and long-distance towing</li>
+        <li>Jump-starts and battery service</li>
+        <li>Flat tire changes</li>
+        <li>Lockout assistance</li>
+        <li>Fuel delivery</li>
+        <li>Accident recovery and scene cleanup</li>
+        <li>Motorcycle towing</li>
+      </ul>
+      <img src="" alt="Roadside assistance truck" width="600" height="350"
+           style="width:100%;max-width:600px;display:block;margin-top:1rem">
+    </section>
+    <section>
+      <h2>What Our Customers Say</h2>
+      <blockquote>
+        <p>"Showed up in 20 minutes on a Sunday night. Professional and got us home safely."</p>
+        <cite>&mdash; Kevin B., Northampton</cite>
+      </blockquote>
+      <blockquote>
+        <p>"Locked out at 11pm and they were there within 15 minutes. Highly recommend."</p>
+        <cite>&mdash; Elena M., Amherst</cite>
+      </blockquote>
+    </section>
+    <section>
+      <h2>About Pioneer Towing</h2>
+      <p>Family-owned since 2003. Our drivers are licensed, insured, and trained in safe
+        vehicle recovery. We operate 24 hours a day, 365 days a year across Hampshire
+        and Franklin counties.</p>
+    </section>
+    <section id="contact">
+      <h2>Call for Service</h2>
+      <p><strong>Address:</strong> 500 Bridge Road, Northampton, MA 01060</p>
+      <p><strong>Hours:</strong> 24 hours a day, 7 days a week</p>
+      <p><strong>Service area:</strong> Northampton, Easthampton, Amherst, Florence, Hadley, and all Hampshire County</p>
+      <!-- Intentionally no tel: link, no form, no email: hasStrongAlternateContact=false -->
+      <p>For immediate service, call us at <strong>(413) 555-0500</strong>. We respond to all calls around the clock.</p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Pioneer Towing &amp; Recovery &mdash; 500 Bridge Road, Northampton, MA &mdash; (413) 555-0500</p>
+  </footer>
+</body>
+</html>

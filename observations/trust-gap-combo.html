@@ -1,0 +1,89 @@
+<!--
+  SCENARIO: trust-gap-combo
+  CATEGORY: observations
+  SIGNALS TRIGGERED: hasServiceClarity=false, hasAboutTeamSignal=false, trustSignalCount=2
+    (hasBusinessIdentity + hasTestimonialSignal only)
+  EXPECTED FINDINGS: []
+  EXPECTED OBSERVATIONS: [service_clarity_gap, about_team_gap, trust_signal_gap]
+  EXPECTED GRADE: (no promoted finding)
+  NOTES: Minimal "We can help!" page. Has business name/phone/form (non-thin) but no
+    services language, no team content, no address, no hours, no service area.
+    trustSignalCount=2: hasBusinessIdentity (title+h1 match) + hasTestimonialSignal.
+    trust_signal_gap fires at <2, so count=2 means it does NOT fire here.
+    Adjust: remove the testimonial so trustSignalCount=1 and trust_signal_gap fires.
+    trustSignalCount=1 (hasBusinessIdentity only, no testimonials, no address, no hours,
+    no service area, no service clarity, no about team).
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pioneer Home Services &mdash; Northampton, MA</title>
+  <meta name="description" content="We can help with all your home needs. Get in touch today.">
+  <meta property="og:title" content="Pioneer Home Services">
+  <meta property="og:description" content="We can help with all your home needs.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/favicon.ico">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Pioneer Home Services",
+    "telephone": "+14135550100"
+  }
+  </script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="site-name">Pioneer Home Services</a>
+      <ul class="nav-links" id="nav-links">
+        <!-- Vague: avoids "Services", "What We Do", "About Us", "Our Team" -->
+        <li><a href="#">How We Help</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu"
+        onclick="document.getElementById('nav-links').classList.toggle('open')">&#9776;</button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Pioneer Home Services</h1>
+      <!-- Generic: no service/area/team anchors -->
+      <p>We can help with your home. Friendly, reliable, and ready to assist.</p>
+      <a href="tel:+14135550100" class="btn">Call (413) 555-0100</a>
+    </section>
+    <section>
+      <!-- Avoids SERVICE_RE and ABOUT_TEAM_RE language throughout -->
+      <h2>Getting Started Is Easy</h2>
+      <p>Call us or fill out the form below. We will get back to you the same day to
+        discuss what you need. Our goal is to make the process simple from the very
+        first conversation. We are available during regular business hours and can
+        often schedule a visit within a day or two of your initial call.</p>
+      <p>We have been helping homeowners for years and take pride in doing good work.
+        If you are not happy with the result, we will make it right. That is our
+        commitment to every customer, no exceptions.</p>
+    </section>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <!-- No address, no hours, no service area (trust signals absent) -->
+      <p class="phone-cta">Call: <a href="tel:+14135550100">(413) 555-0100</a></p>
+      <p style="margin-bottom:1.5rem">Or fill out the form and we'll be in touch shortly.</p>
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your name">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="(413) 555-xxxx">
+        <label for="message">What do you need help with?</label>
+        <textarea id="message" name="message" placeholder="Describe what you need..."></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Pioneer Home Services &mdash; <a href="tel:+14135550100">(413) 555-0100</a></p>
+  </footer>
+</body>
+</html>

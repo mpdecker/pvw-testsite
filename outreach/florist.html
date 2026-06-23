@@ -1,0 +1,114 @@
+<!--
+  SCENARIO: florist
+  CATEGORY: outreach
+  INTENTIONAL FLAWS:
+    1. No Google Maps / Apple Maps / /directions link     -> FindingCode: no_directions_path
+    2. Copyright year 2023                               -> FindingCode: stale_year
+  EXPECTED GRADE: P2
+  OUTREACH ANGLE: Customers ready to visit can't tap for directions, and the site looks
+    a couple of years out of date.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bloom &amp; Co Florist &mdash; Northampton, MA</title>
+  <meta name="description" content="Fresh flowers and floral arrangements in Northampton, MA. Call (413) 555-0300.">
+  <meta property="og:title" content="Bloom &amp; Co Florist">
+  <meta property="og:description" content="Fresh flowers and floral arrangements in Northampton, MA.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/favicon.ico">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Florist",
+    "name": "Bloom & Co Florist",
+    "telephone": "+14135550300",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "88 King Street",
+      "addressLocality": "Northampton",
+      "addressRegion": "MA"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="site-name">Bloom &amp; Co Florist</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Arrangements</a></li>
+        <li><a href="#">Weddings</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu"
+        onclick="document.getElementById('nav-links').classList.toggle('open')">&#9776;</button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Bloom &amp; Co Florist</h1>
+      <p>Fresh flowers and custom arrangements for every occasion in Northampton.</p>
+      <a href="tel:+14135550300" class="btn">Call (413) 555-0300</a>
+    </section>
+    <section>
+      <h2>Our Services</h2>
+      <p>From everyday bouquets to full wedding and event florals, Bloom &amp; Co creates
+        arrangements that make every moment memorable.</p>
+      <ul>
+        <li>Fresh-cut bouquets and arrangements</li>
+        <li>Wedding florals &mdash; bridal, ceremony, reception</li>
+        <li>Corporate and event arrangements</li>
+        <li>Sympathy and funeral flowers</li>
+        <li>Same-day delivery in the Pioneer Valley</li>
+        <li>Custom orders by request</li>
+      </ul>
+    </section>
+    <section>
+      <h2>What Our Customers Say</h2>
+      <blockquote>
+        <p>"The wedding flowers were absolutely stunning. Every guest asked about them."</p>
+        <cite>&mdash; Amanda T., Northampton</cite>
+      </blockquote>
+      <blockquote>
+        <p>"I order from Bloom &amp; Co every week for our office. Always fresh, always beautiful."</p>
+        <cite>&mdash; James R., Easthampton</cite>
+      </blockquote>
+    </section>
+    <section>
+      <h2>About Bloom &amp; Co</h2>
+      <p>Family-owned and located in downtown Northampton since 2008. Our team of certified
+        floral designers works with locally sourced and imported blooms year-round. We
+        offer consultations for weddings and large events at no charge.</p>
+    </section>
+    <section id="contact">
+      <h2>Visit Us or Get in Touch</h2>
+      <!-- Address present (hasAddressSignal=true) but no maps link anywhere on page -->
+      <p><strong>Address:</strong> 88 King Street, Northampton, MA 01060</p>
+      <p><strong>Hours:</strong> Mon&ndash;Fri 9am&ndash;6pm, Sat 9am&ndash;5pm, Sun 10am&ndash;3pm</p>
+      <p><strong>Service area:</strong> Northampton, Easthampton, Florence, Amherst, and surrounding Pioneer Valley towns</p>
+      <p class="phone-cta">Call us: <a href="tel:+14135550300">(413) 555-0300</a></p>
+      <!-- Intentionally no Google Maps, Apple Maps, or /directions link -->
+      <p style="margin-bottom:1.5rem">We're located on King Street in downtown Northampton. Or fill out the form below to ask about availability.</p>
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your name">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="(413) 555-xxxx">
+        <label for="message">What can we help with?</label>
+        <textarea id="message" name="message" placeholder="Tell us about your event or what you're looking for..."></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <!-- Intentionally stale year: 2023 triggers stale_year finding -->
+    <p>&copy; 2023 Bloom &amp; Co Florist &mdash; 88 King Street, Northampton, MA &mdash;
+      <a href="tel:+14135550300">(413) 555-0300</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!--
+  SCENARIO: business-identity-mismatch
+  CATEGORY: observations
+  SIGNALS TRIGGERED: hasConsistentBusinessIdentity=false
+  EXPECTED FINDINGS: []
+  EXPECTED OBSERVATIONS: [business_identity_mismatch]
+  EXPECTED GRADE: (no promoted finding)
+  NOTES: business_identity_mismatch fires when title tokens and H1 tokens share no
+    3+ character non-stop-word tokens. Title tokens: [summit, pro, services, northampton].
+    H1 tokens: [your, trusted, home, improvement, partner]. Zero tokens in common.
+    "summit", "pro", "services", "northampton" do not appear in H1 text.
+    "your", "trusted", "home", "improvement", "partner" do not appear in title.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Intentionally mismatched: title tokens share no words with H1 tokens -->
+  <title>Summit Pro Services &mdash; Northampton, MA</title>
+  <meta name="description" content="Reliable home improvement services in Northampton, MA. Call (413) 555-0100.">
+  <meta property="og:title" content="Summit Pro Services">
+  <meta property="og:description" content="Reliable home improvement services in Northampton, MA.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/favicon.ico">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Summit Pro Services",
+    "telephone": "+14135550100",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Main Street",
+      "addressLocality": "Northampton",
+      "addressRegion": "MA"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="site-name">Summit Pro Services</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu"
+        onclick="document.getElementById('nav-links').classList.toggle('open')">&#9776;</button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <!-- Intentionally mismatched H1: no shared tokens with the <title> -->
+      <h1>Your Trusted Home Improvement Partner</h1>
+      <p>Serving Northampton and the Pioneer Valley since 2005.</p>
+      <a href="tel:+14135550100" class="btn">Call (413) 555-0100</a>
+    </section>
+    <section>
+      <h2>Our Services</h2>
+      <p>We offer a full range of home improvement services throughout Hampshire County.</p>
+      <ul>
+        <li>Kitchen and bathroom remodeling</li>
+        <li>Flooring installation and refinishing</li>
+        <li>Interior and exterior painting</li>
+        <li>Deck and porch construction</li>
+      </ul>
+    </section>
+    <section>
+      <h2>What Our Customers Say</h2>
+      <blockquote>
+        <p>"Outstanding craftsmanship and on time every day. Very happy with our new kitchen."</p>
+        <cite>&mdash; Linda R., Northampton</cite>
+      </blockquote>
+      <blockquote>
+        <p>"Professional crew, clean work site, finished on schedule. Highly recommend."</p>
+        <cite>&mdash; Carlos M., Easthampton</cite>
+      </blockquote>
+    </section>
+    <section>
+      <h2>About Us</h2>
+      <p>Locally owned and operated since 2005. Our team of licensed contractors serves
+        Hampshire County with quality workmanship and a 100% satisfaction guarantee.</p>
+    </section>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p><strong>Address:</strong> 123 Main Street, Northampton, MA 01060</p>
+      <p><strong>Hours:</strong> Mon&ndash;Fri 8am&ndash;6pm, Sat 9am&ndash;3pm</p>
+      <p><strong>Service area:</strong> Northampton, Easthampton, Florence, Amherst, and surrounding Pioneer Valley towns</p>
+      <p class="phone-cta">Call us: <a href="tel:+14135550100">(413) 555-0100</a></p>
+      <p style="margin-bottom:1.5rem">Or fill out the form below and we'll get back to you within one business day.</p>
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your name">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="(413) 555-xxxx">
+        <label for="message">How can we help?</label>
+        <textarea id="message" name="message" placeholder="Describe the project you have in mind..."></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Summit Pro Services &mdash; 123 Main Street, Northampton, MA &mdash;
+      <a href="tel:+14135550100">(413) 555-0100</a></p>
+  </footer>
+</body>
+</html>

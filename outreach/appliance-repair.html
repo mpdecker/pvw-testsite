@@ -1,0 +1,117 @@
+<!--
+  SCENARIO: appliance-repair
+  CATEGORY: outreach
+  INTENTIONAL FLAWS:
+    1. Form field with impossible pattern constraint   -> FindingCode: form_validation_broken
+    2. <pre> block with white-space:nowrap             -> FindingCode: layout_overflow
+  EXPECTED GRADE: P2
+  OUTREACH ANGLE: Your quote form rejects every submission, and the page scrolls
+    sideways on mobile.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Valley Appliance Repair &mdash; Northampton, MA</title>
+  <meta name="description" content="Appliance repair in Northampton, MA. Call (413) 555-0900 for same-day service.">
+  <meta property="og:title" content="Valley Appliance Repair">
+  <meta property="og:description" content="Appliance repair in Northampton, MA.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/favicon.ico">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Valley Appliance Repair",
+    "telephone": "+14135550900",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "78 Locust Street",
+      "addressLocality": "Northampton",
+      "addressRegion": "MA"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="site-name">Valley Appliance Repair</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu"
+        onclick="document.getElementById('nav-links').classList.toggle('open')">&#9776;</button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Valley Appliance Repair</h1>
+      <p>Factory-trained technicians for major appliance brands throughout the Pioneer Valley.</p>
+      <a href="tel:+14135550900" class="btn">Call (413) 555-0900</a>
+    </section>
+    <section>
+      <h2>Our Services</h2>
+      <p>We repair all major brands including GE, Whirlpool, Samsung, LG, Bosch, and
+        Maytag. Same-day and next-day appointments available.</p>
+      <ul>
+        <li>Refrigerator and freezer repair</li>
+        <li>Washer and dryer repair</li>
+        <li>Dishwasher repair</li>
+        <li>Oven, range, and cooktop repair</li>
+        <li>Microwave repair</li>
+        <li>Garbage disposal replacement</li>
+      </ul>
+      <!-- Intentionally wide: white-space:nowrap forces horizontal scroll at 390px viewport -->
+      <pre style="white-space:nowrap; font-size:0.85rem; margin:1rem 0">Valley Appliance Repair &mdash; Factory-certified technicians for GE, Whirlpool, Samsung, LG, Bosch, Maytag, KitchenAid, and Frigidaire</pre>
+    </section>
+    <section>
+      <h2>What Our Customers Say</h2>
+      <blockquote>
+        <p>"Fixed our refrigerator same day. The tech was knowledgeable and had the part on the truck."</p>
+        <cite>&mdash; Donna P., Northampton</cite>
+      </blockquote>
+      <blockquote>
+        <p>"Washer wouldn't spin. They diagnosed and fixed it in under an hour. Great service."</p>
+        <cite>&mdash; Craig S., Easthampton</cite>
+      </blockquote>
+    </section>
+    <section>
+      <h2>About Us</h2>
+      <p>Locally owned since 2009. Our factory-certified technicians have the training and
+        parts inventory to fix most appliances on the first visit. All repairs carry a
+        90-day parts and labor warranty.</p>
+    </section>
+    <section id="contact">
+      <h2>Request a Repair</h2>
+      <p><strong>Address:</strong> 78 Locust Street, Northampton, MA 01060</p>
+      <p><strong>Hours:</strong> Mon&ndash;Fri 8am&ndash;5pm, Sat 9am&ndash;1pm</p>
+      <p><strong>Service area:</strong> Northampton, Easthampton, Florence, Amherst, and surrounding Pioneer Valley towns</p>
+      <p class="phone-cta">Call us: <a href="tel:+14135550900">(413) 555-0900</a></p>
+      <p style="margin-bottom:1.5rem">Or fill out the form below to request a quote.</p>
+      <form class="contact-form" action="#" method="post">
+        <!-- Intentionally broken: impossible pattern blocks all realistic submissions -->
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required
+               pattern="^IMPOSSIBLE_PATTERN_XYZ$"
+               placeholder="Your name">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="(413) 555-xxxx">
+        <label for="appliance">Appliance Type</label>
+        <input type="text" id="appliance" name="appliance" placeholder="e.g. Refrigerator, Washer">
+        <label for="message">Describe the problem</label>
+        <textarea id="message" name="message" placeholder="What is the appliance doing (or not doing)?"></textarea>
+        <button type="submit" class="btn">Request Repair</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Valley Appliance Repair &mdash; 78 Locust Street, Northampton, MA &mdash;
+      <a href="tel:+14135550900">(413) 555-0900</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!--
+  SCENARIO: locksmith
+  CATEGORY: outreach
+  INTENTIONAL FLAWS:
+    1. Missing <title> tag                             -> FindingCode: seo_title
+    2. No service area language anywhere               -> ObservationCode: service_area_gap
+    3. Copyright year 2023                             -> FindingCode: stale_year
+  EXPECTED GRADE: P1
+  OUTREACH ANGLE: No title tag means no search presence, and there's no mention of
+    which towns you cover.
+  NOTES: service_area_gap is an observation (not a promoted finding). seo_title and
+    stale_year are the two promoted findings producing the P1 grade.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Intentionally missing: no <title> tag -->
+  <meta name="description" content="Locksmith services in Northampton, MA. Call (413) 555-0700.">
+  <meta property="og:title" content="Capital Lock &amp; Key">
+  <meta property="og:description" content="Locksmith services in Northampton, MA.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/favicon.ico">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Locksmith",
+    "name": "Capital Lock & Key",
+    "telephone": "+14135550700",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "210 Pleasant Street",
+      "addressLocality": "Northampton",
+      "addressRegion": "MA"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="site-name">Capital Lock &amp; Key</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu"
+        onclick="document.getElementById('nav-links').classList.toggle('open')">&#9776;</button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Capital Lock &amp; Key</h1>
+      <p>Professional locksmith services — residential, commercial, and automotive.</p>
+      <a href="tel:+14135550700" class="btn">Call (413) 555-0700</a>
+    </section>
+    <section>
+      <h2>Our Services</h2>
+      <p>Capital Lock &amp; Key provides fast, reliable locksmith services for homes,
+        businesses, and vehicles. Licensed and insured.</p>
+      <ul>
+        <li>Residential lockouts and rekeying</li>
+        <li>Commercial lock installation and repair</li>
+        <li>Automotive lockouts and key duplication</li>
+        <li>High-security lock upgrades</li>
+        <li>Master key systems</li>
+        <li>Safe opening and combination changes</li>
+      </ul>
+      <!-- Intentionally no service area: no town names, no "we serve X" language -->
+    </section>
+    <section>
+      <h2>What Our Customers Say</h2>
+      <blockquote>
+        <p>"Locked out late at night and they arrived within 30 minutes. Professional and fair."</p>
+        <cite>&mdash; Susan C.</cite>
+      </blockquote>
+      <blockquote>
+        <p>"Rekeyed our entire office after a staff change. Fast, thorough, and good value."</p>
+        <cite>&mdash; Michael T.</cite>
+      </blockquote>
+    </section>
+    <section>
+      <h2>About Capital Lock &amp; Key</h2>
+      <p>Locally owned and operated since 2001. Our licensed locksmiths bring 20+ years
+        of experience to every job. We carry full liability insurance and back all work
+        with a satisfaction guarantee.</p>
+    </section>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p><strong>Address:</strong> 210 Pleasant Street, Northampton, MA 01060</p>
+      <p><strong>Hours:</strong> Mon&ndash;Sat 8am&ndash;6pm, emergency calls 24/7</p>
+      <!-- Intentionally no service area text anywhere on page -->
+      <p class="phone-cta">Call us: <a href="tel:+14135550700">(413) 555-0700</a></p>
+      <p style="margin-bottom:1.5rem">Or fill out the form below.</p>
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your name">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="(413) 555-xxxx">
+        <label for="message">How can we help?</label>
+        <textarea id="message" name="message" placeholder="Describe your locksmith need..."></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <!-- Intentionally stale year: 2023 triggers stale_year finding -->
+    <p>&copy; 2023 Capital Lock &amp; Key &mdash; 210 Pleasant Street, Northampton, MA &mdash;
+      <a href="tel:+14135550700">(413) 555-0700</a></p>
+  </footer>
+</body>
+</html>
