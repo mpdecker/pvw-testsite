@@ -1,10 +1,11 @@
 <!--
   SCENARIO: no-reviews
   CATEGORY: audit-signals
-  SIGNALS TRIGGERED: hasReviews=false
-  EXPECTED FINDINGS: [no_reviews]
-  EXPECTED GRADE: P2
-  NOTES: All signals green. The "What Our Customers Say" section with blockquotes is absent.
+  SIGNALS TRIGGERED: reviewSignalCount=0, isThinBrochure=false
+  EXPECTED FINDINGS: []
+  EXPECTED OBSERVATIONS: [review_signal_gap]
+  EXPECTED GRADE: (observation only)
+  NOTES: Non-thin page without testimonials triggers review_signal_gap. No no_reviews FindingCode.
 -->
 <!DOCTYPE html>
 <html lang="en">

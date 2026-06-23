@@ -1,11 +1,10 @@
 <!--
-  SCENARIO: no-email-path
+  SCENARIO: quote-path-missing
   CATEGORY: journey
-  SIGNALS TRIGGERED: probeEmailContactPath=fail, contactPathTypes includes 'call'
-  EXPECTED FINDINGS: []
-  EXPECTED OBSERVATIONS: [no_email_path, limited_contact_paths]
-  EXPECTED GRADE: (observation only)
-  NOTES: tel: link blocks no_email_path finding promotion. See journey/no-email-finding.html for promoted finding.
+  SIGNALS TRIGGERED: hasQuoteIntent=true, hasContactForm=false
+  EXPECTED FINDINGS: [quote_path_missing]
+  EXPECTED GRADE: P2
+  NOTES: Quote CTA href matches PRICING_RE but links to dead internal page; no contact form.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -51,11 +50,11 @@
     <section class="hero">
       <h1>Pioneer Home Services</h1>
       <p>Serving Northampton and the Pioneer Valley since 2005.</p>
-      <a href="tel:+14135550100" class="btn">Call (413) 555-0100</a>
+      <a href="/get-estimate" class="btn">Request a Free Estimate</a>
     </section>
     <section>
       <h2>Our Services</h2>
-      <p>We offer a full range of home services throughout Hampshire County.</p>
+      <p>We offer plumbing, heating, and general home repairs throughout Hampshire County.</p>
       <ul>
         <li>Plumbing repairs and installation</li>
         <li>Water heater replacement</li>
@@ -63,31 +62,11 @@
         <li>Emergency service available 24/7</li>
       </ul>
     </section>
-    <section>
-      <h2>What Our Customers Say</h2>
-      <blockquote>
-        <p>"Fast, professional, and fairly priced. Would recommend to anyone in the Valley."</p>
-        <cite>&mdash; Sarah M., Northampton</cite>
-      </blockquote>
-      <blockquote>
-        <p>"Fixed our water heater same day. Very happy with the service."</p>
-        <cite>&mdash; Tom K., Easthampton</cite>
-      </blockquote>
-    </section>
-    <section>
-      <h2>About Us</h2>
-      <p>Family-owned and operated since 2005. Our team serves Hampshire County with
-        same-day availability and a 100% satisfaction guarantee.</p>
-    </section>
     <section id="contact">
       <h2>Contact Us</h2>
       <p><strong>Address:</strong> 123 Main Street, Northampton, MA 01060</p>
-      <p><strong>Hours:</strong> Mon&ndash;Fri 8am&ndash;6pm, Sat 9am&ndash;3pm</p>
-      <p><strong>Service area:</strong> Northampton, Easthampton, Florence, Amherst, and surrounding Pioneer Valley towns</p>
-      <!-- Tel: link present (adds 'call' to contactPathTypes, blocks no_email_path finding) -->
       <p class="phone-cta">Call us: <a href="tel:+14135550100">(413) 555-0100</a></p>
-      <!-- Intentionally no form, no mailto:, no /contact link anywhere on page -->
-      <p>We are available by phone during business hours. No online form available at this time.</p>
+      <p>No online form &mdash; call or use the estimate button above.</p>
     </section>
   </main>
   <footer>

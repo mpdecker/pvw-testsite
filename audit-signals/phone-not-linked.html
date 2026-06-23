@@ -1,12 +1,11 @@
 <!--
   SCENARIO: phone-not-linked
   CATEGORY: audit-signals
-  SIGNALS TRIGGERED: phoneLinkedWithTel=false
-  EXPECTED FINDINGS: [phone_not_linked]
-  EXPECTED GRADE: P2
-  NOTES: Phone number appears as plain text in all locations — no <a href="tel:..."> wrapping it.
-         Hero CTA button is a tel: link to keep contact_info signal green.
-         Contact section and footer phone are plain text.
+  SIGNALS TRIGGERED: hasClickToCall=true (hero tel:), plain text phone in contact/footer
+  EXPECTED FINDINGS: []
+  EXPECTED OBSERVATIONS: []
+  EXPECTED GRADE: (no finding — hero tel: link satisfies hasClickToCall)
+  NOTES: Demonstrates partial tel: coverage. no_click_to_call requires !hasClickToCall globally.
 -->
 <!DOCTYPE html>
 <html lang="en">

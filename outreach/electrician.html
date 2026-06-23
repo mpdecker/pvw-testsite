@@ -2,12 +2,12 @@
   SCENARIO: electrician
   CATEGORY: outreach
   INTENTIONAL FLAWS:
-    1. No OG meta tags        →  FindingCode: no_og
-    2. Footer copyright 2020  →  FindingCode: stale_year
+    1. No og: meta tags
+    2. Copyright year 2020
+  EXPECTED FINDINGS: [stale_year]
+  EXPECTED OBSERVATIONS: [no_og]
   EXPECTED GRADE: P2
-  OUTREACH ANGLE: Your site is missing the preview card data that appears when
-    someone shares your link — and the 2020 copyright makes the business look
-    dormant. Both are easy wins.
+  OUTREACH ANGLE: Site looks out of date and social sharing previews are incomplete.
 -->
 <!DOCTYPE html>
 <html lang="en">

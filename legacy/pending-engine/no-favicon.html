@@ -1,11 +1,11 @@
 <!--
-  SCENARIO: no-address
-  CATEGORY: audit-signals
-  SIGNALS TRIGGERED: hasAddressSignal=false
+  SCENARIO: no-favicon
+  CATEGORY: legacy/pending-engine
+  SIGNALS TRIGGERED: (none — pending lead-crm engine support)
   EXPECTED FINDINGS: []
-  EXPECTED OBSERVATIONS: [trust_signal_gap]
-  EXPECTED GRADE: (observation only)
-  NOTES: No street address on page lowers trustSignalCount. No no_address FindingCode exists.
+  EXPECTED OBSERVATIONS: []
+  EXPECTED GRADE: (n/a)
+  NOTES: Reserved for a future engine FindingCode. No observation or finding fires today.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -17,16 +17,22 @@
   <meta property="og:title" content="Pioneer Home Services">
   <meta property="og:description" content="Reliable home services in Northampton, MA.">
   <meta property="og:type" content="website">
-  <link rel="icon" href="/favicon.ico">
+  <!-- Intentionally missing: no favicon link -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Pioneer Home Services",
-    "telephone": "+14135550100"
+    "telephone": "+14135550100",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Main Street",
+      "addressLocality": "Northampton",
+      "addressRegion": "MA"
+    }
   }
   </script>
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../../styles.css">
 </head>
 <body>
   <header>
@@ -70,13 +76,13 @@
     </section>
     <section>
       <h2>Our Work</h2>
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg="
            alt="Pioneer Home Services technician at work" width="600" height="1"
            style="width:100%;max-width:600px;display:block;">
     </section>
     <section id="contact">
       <h2>Contact Us</h2>
-      <!-- Intentionally missing: no street address -->
+      <p><strong>Address:</strong> 123 Main Street, Northampton, MA 01060</p>
       <p><strong>Hours:</strong> Mon–Fri 8am–6pm, Sat 9am–3pm</p>
       <p><strong>Service area:</strong> Northampton, Easthampton, Florence, Amherst, and surrounding Pioneer Valley towns</p>
       <p class="phone-cta">Call us: <a href="tel:+14135550100">(413) 555-0100</a></p>
@@ -93,7 +99,7 @@
     </section>
   </main>
   <footer>
-    <p>&copy; 2025 Pioneer Home Services &mdash; Northampton, MA &mdash;
+    <p>&copy; 2025 Pioneer Home Services &mdash; 123 Main Street, Northampton, MA &mdash;
       <a href="tel:+14135550100">(413) 555-0100</a></p>
   </footer>
 </body>

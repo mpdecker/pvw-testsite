@@ -2,11 +2,9 @@
   SCENARIO: multi-step-broken
   CATEGORY: journey
   SIGNALS TRIGGERED: multiStepFormAdvances=false
-  EXPECTED FINDINGS: [multi_step_failure]
+  EXPECTED FINDINGS: [multi_step_form_blocked]
   EXPECTED GRADE: P1
-  NOTES: Two-step quote form. Step 1 renders and fields are fillable.
-         "Next" button has onclick="return false" — step 2 never appears.
-         A probe filling step 1 and clicking Next observes no state change.
+  NOTES: Step 1 Next button has onclick return false. No multi_step_failure FindingCode.
 -->
 <!DOCTYPE html>
 <html lang="en">

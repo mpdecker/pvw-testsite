@@ -2,12 +2,12 @@
   SCENARIO: plumber
   CATEGORY: outreach
   INTENTIONAL FLAWS:
-    1. No <meta name="description">  →  FindingCode: seo_desc
-    2. .hamburger has no onclick     →  FindingCode: broken_navigation_path
+    1. Missing meta description
+    2. Services nav link → 404
+  EXPECTED FINDINGS: [broken_navigation_path]
+  EXPECTED OBSERVATIONS: [seo_desc]
   EXPECTED GRADE: P1
-  OUTREACH ANGLE: Google won't show a description under your search listing,
-    and your mobile menu doesn't open — two quick fixes that could mean more
-    calls from people searching on their phones.
+  OUTREACH ANGLE: Broken services navigation and weak SEO basics are costing you search traffic.
 -->
 <!DOCTYPE html>
 <html lang="en">

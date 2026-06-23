@@ -2,12 +2,12 @@
   SCENARIO: landscaper
   CATEGORY: outreach
   INTENTIONAL FLAWS:
-    1. No <h1> — hero title is a <p>  →  FindingCode: seo_h1
-    2. Nav links use .tiny-link        →  FindingCode: small_tap_targets
+    1. Missing H1 heading
+    2. Small tap targets in nav
+  EXPECTED FINDINGS: [small_tap_targets]
+  EXPECTED OBSERVATIONS: [seo_h1]
   EXPECTED GRADE: P2
-  OUTREACH ANGLE: Your site is missing the main heading Google looks for, and
-    several nav links are hard to tap on a phone — both affect how many customers
-    find and contact you.
+  OUTREACH ANGLE: Nav links are too small on mobile and heading structure is weak for SEO.
 -->
 <!DOCTYPE html>
 <html lang="en">

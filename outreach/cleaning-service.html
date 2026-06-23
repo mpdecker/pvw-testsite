@@ -2,12 +2,12 @@
   SCENARIO: cleaning-service
   CATEGORY: outreach
   INTENTIONAL FLAWS:
-    1. No testimonials or reviews section          →  FindingCode: no_reviews
-    2. Phone numbers shown as plain text,          →  FindingCode: phone_not_linked
-       not <a href="tel:..."> links
+    1. No testimonials section
+    2. Phone as plain text in contact (hero may have tel:)
+  EXPECTED FINDINGS: []
+  EXPECTED OBSERVATIONS: [review_signal_gap]
   EXPECTED GRADE: P3
-  OUTREACH ANGLE: There's no social proof on the site, and the phone number
-    can't be tapped on mobile — small fixes that could meaningfully increase conversions.
+  OUTREACH ANGLE: No social proof on the site — reviews build trust for in-home services.
 -->
 <!DOCTYPE html>
 <html lang="en">

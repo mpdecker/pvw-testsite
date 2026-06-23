@@ -2,11 +2,12 @@
   SCENARIO: tree-service
   CATEGORY: outreach
   INTENTIONAL FLAWS:
-    1. Body text color: #aaa (low contrast)        →  FindingCode: low_contrast
-    2. No service area mentioned anywhere          →  FindingCode: no_service_area
-  EXPECTED GRADE: P2
-  OUTREACH ANGLE: Your site text is hard to read on mobile — and there's no mention
-    of which towns you serve, so customers searching locally may not know you cover them.
+    1. Body text color #aaa (no engine FindingCode)
+    2. No service area language (address present)
+  EXPECTED FINDINGS: []
+  EXPECTED OBSERVATIONS: [service_area_gap]
+  EXPECTED GRADE: P3
+  OUTREACH ANGLE: No mention of which towns you serve — local searchers may not know you cover them.
 -->
 <!DOCTYPE html>
 <html lang="en">

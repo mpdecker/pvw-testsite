@@ -12,84 +12,85 @@
   <p style="color:#666;margin-bottom:2rem">
     Controlled test scenarios for lead-crm audit and outreach validation.
     Each URL represents one known signal or composite business scenario.
+    See <code>EXPECTED FINDINGS</code> and <code>EXPECTED OBSERVATIONS</code> in each page comment block.
   </p>
 
   <div class="registry-section">
     <h2>Audit Signal Pages</h2>
     <ul>
       <li><a href="audit-signals/clean.html">clean</a><span>Baseline — zero findings expected</span></li>
-      <li><a href="audit-signals/no-seo.html">no-seo</a><span>FindingCodes: seo_desc, seo_h1, no_og</span></li>
-      <li><a href="audit-signals/no-viewport.html">no-viewport</a><span>FindingCode: no_viewport</span></li>
-      <li><a href="audit-signals/no-contact.html">no-contact</a><span>FindingCode: no_contact_info</span></li>
-      <li><a href="audit-signals/small-tap-targets.html">small-tap-targets</a><span>FindingCode: small_tap_targets</span></li>
-      <li><a href="audit-signals/stale-year.html">stale-year</a><span>FindingCode: stale_year</span></li>
-      <li><a href="audit-signals/broken-images.html">broken-images</a><span>FindingCode: broken_images</span></li>
-      <li><a href="audit-signals/dead-links.html">dead-links</a><span>FindingCode: dead_links</span></li>
-      <li><a href="audit-signals/no-schema.html">no-schema</a><span>FindingCode: no_schema</span></li>
-      <li><a href="audit-signals/no-address.html">no-address</a><span>FindingCode: no_address</span></li>
-      <li><a href="audit-signals/no-hours.html">no-hours</a><span>FindingCode: no_hours</span></li>
-      <li><a href="audit-signals/no-reviews.html">no-reviews</a><span>FindingCode: no_reviews</span></li>
-      <li><a href="audit-signals/no-service-area.html">no-service-area</a><span>FindingCode: no_service_area</span></li>
-      <li><a href="audit-signals/images-no-alt.html">images-no-alt</a><span>FindingCode: images_no_alt</span></li>
-      <li><a href="audit-signals/low-contrast.html">low-contrast</a><span>FindingCode: low_contrast</span></li>
-      <li><a href="audit-signals/small-font.html">small-font</a><span>FindingCode: small_font</span></li>
-      <li><a href="audit-signals/duplicate-h1.html">duplicate-h1</a><span>FindingCode: duplicate_h1</span></li>
-      <li><a href="audit-signals/phone-not-linked.html">phone-not-linked</a><span>FindingCode: phone_not_linked</span></li>
-      <li><a href="audit-signals/no-favicon.html">no-favicon</a><span>FindingCode: no_favicon</span></li>
+      <li><a href="audit-signals/no-seo.html">no-seo</a><span>seo_desc + seo_h1 + no_og (cluster)</span></li>
+      <li><a href="audit-signals/no-viewport.html">no-viewport</a><span>no_viewport</span></li>
+      <li><a href="audit-signals/no-contact.html">no-contact</a><span>no_contact_info</span></li>
+      <li><a href="audit-signals/small-tap-targets.html">small-tap-targets</a><span>small_tap_targets (finding)</span></li>
+      <li><a href="audit-signals/small-tap-targets-obs.html">small-tap-targets-obs</a><span>small_tap_targets (observation only)</span></li>
+      <li><a href="audit-signals/stale-year.html">stale-year</a><span>stale_year</span></li>
+      <li><a href="audit-signals/broken-images.html">broken-images</a><span>broken_images (finding)</span></li>
+      <li><a href="audit-signals/broken-image-single.html">broken-image-single</a><span>broken_images (observation only)</span></li>
+      <li><a href="audit-signals/dead-links.html">dead-links</a><span>dead_links</span></li>
+      <li><a href="audit-signals/no-address.html">no-address</a><span>trust_signal_gap (obs)</span></li>
+      <li><a href="audit-signals/no-hours.html">no-hours</a><span>trust_signal_gap (obs)</span></li>
+      <li><a href="audit-signals/no-reviews.html">no-reviews</a><span>review_signal_gap (obs)</span></li>
+      <li><a href="audit-signals/no-service-area.html">no-service-area</a><span>service_area_gap (obs)</span></li>
+      <li><a href="audit-signals/phone-not-linked.html">phone-not-linked</a><span>partial tel: — no finding</span></li>
       <li><a href="audit-signals/no-title.html">no-title</a><span>seo_title</span></li>
       <li><a href="audit-signals/layout-overflow.html">layout-overflow</a><span>layout_overflow</span></li>
       <li><a href="audit-signals/blank-above-fold.html">blank-above-fold</a><span>blank_primary_content</span></li>
       <li><a href="audit-signals/script-errors.html">script-errors</a><span>script_errors</span></li>
       <li><a href="audit-signals/mixed-content.html">mixed-content</a><span>mixed_content</span></li>
+      <li><a href="audit-signals/render-incomplete.html">render-incomplete</a><span>render_incomplete</span></li>
     </ul>
   </div>
 
   <div class="registry-section">
     <h2>Journey Probe Pages</h2>
     <ul>
-      <li><a href="journey/broken-form.html">broken-form</a><span>FindingCode: interactive_control_failure</span></li>
-      <li><a href="journey/broken-nav.html">broken-nav</a><span>FindingCode: broken_navigation_path</span></li>
-      <li><a href="journey/no-cta.html">no-cta</a><span>FindingCode: no_lead_form (CTA absent above fold)</span></li>
-      <li><a href="journey/sticky-overlay.html">sticky-overlay</a><span>FindingCode: primary_cta_blocked</span></li>
-      <li><a href="journey/form-no-confirmation.html">form-no-confirmation</a><span>FindingCode: form_no_confirmation</span></li>
-      <li><a href="journey/popup-blocks-page.html">popup-blocks-page</a><span>FindingCode: popup_blocks_cta</span></li>
-      <li><a href="journey/chatbot-over-cta.html">chatbot-over-cta</a><span>FindingCode: chatbot_blocks_cta</span></li>
-      <li><a href="journey/cta-disabled.html">cta-disabled</a><span>FindingCode: cta_disabled</span></li>
-      <li><a href="journey/no-mobile-cta.html">no-mobile-cta</a><span>FindingCode: no_mobile_cta</span></li>
-      <li><a href="journey/contact-buried.html">contact-buried</a><span>FindingCode: contact_buried</span></li>
-      <li><a href="journey/video-modal-trap.html">video-modal-trap</a><span>FindingCode: modal_trap</span></li>
-      <li><a href="journey/multi-step-broken.html">multi-step-broken</a><span>FindingCode: multi_step_failure</span></li>
+      <li><a href="journey/broken-form.html">broken-form</a><span>interactive_control_failure</span></li>
+      <li><a href="journey/broken-nav.html">broken-nav</a><span>broken_navigation_path</span></li>
+      <li><a href="journey/no-cta.html">no-cta</a><span>no_lead_form + contact_cta_buried (obs)</span></li>
+      <li><a href="journey/sticky-overlay.html">sticky-overlay</a><span>primary_cta_blocked</span></li>
+      <li><a href="journey/form-no-confirmation.html">form-no-confirmation</a><span>form_friction (obs)</span></li>
+      <li><a href="journey/popup-blocks-page.html">popup-blocks-page</a><span>primary_cta_blocked + sticky_overlay_blocker</span></li>
+      <li><a href="journey/chatbot-over-cta.html">chatbot-over-cta</a><span>primary_cta_blocked + sticky_overlay_blocker</span></li>
+      <li><a href="journey/cta-disabled.html">cta-disabled</a><span>weak_primary_cta (obs)</span></li>
+      <li><a href="journey/no-mobile-cta.html">no-mobile-cta</a><span>primary_cta_hidden + contact_cta_buried (obs)</span></li>
+      <li><a href="journey/contact-buried.html">contact-buried</a><span>contact_cta_buried (obs)</span></li>
+      <li><a href="journey/video-modal-trap.html">video-modal-trap</a><span>primary_cta_blocked + sticky_overlay_blocker</span></li>
+      <li><a href="journey/multi-step-broken.html">multi-step-broken</a><span>multi_step_form_blocked</span></li>
       <li><a href="journey/no-call-path.html">no-call-path</a><span>no_call_path + no_click_to_call</span></li>
-      <li><a href="journey/no-email-path.html">no-email-path</a><span>no_email_path (observation only)</span></li>
+      <li><a href="journey/no-email-path.html">no-email-path</a><span>no_email_path (obs only — tel blocks finding)</span></li>
+      <li><a href="journey/no-email-finding.html">no-email-finding</a><span>no_email_path (finding)</span></li>
       <li><a href="journey/no-directions-path.html">no-directions-path</a><span>no_directions_path</span></li>
       <li><a href="journey/no-lead-form.html">no-lead-form</a><span>no_lead_form</span></li>
       <li><a href="journey/form-validation-broken.html">form-validation-broken</a><span>form_validation_broken</span></li>
       <li><a href="journey/form-mobile-blocker.html">form-mobile-blocker</a><span>form_mobile_layout_blocker</span></li>
+      <li><a href="journey/form-field-unusable.html">form-field-unusable</a><span>form_field_unusable</span></li>
+      <li><a href="journey/quote-path-missing.html">quote-path-missing</a><span>quote_path_missing</span></li>
     </ul>
   </div>
 
   <div class="registry-section">
     <h2>Outreach Composite Pages</h2>
     <ul>
-      <li><a href="outreach/plumber.html">plumber</a><span>Pioneer Plumbing Co — P1 (seo_desc + broken_navigation_path)</span></li>
-      <li><a href="outreach/landscaper.html">landscaper</a><span>Valley Landscapes — P2 (seo_h1 + small_tap_targets)</span></li>
-      <li><a href="outreach/electrician.html">electrician</a><span>Berkshire Electric — P2 (no_og + stale_year)</span></li>
-      <li><a href="outreach/roofer.html">roofer</a><span>Valley Ridge Roofing — P0 (seo_desc + broken_navigation_path + broken_images)</span></li>
-      <li><a href="outreach/hvac.html">hvac</a><span>Comfort Zone HVAC — P1 (no_schema + no_hours)</span></li>
-      <li><a href="outreach/contractor.html">contractor</a><span>Berkshire Build &amp; Remodel — P1 (no_og + contact_buried)</span></li>
-      <li><a href="outreach/painter.html">painter</a><span>Five Star Painting Co — P2 (no_address + images_no_alt)</span></li>
-      <li><a href="outreach/tree-service.html">tree-service</a><span>Pioneer Tree &amp; Landscape — P2 (low_contrast + no_service_area)</span></li>
-      <li><a href="outreach/handyman.html">handyman</a><span>Valley Handyman Services — P2 (stale_year + no_hours)</span></li>
-      <li><a href="outreach/pest-control.html">pest-control</a><span>Green Shield Pest Control — P3 (duplicate_h1 + small_font)</span></li>
-      <li><a href="outreach/cleaning-service.html">cleaning-service</a><span>Spotless Home Cleaning — P3 (no_reviews + phone_not_linked)</span></li>
-      <li><a href="outreach/auto-repair.html">auto-repair</a><span>no_click_to_call + small_tap_targets (P2)</span></li>
-      <li><a href="outreach/florist.html">florist</a><span>no_directions_path + stale_year (P2)</span></li>
-      <li><a href="outreach/salon.html">salon</a><span>seo_title + no_click_to_call (P1)</span></li>
-      <li><a href="outreach/towing.html">towing</a><span>seo_title + no_click_to_call + broken_images (P0)</span></li>
-      <li><a href="outreach/locksmith.html">locksmith</a><span>seo_title + stale_year + service_area_gap (P1)</span></li>
-      <li><a href="outreach/appliance-repair.html">appliance-repair</a><span>form_validation_broken + layout_overflow (P2)</span></li>
-      <li><a href="outreach/catering.html">catering</a><span>form_mobile_layout_blocker + service_area_gap (P2)</span></li>
-      <li><a href="outreach/moving.html">moving</a><span>small_tap_targets + misleading_submit_label (P3)</span></li>
+      <li><a href="outreach/plumber.html">plumber</a><span>P1 — broken_navigation_path + seo_desc (obs)</span></li>
+      <li><a href="outreach/landscaper.html">landscaper</a><span>P2 — small_tap_targets + seo_h1 (obs)</span></li>
+      <li><a href="outreach/electrician.html">electrician</a><span>P2 — stale_year + no_og (obs)</span></li>
+      <li><a href="outreach/roofer.html">roofer</a><span>P0 — broken_navigation_path + broken_images</span></li>
+      <li><a href="outreach/hvac.html">hvac</a><span>P2 — trust_signal_gap (obs)</span></li>
+      <li><a href="outreach/contractor.html">contractor</a><span>P2 — no_og + contact_cta_buried (obs)</span></li>
+      <li><a href="outreach/painter.html">painter</a><span>P3 — trust_signal_gap (obs)</span></li>
+      <li><a href="outreach/tree-service.html">tree-service</a><span>P3 — service_area_gap (obs)</span></li>
+      <li><a href="outreach/handyman.html">handyman</a><span>P2 — stale_year + trust_signal_gap</span></li>
+      <li><a href="outreach/pest-control.html">pest-control</a><span>P3 — pending engine signals</span></li>
+      <li><a href="outreach/cleaning-service.html">cleaning-service</a><span>P3 — review_signal_gap (obs)</span></li>
+      <li><a href="outreach/auto-repair.html">auto-repair</a><span>P2 — no_click_to_call + small_tap_targets</span></li>
+      <li><a href="outreach/florist.html">florist</a><span>P2 — no_directions_path + stale_year</span></li>
+      <li><a href="outreach/salon.html">salon</a><span>P1 — seo_title + no_click_to_call</span></li>
+      <li><a href="outreach/towing.html">towing</a><span>P0 — seo_title + no_click_to_call + broken_images</span></li>
+      <li><a href="outreach/locksmith.html">locksmith</a><span>P1 — seo_title + stale_year + service_area_gap</span></li>
+      <li><a href="outreach/appliance-repair.html">appliance-repair</a><span>P2 — form_validation_broken + layout_overflow</span></li>
+      <li><a href="outreach/catering.html">catering</a><span>P2 — form_mobile_layout_blocker + service_area_gap</span></li>
+      <li><a href="outreach/moving.html">moving</a><span>P3 — small_tap_targets + misleading_submit_label</span></li>
     </ul>
   </div>
 
@@ -104,10 +105,30 @@
       <li><a href="observations/overconstrained-form.html">overconstrained-form</a><span>overconstrained_form</span></li>
       <li><a href="observations/business-identity-mismatch.html">business-identity-mismatch</a><span>business_identity_mismatch</span></li>
       <li><a href="observations/pricing-intent-gap.html">pricing-intent-gap</a><span>pricing_intent_gap</span></li>
+      <li><a href="observations/hero-media-blocked.html">hero-media-blocked</a><span>hero_media_blocked</span></li>
+      <li><a href="observations/missing-message-field.html">missing-message-field</a><span>missing_message_field</span></li>
+      <li><a href="observations/weak-primary-cta.html">weak-primary-cta</a><span>weak_primary_cta</span></li>
+      <li><a href="observations/primary-cta-hidden.html">primary-cta-hidden</a><span>primary_cta_hidden</span></li>
+      <li><a href="observations/contact-page-missing.html">contact-page-missing</a><span>contact_page_missing</span></li>
+      <li><a href="observations/booking-path-missing.html">booking-path-missing</a><span>booking_path_missing</span></li>
+      <li><a href="observations/required-fields-excessive.html">required-fields-excessive</a><span>required_fields_excessive</span></li>
+      <li><a href="observations/runtime-error-cluster.html">runtime-error-cluster</a><span>runtime_error_cluster</span></li>
       <li><a href="observations/trust-gap-combo.html">trust-gap-combo</a><span>service_clarity_gap + about_team_gap + trust_signal_gap</span></li>
       <li><a href="observations/form-friction-combo.html">form-friction-combo</a><span>duplicate_contact_fields + overconstrained_form + misleading_submit_label</span></li>
       <li><a href="observations/content-gap-combo.html">content-gap-combo</a><span>service_clarity_gap + pricing_intent_gap + review_signal_gap</span></li>
       <li><a href="observations/identity-gap-combo.html">identity-gap-combo</a><span>business_identity_mismatch + service_area_gap + about_team_gap</span></li>
+    </ul>
+  </div>
+
+  <div class="registry-section">
+    <h2>Legacy — Pending Engine Support</h2>
+    <ul>
+      <li><a href="legacy/pending-engine/no-schema.html">no-schema</a><span>reserved — no FindingCode yet</span></li>
+      <li><a href="legacy/pending-engine/no-favicon.html">no-favicon</a><span>reserved — no FindingCode yet</span></li>
+      <li><a href="legacy/pending-engine/images-no-alt.html">images-no-alt</a><span>reserved — no FindingCode yet</span></li>
+      <li><a href="legacy/pending-engine/low-contrast.html">low-contrast</a><span>reserved — no FindingCode yet</span></li>
+      <li><a href="legacy/pending-engine/small-font.html">small-font</a><span>reserved — no FindingCode yet</span></li>
+      <li><a href="legacy/pending-engine/duplicate-h1.html">duplicate-h1</a><span>reserved — no FindingCode yet</span></li>
     </ul>
   </div>
 </body>

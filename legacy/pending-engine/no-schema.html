@@ -1,10 +1,11 @@
 <!--
-  SCENARIO: small-font
-  CATEGORY: audit-signals
-  SIGNALS TRIGGERED: bodyFontSizePx=10
-  EXPECTED FINDINGS: [small_font]
-  EXPECTED GRADE: P2
-  NOTES: Body font-size forced to 10px. All other signals green.
+  SCENARIO: no-schema
+  CATEGORY: legacy/pending-engine
+  SIGNALS TRIGGERED: (none — pending lead-crm engine support)
+  EXPECTED FINDINGS: []
+  EXPECTED OBSERVATIONS: []
+  EXPECTED GRADE: (n/a)
+  NOTES: Reserved for a future engine FindingCode. No observation or finding fires today.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -17,23 +18,8 @@
   <meta property="og:description" content="Reliable home services in Northampton, MA.">
   <meta property="og:type" content="website">
   <link rel="icon" href="/favicon.ico">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Pioneer Home Services",
-    "telephone": "+14135550100",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "123 Main Street",
-      "addressLocality": "Northampton",
-      "addressRegion": "MA"
-    }
-  }
-  </script>
-  <link rel="stylesheet" href="../styles.css">
-  <!-- Intentionally small font: 10px body text -->
-  <style>body { font-size: 10px; }</style>
+  <!-- Intentionally missing: no LocalBusiness JSON-LD schema -->
+  <link rel="stylesheet" href="../../styles.css">
 </head>
 <body>
   <header>
@@ -77,7 +63,7 @@
     </section>
     <section>
       <h2>Our Work</h2>
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg="
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
            alt="Pioneer Home Services technician at work" width="600" height="1"
            style="width:100%;max-width:600px;display:block;">
     </section>

@@ -1,18 +1,18 @@
 <!--
-  SCENARIO: no-service-area
-  CATEGORY: audit-signals
-  SIGNALS TRIGGERED: hasServiceAreaSignal=false, hasAddressSignal=true
+  SCENARIO: missing-message-field
+  CATEGORY: observations
+  SIGNALS TRIGGERED: hasContactForm=true, primaryFormHasMessageField=false
   EXPECTED FINDINGS: []
-  EXPECTED OBSERVATIONS: [service_area_gap]
+  EXPECTED OBSERVATIONS: [missing_message_field]
   EXPECTED GRADE: (observation only)
-  NOTES: Address present but no service-area language. No no_service_area FindingCode.
+  NOTES: Form collects name and phone only; no textarea or message field.
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pioneer Home Services — Northampton, MA</title>
+  <title>Pioneer Home Services &mdash; Northampton, MA</title>
   <meta name="description" content="Reliable home services in Northampton, MA. Call (413) 555-0100 for a free estimate.">
   <meta property="og:title" content="Pioneer Home Services">
   <meta property="og:description" content="Reliable home services in Northampton, MA.">
@@ -44,7 +44,7 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <button class="hamburger" aria-label="Menu"
-        onclick="document.getElementById('nav-links').classList.toggle('open')">☰</button>
+        onclick="document.getElementById('nav-links').classList.toggle('open')">&#9776;</button>
     </nav>
   </header>
   <main>
@@ -53,47 +53,14 @@
       <p>Serving Northampton and the Pioneer Valley since 2005.</p>
       <a href="tel:+14135550100" class="btn">Call (413) 555-0100</a>
     </section>
-    <section>
-      <h2>Our Services</h2>
-      <p>We offer a full range of home services for residential and commercial customers.</p>
-      <ul>
-        <li>Plumbing repairs and installation</li>
-        <li>Water heater replacement</li>
-        <li>Drain cleaning</li>
-        <li>Emergency service available 24/7</li>
-      </ul>
-    </section>
-    <section>
-      <h2>What Our Customers Say</h2>
-      <blockquote>
-        <p>"Fast, professional, and fairly priced. Would recommend to anyone in the Valley."</p>
-        <cite>— Sarah M., Northampton</cite>
-      </blockquote>
-      <blockquote>
-        <p>"Fixed our water heater same day. Very happy with the service."</p>
-        <cite>— Tom K., Easthampton</cite>
-      </blockquote>
-    </section>
-    <section>
-      <h2>Our Work</h2>
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
-           alt="Pioneer Home Services technician at work" width="600" height="1"
-           style="width:100%;max-width:600px;display:block;">
-    </section>
     <section id="contact">
       <h2>Contact Us</h2>
-      <p><strong>Address:</strong> 123 Main Street, Northampton, MA 01060</p>
-      <p><strong>Hours:</strong> Mon–Fri 8am–6pm, Sat 9am–3pm</p>
-      <!-- Intentionally missing: no service area paragraph -->
       <p class="phone-cta">Call us: <a href="tel:+14135550100">(413) 555-0100</a></p>
-      <p style="margin-bottom:1.5rem">Or fill out the form below and we'll get back to you within one business day.</p>
       <form class="contact-form" action="#" method="post">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" required placeholder="Your name">
         <label for="phone">Phone</label>
-        <input type="tel" id="phone" name="phone" placeholder="(413) 555-xxxx">
-        <label for="message">How can we help?</label>
-        <textarea id="message" name="message" placeholder="Describe the work you need..."></textarea>
+        <input type="tel" id="phone" name="phone" required placeholder="(413) 555-xxxx">
         <button type="submit" class="btn">Send Message</button>
       </form>
     </section>
