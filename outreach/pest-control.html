@@ -1,0 +1,120 @@
+<!--
+  SCENARIO: pest-control
+  CATEGORY: outreach
+  INTENTIONAL FLAWS:
+    1. Two <h1> elements on page                   →  FindingCode: duplicate_h1
+    2. Body font-size: 10px                        →  FindingCode: small_font
+  EXPECTED GRADE: P3
+  OUTREACH ANGLE: A couple of minor technical issues are holding back an otherwise
+    solid site — small text is hurting readability and a duplicate heading may
+    confuse search engines about your primary topic.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Green Shield Pest Control — Northampton, MA</title>
+  <meta name="description" content="Pest control services in Northampton, MA. Call (413) 555-0800 for a free inspection.">
+  <meta property="og:title" content="Green Shield Pest Control">
+  <meta property="og:description" content="Pest control in Northampton, MA.">
+  <meta property="og:type" content="website">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Green Shield Pest Control",
+    "telephone": "+14135550800",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "200 Main Street",
+      "addressLocality": "Northampton",
+      "addressRegion": "MA"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="../styles.css">
+  <!-- Intentionally small font: 10px body text -->
+  <style>body { font-size: 10px; }</style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="site-name">Green Shield Pest Control</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu"
+        onclick="document.getElementById('nav-links').classList.toggle('open')">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Green Shield Pest Control</h1>
+      <p>Safe, effective pest management for homes and businesses in the Pioneer Valley.</p>
+      <a href="tel:+14135550800" class="btn">Call (413) 555-0800</a>
+    </section>
+
+    <section>
+      <h2>Pest Control Services</h2>
+      <p>Green Shield uses integrated pest management (IPM) — targeting pests while minimizing chemical exposure to your family and pets.</p>
+      <ul>
+        <li>Rodent control — mice, rats, exclusion work</li>
+        <li>Ant and cockroach treatment</li>
+        <li>Bed bug inspection and treatment</li>
+        <li>Wasp and hornet nest removal</li>
+        <li>Wildlife exclusion — squirrels, bats, raccoons</li>
+        <li>Termite inspection and treatment</li>
+        <li>Seasonal mosquito and tick control</li>
+      </ul>
+      <p>All treatments are EPA-registered. We're licensed by the Massachusetts Department of Agricultural Resources and carry full liability insurance.</p>
+    </section>
+
+    <section>
+      <!-- Intentionally duplicate H1: second h1 in a content section -->
+      <h1 style="font-size:1.4rem">Why Choose Green Shield?</h1>
+      <p>We've been protecting Pioneer Valley homes since 2012. Owner-operated, local, and accountable. We don't use toxic shortcuts, and we stand behind our results with a 30-day re-treatment guarantee.</p>
+      <p>Our technicians are licensed applicators who explain every treatment before they start. We give you a full written report after every visit.</p>
+    </section>
+
+    <section>
+      <h2>What Our Customers Say</h2>
+      <blockquote>
+        <p>"Had a bad mouse problem before winter. Green Shield sealed the entry points and eliminated the problem. Haven't seen one since."</p>
+        <cite>— Patricia D., Northampton</cite>
+      </blockquote>
+      <blockquote>
+        <p>"Used them for a bed bug issue. Professional, thorough, and discrete. Problem solved in two visits."</p>
+        <cite>— James K., Amherst</cite>
+      </blockquote>
+    </section>
+
+    <section id="contact">
+      <h2>Schedule a Free Inspection</h2>
+      <p><strong>Address:</strong> 200 Main Street, Northampton, MA 01060</p>
+      <p><strong>Hours:</strong> Mon–Fri 8am–5pm, Sat 9am–1pm</p>
+      <p><strong>Service area:</strong> Northampton, Easthampton, Florence, Amherst, and surrounding Pioneer Valley towns</p>
+      <p class="phone-cta">Call us: <a href="tel:+14135550800">(413) 555-0800</a></p>
+      <p style="margin-bottom:1.5rem">Or fill out the form and we'll get back to you within one business day.</p>
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required placeholder="Jane Smith">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="(413) 555-xxxx">
+        <label for="message">Describe the problem</label>
+        <textarea id="message" name="message"
+          placeholder="e.g. Seeing mice in kitchen, ant trails in bathroom, noticed bed bugs..."></textarea>
+        <button type="submit" class="btn">Request Inspection</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Green Shield Pest Control &mdash; 200 Main Street, Northampton, MA &mdash;
+      <a href="tel:+14135550800">(413) 555-0800</a></p>
+  </footer>
+</body>
+</html>

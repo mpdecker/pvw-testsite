@@ -1,0 +1,89 @@
+<!--
+  SCENARIO: popup-blocks-page
+  CATEGORY: journey
+  SIGNALS TRIGGERED: ctaBlockedByOverlay=true
+  EXPECTED FINDINGS: [popup_blocks_cta]
+  EXPECTED GRADE: P1
+  NOTES: Full-screen modal fires immediately on load. No dismiss button.
+         CTA button is rendered in the page beneath the overlay but is unreachable.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pioneer Home Services — Northampton, MA</title>
+  <meta name="description" content="Reliable home services in Northampton, MA. Call (413) 555-0100.">
+  <meta property="og:title" content="Pioneer Home Services">
+  <meta property="og:description" content="Reliable home services in Northampton, MA.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    #modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #modal-box {
+      background: #fff;
+      padding: 2rem;
+      max-width: 420px;
+      width: 90%;
+      border-radius: 8px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Intentionally blocking: full-screen modal with no dismiss button -->
+  <div id="modal-overlay">
+    <div id="modal-box">
+      <h2>Special Offer</h2>
+      <p>Sign up for our newsletter and get 10% off your first service call.</p>
+      <input type="email" placeholder="Your email address"
+             style="width:100%;padding:0.5rem;margin:1rem 0;border:1px solid #ccc;border-radius:4px;">
+      <button style="background:#2563eb;color:#fff;border:none;padding:0.75rem 2rem;border-radius:4px;font-size:1rem;cursor:pointer;">
+        Subscribe
+      </button>
+      <!-- Intentionally missing: no close/dismiss button -->
+    </div>
+  </div>
+
+  <header>
+    <nav>
+      <a href="#" class="site-name">Pioneer Home Services</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu"
+        onclick="document.getElementById('nav-links').classList.toggle('open')">☰</button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Pioneer Home Services</h1>
+      <p>Serving Northampton and the Pioneer Valley since 2005.</p>
+      <a href="tel:+14135550100" class="btn">Call (413) 555-0100</a>
+    </section>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p class="phone-cta">Call: <a href="tel:+14135550100">(413) 555-0100</a></p>
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your name">
+        <label for="message">How can we help?</label>
+        <textarea id="message" name="message" placeholder="Describe what you need..."></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Pioneer Home Services &mdash; Northampton, MA</p>
+  </footer>
+</body>
+</html>

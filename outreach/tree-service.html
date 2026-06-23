@@ -1,0 +1,119 @@
+<!--
+  SCENARIO: tree-service
+  CATEGORY: outreach
+  INTENTIONAL FLAWS:
+    1. Body text color: #aaa (low contrast)        →  FindingCode: low_contrast
+    2. No service area mentioned anywhere          →  FindingCode: no_service_area
+  EXPECTED GRADE: P2
+  OUTREACH ANGLE: Your site text is hard to read on mobile — and there's no mention
+    of which towns you serve, so customers searching locally may not know you cover them.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pioneer Tree &amp; Landscape — Northampton, MA</title>
+  <meta name="description" content="Tree removal, trimming, and stump grinding in Northampton, MA. Call (413) 555-0600.">
+  <meta property="og:title" content="Pioneer Tree &amp; Landscape">
+  <meta property="og:description" content="Tree removal, trimming, and stump grinding in Northampton, MA.">
+  <meta property="og:type" content="website">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Pioneer Tree & Landscape",
+    "telephone": "+14135550600",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "321 Elm Street",
+      "addressLocality": "Northampton",
+      "addressRegion": "MA"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="../styles.css">
+  <!-- Intentionally low contrast: #aaa body text on white -->
+  <style>body { color: #aaa; }</style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="site-name">Pioneer Tree &amp; Landscape</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu"
+        onclick="document.getElementById('nav-links').classList.toggle('open')">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Pioneer Tree &amp; Landscape</h1>
+      <p>Professional tree care and landscaping for residential and commercial properties.</p>
+      <a href="tel:+14135550600" class="btn">Call (413) 555-0600</a>
+    </section>
+
+    <section>
+      <h2>Our Services</h2>
+      <p>Pioneer Tree & Landscape provides complete tree and landscape care. Our ISA-certified arborists assess every tree before any work begins.</p>
+      <ul>
+        <li>Tree removal — including large and hazardous trees</li>
+        <li>Tree trimming and crown reduction</li>
+        <li>Stump grinding and removal</li>
+        <li>Emergency storm damage cleanup</li>
+        <li>Land clearing for construction</li>
+        <li>Hedge trimming and shrub maintenance</li>
+        <li>Seasonal cleanup — spring and fall</li>
+      </ul>
+      <!-- Intentionally missing: no service area or town names -->
+      <p>We carry full liability insurance and workers' compensation coverage. All work performed by our own trained employees.</p>
+    </section>
+
+    <section>
+      <h2>About Pioneer Tree</h2>
+      <p>We've been caring for trees and landscapes since 2010. Our team of six includes two ISA-certified arborists. We use professional-grade equipment and follow ANSI A300 pruning standards on every job.</p>
+      <p>Free estimates available Monday through Saturday. Emergency service available around the clock for storm damage and hazardous trees.</p>
+    </section>
+
+    <section>
+      <h2>What Our Customers Say</h2>
+      <blockquote>
+        <p>"Removed a massive oak that was threatening our house. Professional, careful, and cleaned up every branch and chip."</p>
+        <cite>— Tom H.</cite>
+      </blockquote>
+      <blockquote>
+        <p>"Fast response after the storm. Had three downed trees cleared within 24 hours. Excellent work."</p>
+        <cite>— Maria S.</cite>
+      </blockquote>
+    </section>
+
+    <section id="contact">
+      <h2>Get a Free Estimate</h2>
+      <p><strong>Address:</strong> 321 Elm Street, Northampton, MA 01060</p>
+      <p><strong>Hours:</strong> Mon–Sat 7am–6pm</p>
+      <!-- Intentionally missing: no service area in contact section -->
+      <p class="phone-cta">Call us: <a href="tel:+14135550600">(413) 555-0600</a></p>
+      <p style="margin-bottom:1.5rem">Or fill out the form and we'll get back to you within one business day.</p>
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required placeholder="Jane Smith">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="(413) 555-xxxx">
+        <label for="message">Describe the work needed</label>
+        <textarea id="message" name="message"
+          placeholder="e.g. Large oak needs removal, stump grinding, storm debris..."></textarea>
+        <button type="submit" class="btn">Request Estimate</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Pioneer Tree &amp; Landscape &mdash; 321 Elm Street, Northampton, MA &mdash;
+      <a href="tel:+14135550600">(413) 555-0600</a></p>
+  </footer>
+</body>
+</html>

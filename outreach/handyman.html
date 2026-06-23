@@ -1,0 +1,118 @@
+<!--
+  SCENARIO: handyman
+  CATEGORY: outreach
+  INTENTIONAL FLAWS:
+    1. Copyright year 2022 in footer               →  FindingCode: stale_year
+    2. No business hours in contact section        →  FindingCode: no_hours
+  EXPECTED GRADE: P2
+  OUTREACH ANGLE: Your site looks like it hasn't been touched in years — the copyright
+    is from 2022 — and there are no hours listed, so customers don't know when to call.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Valley Handyman Services — Northampton, MA</title>
+  <meta name="description" content="Handyman services in Northampton, MA. Call (413) 555-0700 for a free estimate.">
+  <meta property="og:title" content="Valley Handyman Services">
+  <meta property="og:description" content="Handyman services in Northampton, MA.">
+  <meta property="og:type" content="website">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Valley Handyman Services",
+    "telephone": "+14135550700",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "88 Bridge Street",
+      "addressLocality": "Northampton",
+      "addressRegion": "MA"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="site-name">Valley Handyman Services</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu"
+        onclick="document.getElementById('nav-links').classList.toggle('open')">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Valley Handyman Services</h1>
+      <p>Reliable home repairs and maintenance for Northampton and the Pioneer Valley.</p>
+      <a href="tel:+14135550700" class="btn">Call (413) 555-0700</a>
+    </section>
+
+    <section>
+      <h2>What We Do</h2>
+      <p>Valley Handyman tackles the jobs that need doing but keep getting pushed to the weekend — and then the next weekend. We handle small repairs, installations, and maintenance tasks that don't require a specialist.</p>
+      <ul>
+        <li>Drywall repair and patching</li>
+        <li>Door and window repair and weatherstripping</li>
+        <li>Deck repair and staining</li>
+        <li>Furniture assembly and mounting</li>
+        <li>Fixture installation — fans, lights, towel bars</li>
+        <li>Tile grout repair and caulking</li>
+        <li>Fence repair</li>
+        <li>Gutter cleaning</li>
+      </ul>
+      <p>We're licensed, insured, and background-checked. We show up when we say we will and charge what we quoted.</p>
+    </section>
+
+    <section>
+      <h2>About Valley Handyman</h2>
+      <p>Owner Dan Valle has been doing home repairs professionally since 2014. He started Valley Handyman Services because he kept seeing homeowners stuck waiting weeks for contractors to fix simple things. Dan specializes in the work that falls between DIY and a full contractor — done right, done quickly, at fair prices.</p>
+      <p><strong>Service area:</strong> Northampton, Easthampton, Florence, Amherst, and surrounding Pioneer Valley towns</p>
+    </section>
+
+    <section>
+      <h2>What Our Customers Say</h2>
+      <blockquote>
+        <p>"Fixed six things in one visit that had been on our list for two years. Efficient, professional, reasonable price."</p>
+        <cite>— Anne K., Northampton</cite>
+      </blockquote>
+      <blockquote>
+        <p>"Dan repaired our deck boards and re-stained the whole thing. Looks brand new."</p>
+        <cite>— Chris W., Florence</cite>
+      </blockquote>
+    </section>
+
+    <section id="contact">
+      <h2>Book a Visit</h2>
+      <p><strong>Address:</strong> 88 Bridge Street, Northampton, MA 01060</p>
+      <!-- Intentionally missing: no business hours listed -->
+      <p><strong>Service area:</strong> Northampton, Easthampton, Florence, Amherst, and surrounding Pioneer Valley towns</p>
+      <p class="phone-cta">Call us: <a href="tel:+14135550700">(413) 555-0700</a></p>
+      <p style="margin-bottom:1.5rem">Or fill out the form and we'll get back to you within one business day.</p>
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required placeholder="Jane Smith">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="(413) 555-xxxx">
+        <label for="message">What needs doing?</label>
+        <textarea id="message" name="message"
+          placeholder="e.g. Drywall repair in bedroom, deck board replacement, door won't close..."></textarea>
+        <button type="submit" class="btn">Request a Visit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <!-- Intentionally stale: copyright year 2022, not current year -->
+    <p>&copy; 2022 Valley Handyman Services &mdash; 88 Bridge Street, Northampton, MA &mdash;
+      <a href="tel:+14135550700">(413) 555-0700</a></p>
+  </footer>
+</body>
+</html>

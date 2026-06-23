@@ -1,0 +1,103 @@
+<!--
+  SCENARIO: hvac
+  CATEGORY: outreach
+  INTENTIONAL FLAWS:
+    1. No <script type="application/ld+json">      →  FindingCode: no_schema
+    2. No business hours in contact section        →  FindingCode: no_hours
+  EXPECTED GRADE: P1
+  OUTREACH ANGLE: Your site isn't showing up in "near me" searches, and customers
+    can't tell if you're open — two quick fixes that directly affect inbound calls.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comfort Zone HVAC — Northampton, MA</title>
+  <meta name="description" content="Heating and cooling services in Northampton, MA. Call (413) 555-0300.">
+  <meta property="og:title" content="Comfort Zone HVAC">
+  <meta property="og:description" content="Heating and cooling services in Northampton, MA.">
+  <meta property="og:type" content="website">
+  <!-- Intentionally missing: no LocalBusiness JSON-LD schema -->
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="site-name">Comfort Zone HVAC</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu"
+        onclick="document.getElementById('nav-links').classList.toggle('open')">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Comfort Zone HVAC</h1>
+      <p>Heating and cooling solutions for homes and businesses throughout Hampshire County.</p>
+      <a href="tel:+14135550300" class="btn">Call (413) 555-0300</a>
+    </section>
+
+    <section>
+      <h2>HVAC Services</h2>
+      <p>Comfort Zone handles all aspects of home comfort — from an emergency furnace failure in January to a new central AC installation in May.</p>
+      <ul>
+        <li>Furnace and boiler installation, repair, and maintenance</li>
+        <li>Central air conditioning installation and service</li>
+        <li>Heat pump systems — installation and maintenance</li>
+        <li>Mini-split ductless systems</li>
+        <li>Ductwork design, installation, and cleaning</li>
+        <li>Air quality solutions — humidifiers, filtration, UV systems</li>
+        <li>Emergency heating and cooling service</li>
+      </ul>
+      <p>We service all major brands: Carrier, Trane, Lennox, Bryant, Goodman, and more. Our technicians are NATE-certified and carry Massachusetts HVAC contractor licenses.</p>
+    </section>
+
+    <section>
+      <h2>Why Comfort Zone?</h2>
+      <p>We've been keeping Pioneer Valley homes comfortable since 2008. Every job comes with a 1-year parts and labor warranty. We offer annual maintenance plans that keep your system running at peak efficiency — and prevent the breakdowns that always seem to happen on the coldest or hottest days.</p>
+      <p>We're a Carrier Factory Authorized Dealer, which means we have access to the latest equipment, factory training, and extended warranty programs that we pass along to our customers.</p>
+    </section>
+
+    <section>
+      <h2>What Our Customers Say</h2>
+      <blockquote>
+        <p>"Our furnace died at 10pm on a Friday in February. Comfort Zone had a tech here by midnight and the heat back on by 2am. Incredible service."</p>
+        <cite>— Paul R., Northampton</cite>
+      </blockquote>
+      <blockquote>
+        <p>"Installed a new heat pump system — professional crew, clean work, explained everything. We're saving $80/month on energy costs."</p>
+        <cite>— Karen T., Florence</cite>
+      </blockquote>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p><strong>Address:</strong> 456 King Street, Northampton, MA 01060</p>
+      <!-- Intentionally missing: no business hours listed -->
+      <p><strong>Service area:</strong> Northampton, Easthampton, Florence, Amherst, Hadley, and surrounding Pioneer Valley towns</p>
+      <p class="phone-cta">Call us: <a href="tel:+14135550300">(413) 555-0300</a></p>
+      <p style="margin-bottom:1.5rem">Or fill out the form and we'll get back to you within one business day.</p>
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required placeholder="Jane Smith">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="(413) 555-xxxx">
+        <label for="message">How can we help?</label>
+        <textarea id="message" name="message"
+          placeholder="e.g. Furnace making noise, need new AC, annual tune-up..."></textarea>
+        <button type="submit" class="btn">Request Service</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Comfort Zone HVAC &mdash; Northampton, MA &mdash;
+      <a href="tel:+14135550300">(413) 555-0300</a></p>
+  </footer>
+</body>
+</html>

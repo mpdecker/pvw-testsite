@@ -1,0 +1,115 @@
+<!--
+  SCENARIO: contractor
+  CATEGORY: outreach
+  INTENTIONAL FLAWS:
+    1. No og: meta tags                            →  FindingCode: no_og
+    2. Contact section only reachable by           →  FindingCode: contact_buried
+       scrolling past ~3000px; no nav anchor
+  EXPECTED GRADE: P1
+  OUTREACH ANGLE: Your social media previews are broken, and anyone trying to contact
+    you from your website has to scroll past your entire portfolio to find the form.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Berkshire Build &amp; Remodel — Northampton, MA</title>
+  <meta name="description" content="Kitchen, bathroom, and home remodeling in Northampton, MA. Call (413) 555-0400.">
+  <!-- Intentionally missing: no og:title, og:description, og:type -->
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="site-name">Berkshire Build &amp; Remodel</a>
+      <!-- Intentionally missing: no #contact link in nav -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu"
+        onclick="document.getElementById('nav-links').classList.toggle('open')">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Berkshire Build &amp; Remodel</h1>
+      <p>Custom kitchens, bathrooms, additions, and whole-home renovations in the Pioneer Valley.</p>
+      <a href="tel:+14135550400" class="btn">Call (413) 555-0400</a>
+    </section>
+
+    <section id="services">
+      <h2>Remodeling Services</h2>
+      <p>Berkshire Build & Remodel handles projects of every scale — from a single bathroom refresh to a whole-home transformation. We're a design-build firm, which means we handle design, permits, and construction under one roof.</p>
+      <ul>
+        <li>Kitchen remodeling — full gut renovations, cabinet refacing, countertop replacement</li>
+        <li>Bathroom remodeling — custom tile, walk-in showers, heated floors</li>
+        <li>Home additions — room additions, garage conversions, in-law suites</li>
+        <li>Basement finishing — home offices, rec rooms, media rooms</li>
+        <li>Deck and outdoor living spaces</li>
+        <li>Window and door replacement</li>
+        <li>Interior and exterior painting</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Recent Projects</h2>
+      <p>Every project is different. Here's a sample of what we've built for Pioneer Valley homeowners in the past year.</p>
+      <h3>Kitchen Renovation — Northampton</h3>
+      <p>Complete gut renovation: new custom cabinets, quartz countertops, tile backsplash, hardwood floors, recessed lighting, and a new island. Project duration: 6 weeks.</p>
+      <h3>Master Bath Addition — Easthampton</h3>
+      <p>Converted an underutilized bedroom into a master suite with a walk-in closet and spa bathroom featuring a freestanding tub and double vanity. Project duration: 4 weeks.</p>
+      <h3>Basement Finishing — Florence</h3>
+      <p>Turned an unfinished basement into a home office, a gym area, and a full bath. All permits pulled and inspected. Project duration: 5 weeks.</p>
+      <h3>Two-Story Addition — Amherst</h3>
+      <p>Added a two-story addition to a 1960s cape: new primary bedroom suite upstairs, expanded living room below. Matched existing trim and siding exactly. Project duration: 12 weeks.</p>
+    </section>
+
+    <section id="about">
+      <h2>About Berkshire Build &amp; Remodel</h2>
+      <p>We've been remodeling homes in Hampshire County since 2002. Owner Jim Bertrand is a licensed general contractor (MA License #78901) who still walks every job site daily. We employ twelve full-time tradespeople and work with a small network of trusted subcontractors for specialty trades.</p>
+      <p>We're members of the National Association of the Remodeling Industry (NARI) and the Better Business Bureau. Every project includes a detailed written contract, a fixed-price quote, and a weekly progress update.</p>
+      <p>We don't take on more work than we can execute well. Our current lead time is 6–10 weeks, and we maintain that schedule by not overcommitting. When we give you a completion date, we mean it.</p>
+    </section>
+
+    <section>
+      <h2>What Our Clients Say</h2>
+      <blockquote>
+        <p>"Jim and his team completely transformed our kitchen. On time, on budget, and the quality is beyond what we hoped for. Highly recommend."</p>
+        <cite>— Carol &amp; Mark D., Northampton</cite>
+      </blockquote>
+      <blockquote>
+        <p>"We've used Berkshire Build for three projects now. They're professional, communicative, and do beautiful work. They're the only remodelers we'll call."</p>
+        <cite>— Steve P., Amherst</cite>
+      </blockquote>
+    </section>
+
+    <!-- Intentionally buried: contact section reachable only by scrolling past full page -->
+    <section id="contact">
+      <h2>Start Your Project</h2>
+      <p><strong>Address:</strong> 789 Elm Street, Northampton, MA 01060</p>
+      <p><strong>Hours:</strong> Mon–Fri 8am–5pm</p>
+      <p class="phone-cta">Call us: <a href="tel:+14135550400">(413) 555-0400</a></p>
+      <p style="margin-bottom:1.5rem">Fill out the form and we'll schedule a free in-home consultation.</p>
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required placeholder="Jane Smith">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="(413) 555-xxxx">
+        <label for="message">Tell us about your project</label>
+        <textarea id="message" name="message"
+          placeholder="e.g. Kitchen renovation, approximately $40k budget, hoping to start in the fall..."></textarea>
+        <button type="submit" class="btn">Request Consultation</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Berkshire Build &amp; Remodel &mdash; Northampton, MA &mdash; MA License #78901 &mdash;
+      <a href="tel:+14135550400">(413) 555-0400</a></p>
+  </footer>
+</body>
+</html>

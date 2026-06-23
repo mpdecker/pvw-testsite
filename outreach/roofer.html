@@ -1,0 +1,97 @@
+<!--
+  SCENARIO: roofer
+  CATEGORY: outreach
+  INTENTIONAL FLAWS:
+    1. No <meta name="description">                →  FindingCode: seo_desc
+    2. .hamburger has no onclick                   →  FindingCode: broken_navigation_path
+    3. Two <img> with src="images/roof-*.jpg"      →  FindingCode: broken_images
+  EXPECTED GRADE: P0
+  OUTREACH ANGLE: Three critical issues found — missing search description, broken mobile menu,
+    and broken gallery images — any one of which costs you leads.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Valley Ridge Roofing — Northampton, MA</title>
+  <!-- Intentionally missing: no meta description -->
+  <meta property="og:title" content="Valley Ridge Roofing">
+  <meta property="og:description" content="Expert roofing services in Northampton, MA.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="site-name">Valley Ridge Roofing</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <!-- Intentionally broken: no onclick -->
+      <button class="hamburger" aria-label="Menu">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Valley Ridge Roofing</h1>
+      <p>Northampton's trusted roofing contractor since 1998. Residential and commercial roofing throughout the Pioneer Valley.</p>
+      <a href="tel:+14135550200" class="btn">Call (413) 555-0200</a>
+    </section>
+
+    <section>
+      <h2>Roofing Services</h2>
+      <p>Valley Ridge Roofing handles every aspect of your roof — from a minor repair to a full replacement. We work with asphalt shingles, metal roofing, flat roofs, and cedar shakes.</p>
+      <ul>
+        <li>Full roof replacement</li>
+        <li>Leak repair and emergency patching</li>
+        <li>Gutter installation and cleaning</li>
+        <li>Storm damage assessment and insurance claims</li>
+        <li>Skylights and ventilation</li>
+        <li>Flat roof systems (TPO, EPDM, modified bitumen)</li>
+        <li>Free estimates — no pressure, no obligation</li>
+      </ul>
+      <p>All work is performed by our own employees — no subcontractors. We're fully licensed (MA License #55432) and insured, with a 10-year workmanship warranty on all full replacements.</p>
+    </section>
+
+    <section>
+      <h2>Recent Projects</h2>
+      <!-- Intentionally broken: image files do not exist -->
+      <img src="images/roof-replacement-northampton.jpg" alt="Roof replacement in Northampton" width="600" height="400"
+           style="width:100%;max-width:600px;display:block;margin-bottom:0.5rem;">
+      <img src="images/roof-repair-easthampton.jpg" alt="Roof repair in Easthampton" width="600" height="400"
+           style="width:100%;max-width:600px;display:block;">
+    </section>
+
+    <section>
+      <h2>Why Valley Ridge?</h2>
+      <p>We've been roofing homes and businesses in Hampshire County for over 25 years. We know the climate here — the ice dams, the heavy snow loads, the wind. We spec every job for Pioneer Valley conditions, not generic specs from a manufacturer's brochure.</p>
+      <p>Our crews are fast, clean, and respectful of your property. We put down tarps, pick up every nail with a magnet roller, and haul away all old materials. Most residential replacements are completed in a single day.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Get a Free Estimate</h2>
+      <p class="phone-cta">Call now: <a href="tel:+14135550200">(413) 555-0200</a></p>
+      <p style="margin-bottom:1.5rem">Fill out the form and we'll schedule a free on-site estimate within 48 hours.</p>
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required placeholder="Jane Smith">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="(413) 555-xxxx">
+        <label for="message">Describe the project</label>
+        <textarea id="message" name="message"
+          placeholder="e.g. Missing shingles after storm, full replacement needed, gutter repair..."></textarea>
+        <button type="submit" class="btn">Request Free Estimate</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Valley Ridge Roofing &mdash; Northampton, MA &mdash; MA License #55432 &mdash;
+      <a href="tel:+14135550200">(413) 555-0200</a></p>
+  </footer>
+</body>
+</html>

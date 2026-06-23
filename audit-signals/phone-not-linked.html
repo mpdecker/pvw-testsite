@@ -1,0 +1,109 @@
+<!--
+  SCENARIO: phone-not-linked
+  CATEGORY: audit-signals
+  SIGNALS TRIGGERED: phoneLinkedWithTel=false
+  EXPECTED FINDINGS: [phone_not_linked]
+  EXPECTED GRADE: P2
+  NOTES: Phone number appears as plain text in all locations — no <a href="tel:..."> wrapping it.
+         Hero CTA button is a tel: link to keep contact_info signal green.
+         Contact section and footer phone are plain text.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pioneer Home Services — Northampton, MA</title>
+  <meta name="description" content="Reliable home services in Northampton, MA. Call (413) 555-0100 for a free estimate.">
+  <meta property="og:title" content="Pioneer Home Services">
+  <meta property="og:description" content="Reliable home services in Northampton, MA.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/favicon.ico">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Pioneer Home Services",
+    "telephone": "+14135550100",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Main Street",
+      "addressLocality": "Northampton",
+      "addressRegion": "MA"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="site-name">Pioneer Home Services</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu"
+        onclick="document.getElementById('nav-links').classList.toggle('open')">☰</button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Pioneer Home Services</h1>
+      <p>Serving Northampton and the Pioneer Valley since 2005.</p>
+      <a href="tel:+14135550100" class="btn">Call (413) 555-0100</a>
+    </section>
+    <section>
+      <h2>Our Services</h2>
+      <p>We offer a full range of home services throughout Hampshire County.</p>
+      <ul>
+        <li>Plumbing repairs and installation</li>
+        <li>Water heater replacement</li>
+        <li>Drain cleaning</li>
+        <li>Emergency service available 24/7</li>
+      </ul>
+    </section>
+    <section>
+      <h2>What Our Customers Say</h2>
+      <blockquote>
+        <p>"Fast, professional, and fairly priced. Would recommend to anyone in the Valley."</p>
+        <cite>— Sarah M., Northampton</cite>
+      </blockquote>
+      <blockquote>
+        <p>"Fixed our water heater same day. Very happy with the service."</p>
+        <cite>— Tom K., Easthampton</cite>
+      </blockquote>
+    </section>
+    <section>
+      <h2>Our Work</h2>
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg="
+           alt="Pioneer Home Services technician at work" width="600" height="1"
+           style="width:100%;max-width:600px;display:block;">
+    </section>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p><strong>Address:</strong> 123 Main Street, Northampton, MA 01060</p>
+      <p><strong>Hours:</strong> Mon–Fri 8am–6pm, Sat 9am–3pm</p>
+      <p><strong>Service area:</strong> Northampton, Easthampton, Florence, Amherst, and surrounding Pioneer Valley towns</p>
+      <!-- Intentionally unlinked: phone as plain text -->
+      <p class="phone-cta">Call us: (413) 555-0100</p>
+      <p style="margin-bottom:1.5rem">Or fill out the form below and we'll get back to you within one business day.</p>
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your name">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="(413) 555-xxxx">
+        <label for="message">How can we help?</label>
+        <textarea id="message" name="message" placeholder="Describe the work you need..."></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <!-- Intentionally unlinked: phone as plain text -->
+    <p>&copy; 2025 Pioneer Home Services &mdash; 123 Main Street, Northampton, MA &mdash;
+      (413) 555-0100</p>
+  </footer>
+</body>
+</html>
