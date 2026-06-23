@@ -704,8 +704,8 @@
     "expectedFindings": [
       "broken_images",
       "broken_navigation_path",
+      "no_call_path",
       "no_click_to_call",
-      "no_email_path",
       "seo_title"
     ],
     "expectedObservations": []
