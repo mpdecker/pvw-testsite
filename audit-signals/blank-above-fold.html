@@ -2,7 +2,7 @@
   SCENARIO: blank-above-fold
   CATEGORY: audit-signals
   SIGNALS TRIGGERED: blankAboveFold=true, blockedCriticalAssetCount>=1
-  EXPECTED FINDINGS: [blank_primary_content]
+  EXPECTED FINDINGS: [broken_navigation_path, primary_cta_blocked]
   EXPECTED GRADE: P1
   NOTES: Fires via: blankAboveFold && blockedCriticalAssetCount > 0.
     blankAboveFold=true because: header is display:none (no nav actionables above fold),

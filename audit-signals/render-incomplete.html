@@ -2,7 +2,7 @@
   SCENARIO: render-incomplete
   CATEGORY: audit-signals
   SIGNALS TRIGGERED: blockedCriticalAssetCount>0, brokenImages>1
-  EXPECTED FINDINGS: [render_incomplete]
+  EXPECTED FINDINGS: [broken_images, render_incomplete, script_errors]
   EXPECTED GRADE: P2
   NOTES: Broken stylesheet plus two broken hero images satisfy render_incomplete promotion.
 -->
