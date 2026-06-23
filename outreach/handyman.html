@@ -2,11 +2,12 @@
   SCENARIO: handyman
   CATEGORY: outreach
   INTENTIONAL FLAWS:
-    1. Copyright year 2022 in footer               →  FindingCode: stale_year
-    2. No business hours in contact section        →  FindingCode: no_hours
+    1. Copyright year 2022 in footer
+    2. No business hours in contact section
+  EXPECTED FINDINGS: [stale_year]
+  EXPECTED OBSERVATIONS: [trust_signal_gap]
   EXPECTED GRADE: P2
-  OUTREACH ANGLE: Your site looks like it hasn't been touched in years — the copyright
-    is from 2022 — and there are no hours listed, so customers don't know when to call.
+  OUTREACH ANGLE: Site looks neglected and hours are missing — customers don't know when to call.
 -->
 <!DOCTYPE html>
 <html lang="en">

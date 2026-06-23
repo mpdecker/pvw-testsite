@@ -2,12 +2,12 @@
   SCENARIO: painter
   CATEGORY: outreach
   INTENTIONAL FLAWS:
-    1. No street address anywhere on page          →  FindingCode: no_address
-    2. Portfolio images have alt=""                →  FindingCode: images_no_alt
-  EXPECTED GRADE: P2
-  OUTREACH ANGLE: Your portfolio photos are invisible to search engines and screen
-    readers, and there's no address on the site — both make it harder for local
-    customers to trust and find you.
+    1. No street address on page
+    2. Portfolio images use empty alt text (no engine FindingCode)
+  EXPECTED FINDINGS: []
+  EXPECTED OBSERVATIONS: [trust_signal_gap]
+  EXPECTED GRADE: P3
+  OUTREACH ANGLE: No address on-site makes it harder for local customers to trust you.
 -->
 <!DOCTYPE html>
 <html lang="en">

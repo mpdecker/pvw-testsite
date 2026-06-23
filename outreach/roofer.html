@@ -2,12 +2,13 @@
   SCENARIO: roofer
   CATEGORY: outreach
   INTENTIONAL FLAWS:
-    1. No <meta name="description">                →  FindingCode: seo_desc
-    2. .hamburger has no onclick                   →  FindingCode: broken_navigation_path
-    3. Two <img> with src="images/roof-*.jpg"      →  FindingCode: broken_images
+    1. Missing meta description
+    2. Services nav → 404
+    3. Two broken image src paths
+  EXPECTED FINDINGS: [broken_navigation_path, broken_images]
+  EXPECTED OBSERVATIONS: [seo_desc]
   EXPECTED GRADE: P0
-  OUTREACH ANGLE: Three critical issues found — missing search description, broken mobile menu,
-    and broken gallery images — any one of which costs you leads.
+  OUTREACH ANGLE: Three critical issues — broken nav, broken images, and weak search snippets.
 -->
 <!DOCTYPE html>
 <html lang="en">

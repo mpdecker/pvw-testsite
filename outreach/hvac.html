@@ -2,11 +2,12 @@
   SCENARIO: hvac
   CATEGORY: outreach
   INTENTIONAL FLAWS:
-    1. No <script type="application/ld+json">      →  FindingCode: no_schema
-    2. No business hours in contact section        →  FindingCode: no_hours
-  EXPECTED GRADE: P1
-  OUTREACH ANGLE: Your site isn't showing up in "near me" searches, and customers
-    can't tell if you're open — two quick fixes that directly affect inbound calls.
+    1. No JSON-LD schema (no engine FindingCode)
+    2. No business hours in contact section
+  EXPECTED FINDINGS: []
+  EXPECTED OBSERVATIONS: [trust_signal_gap]
+  EXPECTED GRADE: P2
+  OUTREACH ANGLE: Customers can't tell if you're open — trust signals are thin on the page.
 -->
 <!DOCTYPE html>
 <html lang="en">

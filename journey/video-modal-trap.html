@@ -1,11 +1,11 @@
 <!--
   SCENARIO: video-modal-trap
   CATEGORY: journey
-  SIGNALS TRIGGERED: undismissableModalOnLoad=true
-  EXPECTED FINDINGS: [modal_trap]
+  SIGNALS TRIGGERED: primaryCtaBlocked=true, stickyOverlayBlockerCount>0
+  EXPECTED FINDINGS: [primary_cta_blocked]
+  EXPECTED OBSERVATIONS: [sticky_overlay_blocker]
   EXPECTED GRADE: P1
-  NOTES: A video modal fires automatically on page load. No close button.
-         Clicking outside the modal does nothing. Page content is unreachable.
+  NOTES: Autoplay modal with no dismiss blocks CTA. No modal_trap FindingCode.
 -->
 <!DOCTYPE html>
 <html lang="en">

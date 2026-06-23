@@ -1,10 +1,11 @@
 <!--
   SCENARIO: no-hours
   CATEGORY: audit-signals
-  SIGNALS TRIGGERED: hasBusinessHours=false
-  EXPECTED FINDINGS: [no_hours]
-  EXPECTED GRADE: P2
-  NOTES: Address, schema, service area, reviews all present. Business hours paragraph absent.
+  SIGNALS TRIGGERED: hasHoursSignal=false
+  EXPECTED FINDINGS: []
+  EXPECTED OBSERVATIONS: [trust_signal_gap]
+  EXPECTED GRADE: (observation only)
+  NOTES: Missing hours text lowers trustSignalCount. No no_hours FindingCode exists.
 -->
 <!DOCTYPE html>
 <html lang="en">

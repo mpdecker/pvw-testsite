@@ -1,0 +1,706 @@
+[
+  {
+    "path": "audit-signals/blank-above-fold.html",
+    "url": "https://pvw-testsite.vercel.app/audit-signals/blank-above-fold.html",
+    "expectedFindings": [
+      "blank_primary_content"
+    ],
+    "expectedObservations": []
+  },
+  {
+    "path": "audit-signals/broken-image-single.html",
+    "url": "https://pvw-testsite.vercel.app/audit-signals/broken-image-single.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "broken_images"
+    ]
+  },
+  {
+    "path": "audit-signals/broken-images.html",
+    "url": "https://pvw-testsite.vercel.app/audit-signals/broken-images.html",
+    "expectedFindings": [
+      "broken_images"
+    ],
+    "expectedObservations": []
+  },
+  {
+    "path": "audit-signals/clean.html",
+    "url": "https://pvw-testsite.vercel.app/audit-signals/clean.html",
+    "expectedFindings": [],
+    "expectedObservations": []
+  },
+  {
+    "path": "audit-signals/dead-links.html",
+    "url": "https://pvw-testsite.vercel.app/audit-signals/dead-links.html",
+    "expectedFindings": [
+      "dead_links"
+    ],
+    "expectedObservations": []
+  },
+  {
+    "path": "audit-signals/layout-overflow.html",
+    "url": "https://pvw-testsite.vercel.app/audit-signals/layout-overflow.html",
+    "expectedFindings": [
+      "layout_overflow"
+    ],
+    "expectedObservations": []
+  },
+  {
+    "path": "audit-signals/mixed-content.html",
+    "url": "https://pvw-testsite.vercel.app/audit-signals/mixed-content.html",
+    "expectedFindings": [
+      "mixed_content"
+    ],
+    "expectedObservations": []
+  },
+  {
+    "path": "audit-signals/no-address.html",
+    "url": "https://pvw-testsite.vercel.app/audit-signals/no-address.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "trust_signal_gap"
+    ]
+  },
+  {
+    "path": "audit-signals/no-contact.html",
+    "url": "https://pvw-testsite.vercel.app/audit-signals/no-contact.html",
+    "expectedFindings": [
+      "no_contact_info",
+      "no_call_path",
+      "no_lead_form"
+    ],
+    "expectedObservations": []
+  },
+  {
+    "path": "audit-signals/no-hours.html",
+    "url": "https://pvw-testsite.vercel.app/audit-signals/no-hours.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "trust_signal_gap"
+    ]
+  },
+  {
+    "path": "audit-signals/no-reviews.html",
+    "url": "https://pvw-testsite.vercel.app/audit-signals/no-reviews.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "review_signal_gap"
+    ]
+  },
+  {
+    "path": "audit-signals/no-seo.html",
+    "url": "https://pvw-testsite.vercel.app/audit-signals/no-seo.html",
+    "expectedFindings": [
+      "seo_desc",
+      "seo_h1",
+      "no_og"
+    ],
+    "expectedObservations": []
+  },
+  {
+    "path": "audit-signals/no-service-area.html",
+    "url": "https://pvw-testsite.vercel.app/audit-signals/no-service-area.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "service_area_gap"
+    ]
+  },
+  {
+    "path": "audit-signals/no-title.html",
+    "url": "https://pvw-testsite.vercel.app/audit-signals/no-title.html",
+    "expectedFindings": [
+      "seo_title"
+    ],
+    "expectedObservations": []
+  },
+  {
+    "path": "audit-signals/no-viewport.html",
+    "url": "https://pvw-testsite.vercel.app/audit-signals/no-viewport.html",
+    "expectedFindings": [
+      "no_viewport"
+    ],
+    "expectedObservations": []
+  },
+  {
+    "path": "audit-signals/phone-not-linked.html",
+    "url": "https://pvw-testsite.vercel.app/audit-signals/phone-not-linked.html",
+    "expectedFindings": [],
+    "expectedObservations": []
+  },
+  {
+    "path": "audit-signals/render-incomplete.html",
+    "url": "https://pvw-testsite.vercel.app/audit-signals/render-incomplete.html",
+    "expectedFindings": [
+      "render_incomplete"
+    ],
+    "expectedObservations": []
+  },
+  {
+    "path": "audit-signals/script-errors.html",
+    "url": "https://pvw-testsite.vercel.app/audit-signals/script-errors.html",
+    "expectedFindings": [
+      "script_errors"
+    ],
+    "expectedObservations": []
+  },
+  {
+    "path": "audit-signals/small-tap-targets-obs.html",
+    "url": "https://pvw-testsite.vercel.app/audit-signals/small-tap-targets-obs.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "small_tap_targets"
+    ]
+  },
+  {
+    "path": "audit-signals/small-tap-targets.html",
+    "url": "https://pvw-testsite.vercel.app/audit-signals/small-tap-targets.html",
+    "expectedFindings": [
+      "small_tap_targets"
+    ],
+    "expectedObservations": []
+  },
+  {
+    "path": "audit-signals/stale-year.html",
+    "url": "https://pvw-testsite.vercel.app/audit-signals/stale-year.html",
+    "expectedFindings": [
+      "stale_year"
+    ],
+    "expectedObservations": []
+  },
+  {
+    "path": "journey/broken-form.html",
+    "url": "https://pvw-testsite.vercel.app/journey/broken-form.html",
+    "expectedFindings": [
+      "interactive_control_failure"
+    ],
+    "expectedObservations": []
+  },
+  {
+    "path": "journey/broken-nav.html",
+    "url": "https://pvw-testsite.vercel.app/journey/broken-nav.html",
+    "expectedFindings": [
+      "broken_navigation_path"
+    ],
+    "expectedObservations": []
+  },
+  {
+    "path": "journey/chatbot-over-cta.html",
+    "url": "https://pvw-testsite.vercel.app/journey/chatbot-over-cta.html",
+    "expectedFindings": [
+      "primary_cta_blocked"
+    ],
+    "expectedObservations": [
+      "sticky_overlay_blocker"
+    ]
+  },
+  {
+    "path": "journey/contact-buried.html",
+    "url": "https://pvw-testsite.vercel.app/journey/contact-buried.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "contact_cta_buried"
+    ]
+  },
+  {
+    "path": "journey/cta-disabled.html",
+    "url": "https://pvw-testsite.vercel.app/journey/cta-disabled.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "weak_primary_cta"
+    ]
+  },
+  {
+    "path": "journey/form-field-unusable.html",
+    "url": "https://pvw-testsite.vercel.app/journey/form-field-unusable.html",
+    "expectedFindings": [
+      "form_field_unusable"
+    ],
+    "expectedObservations": []
+  },
+  {
+    "path": "journey/form-mobile-blocker.html",
+    "url": "https://pvw-testsite.vercel.app/journey/form-mobile-blocker.html",
+    "expectedFindings": [
+      "form_mobile_layout_blocker"
+    ],
+    "expectedObservations": []
+  },
+  {
+    "path": "journey/form-no-confirmation.html",
+    "url": "https://pvw-testsite.vercel.app/journey/form-no-confirmation.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "form_friction"
+    ]
+  },
+  {
+    "path": "journey/form-validation-broken.html",
+    "url": "https://pvw-testsite.vercel.app/journey/form-validation-broken.html",
+    "expectedFindings": [
+      "form_validation_broken"
+    ],
+    "expectedObservations": []
+  },
+  {
+    "path": "journey/multi-step-broken.html",
+    "url": "https://pvw-testsite.vercel.app/journey/multi-step-broken.html",
+    "expectedFindings": [
+      "multi_step_form_blocked"
+    ],
+    "expectedObservations": []
+  },
+  {
+    "path": "journey/no-call-path.html",
+    "url": "https://pvw-testsite.vercel.app/journey/no-call-path.html",
+    "expectedFindings": [
+      "no_call_path",
+      "no_click_to_call"
+    ],
+    "expectedObservations": []
+  },
+  {
+    "path": "journey/no-cta.html",
+    "url": "https://pvw-testsite.vercel.app/journey/no-cta.html",
+    "expectedFindings": [
+      "no_lead_form"
+    ],
+    "expectedObservations": [
+      "primary_cta_hidden",
+      "contact_cta_buried"
+    ]
+  },
+  {
+    "path": "journey/no-directions-path.html",
+    "url": "https://pvw-testsite.vercel.app/journey/no-directions-path.html",
+    "expectedFindings": [
+      "no_directions_path"
+    ],
+    "expectedObservations": []
+  },
+  {
+    "path": "journey/no-email-finding.html",
+    "url": "https://pvw-testsite.vercel.app/journey/no-email-finding.html",
+    "expectedFindings": [
+      "no_email_path"
+    ],
+    "expectedObservations": [
+      "limited_contact_paths"
+    ]
+  },
+  {
+    "path": "journey/no-email-path.html",
+    "url": "https://pvw-testsite.vercel.app/journey/no-email-path.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "no_email_path",
+      "limited_contact_paths"
+    ]
+  },
+  {
+    "path": "journey/no-lead-form.html",
+    "url": "https://pvw-testsite.vercel.app/journey/no-lead-form.html",
+    "expectedFindings": [
+      "no_lead_form"
+    ],
+    "expectedObservations": []
+  },
+  {
+    "path": "journey/no-mobile-cta.html",
+    "url": "https://pvw-testsite.vercel.app/journey/no-mobile-cta.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "primary_cta_hidden",
+      "contact_cta_buried"
+    ]
+  },
+  {
+    "path": "journey/popup-blocks-page.html",
+    "url": "https://pvw-testsite.vercel.app/journey/popup-blocks-page.html",
+    "expectedFindings": [
+      "primary_cta_blocked"
+    ],
+    "expectedObservations": [
+      "sticky_overlay_blocker"
+    ]
+  },
+  {
+    "path": "journey/quote-path-missing.html",
+    "url": "https://pvw-testsite.vercel.app/journey/quote-path-missing.html",
+    "expectedFindings": [
+      "quote_path_missing"
+    ],
+    "expectedObservations": []
+  },
+  {
+    "path": "journey/sticky-overlay.html",
+    "url": "https://pvw-testsite.vercel.app/journey/sticky-overlay.html",
+    "expectedFindings": [
+      "primary_cta_blocked"
+    ],
+    "expectedObservations": []
+  },
+  {
+    "path": "journey/video-modal-trap.html",
+    "url": "https://pvw-testsite.vercel.app/journey/video-modal-trap.html",
+    "expectedFindings": [
+      "primary_cta_blocked"
+    ],
+    "expectedObservations": [
+      "sticky_overlay_blocker"
+    ]
+  },
+  {
+    "path": "observations/about-team-gap.html",
+    "url": "https://pvw-testsite.vercel.app/observations/about-team-gap.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "about_team_gap"
+    ]
+  },
+  {
+    "path": "observations/booking-path-missing.html",
+    "url": "https://pvw-testsite.vercel.app/observations/booking-path-missing.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "booking_path_missing"
+    ]
+  },
+  {
+    "path": "observations/business-identity-mismatch.html",
+    "url": "https://pvw-testsite.vercel.app/observations/business-identity-mismatch.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "business_identity_mismatch"
+    ]
+  },
+  {
+    "path": "observations/contact-page-missing.html",
+    "url": "https://pvw-testsite.vercel.app/observations/contact-page-missing.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "contact_page_missing"
+    ]
+  },
+  {
+    "path": "observations/content-gap-combo.html",
+    "url": "https://pvw-testsite.vercel.app/observations/content-gap-combo.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "service_clarity_gap",
+      "pricing_intent_gap",
+      "review_signal_gap"
+    ]
+  },
+  {
+    "path": "observations/duplicate-contact-fields.html",
+    "url": "https://pvw-testsite.vercel.app/observations/duplicate-contact-fields.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "duplicate_contact_fields"
+    ]
+  },
+  {
+    "path": "observations/form-friction-combo.html",
+    "url": "https://pvw-testsite.vercel.app/observations/form-friction-combo.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "duplicate_contact_fields",
+      "overconstrained_form",
+      "misleading_submit_label"
+    ]
+  },
+  {
+    "path": "observations/hero-media-blocked.html",
+    "url": "https://pvw-testsite.vercel.app/observations/hero-media-blocked.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "hero_media_blocked"
+    ]
+  },
+  {
+    "path": "observations/identity-gap-combo.html",
+    "url": "https://pvw-testsite.vercel.app/observations/identity-gap-combo.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "business_identity_mismatch",
+      "service_area_gap",
+      "about_team_gap"
+    ]
+  },
+  {
+    "path": "observations/misleading-submit-label.html",
+    "url": "https://pvw-testsite.vercel.app/observations/misleading-submit-label.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "misleading_submit_label"
+    ]
+  },
+  {
+    "path": "observations/missing-message-field.html",
+    "url": "https://pvw-testsite.vercel.app/observations/missing-message-field.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "missing_message_field"
+    ]
+  },
+  {
+    "path": "observations/overconstrained-form.html",
+    "url": "https://pvw-testsite.vercel.app/observations/overconstrained-form.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "overconstrained_form",
+      "misleading_submit_label",
+      "duplicate_contact_fields"
+    ]
+  },
+  {
+    "path": "observations/pricing-intent-gap.html",
+    "url": "https://pvw-testsite.vercel.app/observations/pricing-intent-gap.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "pricing_intent_gap"
+    ]
+  },
+  {
+    "path": "observations/primary-cta-hidden.html",
+    "url": "https://pvw-testsite.vercel.app/observations/primary-cta-hidden.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "primary_cta_hidden"
+    ]
+  },
+  {
+    "path": "observations/required-fields-excessive.html",
+    "url": "https://pvw-testsite.vercel.app/observations/required-fields-excessive.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "required_fields_excessive",
+      "form_friction"
+    ]
+  },
+  {
+    "path": "observations/runtime-error-cluster.html",
+    "url": "https://pvw-testsite.vercel.app/observations/runtime-error-cluster.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "runtime_error_cluster",
+      "script_errors"
+    ]
+  },
+  {
+    "path": "observations/service-clarity-gap.html",
+    "url": "https://pvw-testsite.vercel.app/observations/service-clarity-gap.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "service_clarity_gap"
+    ]
+  },
+  {
+    "path": "observations/trust-gap-combo.html",
+    "url": "https://pvw-testsite.vercel.app/observations/trust-gap-combo.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "service_clarity_gap",
+      "about_team_gap",
+      "trust_signal_gap"
+    ]
+  },
+  {
+    "path": "observations/trust-signal-gap.html",
+    "url": "https://pvw-testsite.vercel.app/observations/trust-signal-gap.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "trust_signal_gap"
+    ]
+  },
+  {
+    "path": "observations/weak-primary-cta.html",
+    "url": "https://pvw-testsite.vercel.app/observations/weak-primary-cta.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "weak_primary_cta"
+    ]
+  },
+  {
+    "path": "outreach/appliance-repair.html",
+    "url": "https://pvw-testsite.vercel.app/outreach/appliance-repair.html",
+    "expectedFindings": [],
+    "expectedObservations": []
+  },
+  {
+    "path": "outreach/auto-repair.html",
+    "url": "https://pvw-testsite.vercel.app/outreach/auto-repair.html",
+    "expectedFindings": [],
+    "expectedObservations": []
+  },
+  {
+    "path": "outreach/catering.html",
+    "url": "https://pvw-testsite.vercel.app/outreach/catering.html",
+    "expectedFindings": [],
+    "expectedObservations": []
+  },
+  {
+    "path": "outreach/cleaning-service.html",
+    "url": "https://pvw-testsite.vercel.app/outreach/cleaning-service.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "review_signal_gap"
+    ]
+  },
+  {
+    "path": "outreach/contractor.html",
+    "url": "https://pvw-testsite.vercel.app/outreach/contractor.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "no_og",
+      "contact_cta_buried"
+    ]
+  },
+  {
+    "path": "outreach/electrician.html",
+    "url": "https://pvw-testsite.vercel.app/outreach/electrician.html",
+    "expectedFindings": [
+      "stale_year"
+    ],
+    "expectedObservations": [
+      "no_og"
+    ]
+  },
+  {
+    "path": "outreach/florist.html",
+    "url": "https://pvw-testsite.vercel.app/outreach/florist.html",
+    "expectedFindings": [],
+    "expectedObservations": []
+  },
+  {
+    "path": "outreach/handyman.html",
+    "url": "https://pvw-testsite.vercel.app/outreach/handyman.html",
+    "expectedFindings": [
+      "stale_year"
+    ],
+    "expectedObservations": [
+      "trust_signal_gap"
+    ]
+  },
+  {
+    "path": "outreach/hvac.html",
+    "url": "https://pvw-testsite.vercel.app/outreach/hvac.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "trust_signal_gap"
+    ]
+  },
+  {
+    "path": "outreach/landscaper.html",
+    "url": "https://pvw-testsite.vercel.app/outreach/landscaper.html",
+    "expectedFindings": [
+      "small_tap_targets"
+    ],
+    "expectedObservations": [
+      "seo_h1"
+    ]
+  },
+  {
+    "path": "outreach/locksmith.html",
+    "url": "https://pvw-testsite.vercel.app/outreach/locksmith.html",
+    "expectedFindings": [],
+    "expectedObservations": []
+  },
+  {
+    "path": "outreach/moving.html",
+    "url": "https://pvw-testsite.vercel.app/outreach/moving.html",
+    "expectedFindings": [],
+    "expectedObservations": []
+  },
+  {
+    "path": "outreach/painter.html",
+    "url": "https://pvw-testsite.vercel.app/outreach/painter.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "trust_signal_gap"
+    ]
+  },
+  {
+    "path": "outreach/pest-control.html",
+    "url": "https://pvw-testsite.vercel.app/outreach/pest-control.html",
+    "expectedFindings": [],
+    "expectedObservations": []
+  },
+  {
+    "path": "outreach/plumber.html",
+    "url": "https://pvw-testsite.vercel.app/outreach/plumber.html",
+    "expectedFindings": [
+      "broken_navigation_path"
+    ],
+    "expectedObservations": [
+      "seo_desc"
+    ]
+  },
+  {
+    "path": "outreach/roofer.html",
+    "url": "https://pvw-testsite.vercel.app/outreach/roofer.html",
+    "expectedFindings": [
+      "broken_navigation_path",
+      "broken_images"
+    ],
+    "expectedObservations": [
+      "seo_desc"
+    ]
+  },
+  {
+    "path": "outreach/salon.html",
+    "url": "https://pvw-testsite.vercel.app/outreach/salon.html",
+    "expectedFindings": [],
+    "expectedObservations": []
+  },
+  {
+    "path": "outreach/towing.html",
+    "url": "https://pvw-testsite.vercel.app/outreach/towing.html",
+    "expectedFindings": [],
+    "expectedObservations": []
+  },
+  {
+    "path": "outreach/tree-service.html",
+    "url": "https://pvw-testsite.vercel.app/outreach/tree-service.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "service_area_gap"
+    ]
+  },
+  {
+    "path": "legacy/pending-engine/duplicate-h1.html",
+    "url": "https://pvw-testsite.vercel.app/legacy/pending-engine/duplicate-h1.html",
+    "expectedFindings": [],
+    "expectedObservations": []
+  },
+  {
+    "path": "legacy/pending-engine/images-no-alt.html",
+    "url": "https://pvw-testsite.vercel.app/legacy/pending-engine/images-no-alt.html",
+    "expectedFindings": [],
+    "expectedObservations": []
+  },
+  {
+    "path": "legacy/pending-engine/low-contrast.html",
+    "url": "https://pvw-testsite.vercel.app/legacy/pending-engine/low-contrast.html",
+    "expectedFindings": [],
+    "expectedObservations": []
+  },
+  {
+    "path": "legacy/pending-engine/no-favicon.html",
+    "url": "https://pvw-testsite.vercel.app/legacy/pending-engine/no-favicon.html",
+    "expectedFindings": [],
+    "expectedObservations": []
+  },
+  {
+    "path": "legacy/pending-engine/no-schema.html",
+    "url": "https://pvw-testsite.vercel.app/legacy/pending-engine/no-schema.html",
+    "expectedFindings": [],
+    "expectedObservations": []
+  },
+  {
+    "path": "legacy/pending-engine/small-font.html",
+    "url": "https://pvw-testsite.vercel.app/legacy/pending-engine/small-font.html",
+    "expectedFindings": [],
+    "expectedObservations": []
+  }
+]

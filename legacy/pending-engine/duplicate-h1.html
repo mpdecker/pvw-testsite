@@ -1,11 +1,11 @@
 <!--
-  SCENARIO: low-contrast
-  CATEGORY: audit-signals
-  SIGNALS TRIGGERED: hasLowContrastText=true
-  EXPECTED FINDINGS: [low_contrast]
-  EXPECTED GRADE: P2
-  NOTES: Body text set to #aaa on white background — approx 2.3:1 contrast ratio, below WCAG AA 4.5:1.
-         All other signals green.
+  SCENARIO: duplicate-h1
+  CATEGORY: legacy/pending-engine
+  SIGNALS TRIGGERED: (none — pending lead-crm engine support)
+  EXPECTED FINDINGS: []
+  EXPECTED OBSERVATIONS: []
+  EXPECTED GRADE: (n/a)
+  NOTES: Reserved for a future engine FindingCode. No observation or finding fires today.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -32,9 +32,7 @@
     }
   }
   </script>
-  <link rel="stylesheet" href="../styles.css">
-  <!-- Intentionally low contrast: #aaa on white is ~2.3:1 ratio, below WCAG AA -->
-  <style>body { color: #aaa; }</style>
+  <link rel="stylesheet" href="../../styles.css">
 </head>
 <body>
   <header>
@@ -101,6 +99,8 @@
     </section>
   </main>
   <footer>
+    <!-- Intentionally duplicate H1: second h1 in footer -->
+    <h1 style="font-size:1rem;margin:0 0 0.25rem">Pioneer Home Services</h1>
     <p>&copy; 2025 Pioneer Home Services &mdash; 123 Main Street, Northampton, MA &mdash;
       <a href="tel:+14135550100">(413) 555-0100</a></p>
   </footer>

@@ -1,11 +1,11 @@
 <!--
   SCENARIO: cta-disabled
   CATEGORY: journey
-  SIGNALS TRIGGERED: primaryCtaInteractive=false
-  EXPECTED FINDINGS: [cta_disabled]
-  EXPECTED GRADE: P2
-  NOTES: The main CTA button renders visually as active but has the disabled attribute
-         and pointer-events:none. A probe click registers no action.
+  SIGNALS TRIGGERED: primaryCtaActionable=false
+  EXPECTED FINDINGS: []
+  EXPECTED OBSERVATIONS: [weak_primary_cta]
+  EXPECTED GRADE: (observation only)
+  NOTES: Disabled hero button; tel: link in contact section provides alternate path. No cta_disabled FindingCode.
 -->
 <!DOCTYPE html>
 <html lang="en">

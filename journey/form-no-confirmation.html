@@ -1,12 +1,11 @@
 <!--
   SCENARIO: form-no-confirmation
   CATEGORY: journey
-  SIGNALS TRIGGERED: formConfirmationPresent=false
-  EXPECTED FINDINGS: [form_no_confirmation]
-  EXPECTED GRADE: P2
-  NOTES: Form fields work and the submit button is type="submit", but onsubmit=preventDefault()
-         means the page never navigates or shows a success message. A probe clicking submit
-         observes no change in page state.
+  SIGNALS TRIGGERED: form submits via preventDefault with no confirmation
+  EXPECTED FINDINGS: []
+  EXPECTED OBSERVATIONS: [form_friction]
+  EXPECTED GRADE: (observation only)
+  NOTES: No form_no_confirmation FindingCode. Journey probe may stall; form_friction observation likely.
 -->
 <!DOCTYPE html>
 <html lang="en">

@@ -1,11 +1,11 @@
 <!--
   SCENARIO: no-mobile-cta
   CATEGORY: journey
-  SIGNALS TRIGGERED: ctaVisibleAtMobileViewport=false
-  EXPECTED FINDINGS: [no_mobile_cta]
-  EXPECTED GRADE: P2
-  NOTES: Hero CTA button is visible at desktop width (>480px) but hidden via CSS at <=480px.
-         A headless probe at mobile viewport finds no actionable CTA in the hero.
+  SIGNALS TRIGGERED: contactCtaAboveFold=false at mobile viewport
+  EXPECTED FINDINGS: []
+  EXPECTED OBSERVATIONS: [primary_cta_hidden, contact_cta_buried]
+  EXPECTED GRADE: (observation only)
+  NOTES: CTA hidden via CSS at mobile width. No no_mobile_cta FindingCode.
 -->
 <!DOCTYPE html>
 <html lang="en">

@@ -1,11 +1,11 @@
 <!--
   SCENARIO: contact-buried
   CATEGORY: journey
-  SIGNALS TRIGGERED: contactScrollDepthPx>2000, noContactAnchorInNav=true
-  EXPECTED FINDINGS: [contact_buried]
-  EXPECTED GRADE: P2
-  NOTES: Contact section is ~3200px below the fold. Nav links go to #services and #about
-         but not #contact. A probe must scroll past the entire page to find the form.
+  SIGNALS TRIGGERED: contactCtaAboveFold=false, contactCtaCount>0
+  EXPECTED FINDINGS: []
+  EXPECTED OBSERVATIONS: [contact_cta_buried]
+  EXPECTED GRADE: (observation only)
+  NOTES: Contact section far below fold with no nav anchor. No contact_buried FindingCode.
 -->
 <!DOCTYPE html>
 <html lang="en">

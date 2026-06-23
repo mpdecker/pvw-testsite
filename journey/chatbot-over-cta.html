@@ -1,11 +1,11 @@
 <!--
   SCENARIO: chatbot-over-cta
   CATEGORY: journey
-  SIGNALS TRIGGERED: ctaBlockedByChatWidget=true
-  EXPECTED FINDINGS: [chatbot_blocks_cta]
-  EXPECTED GRADE: P2
-  NOTES: A fixed-position chat widget is z-indexed over the sticky "Call Now" CTA bar.
-         The CTA bar is rendered but the chat button fully overlaps it in the bottom-right corner.
+  SIGNALS TRIGGERED: primaryCtaBlocked=true, stickyOverlayBlockerCount>0
+  EXPECTED FINDINGS: [primary_cta_blocked]
+  EXPECTED OBSERVATIONS: [sticky_overlay_blocker]
+  EXPECTED GRADE: P1
+  NOTES: Fixed chat widget covers phone CTA. No chatbot_blocks_cta FindingCode.
 -->
 <!DOCTYPE html>
 <html lang="en">

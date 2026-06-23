@@ -2,12 +2,12 @@
   SCENARIO: contractor
   CATEGORY: outreach
   INTENTIONAL FLAWS:
-    1. No og: meta tags                            →  FindingCode: no_og
-    2. Contact section only reachable by           →  FindingCode: contact_buried
-       scrolling past ~3000px; no nav anchor
-  EXPECTED GRADE: P1
-  OUTREACH ANGLE: Your social media previews are broken, and anyone trying to contact
-    you from your website has to scroll past your entire portfolio to find the form.
+    1. No og: meta tags
+    2. Contact section buried below ~3000px scroll; no nav anchor
+  EXPECTED FINDINGS: []
+  EXPECTED OBSERVATIONS: [no_og, contact_cta_buried]
+  EXPECTED GRADE: P2
+  OUTREACH ANGLE: Social previews are weak and the contact form is buried below your portfolio.
 -->
 <!DOCTYPE html>
 <html lang="en">

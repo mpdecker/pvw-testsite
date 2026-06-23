@@ -1,0 +1,70 @@
+<!--
+  SCENARIO: no-email-finding
+  CATEGORY: journey
+  SIGNALS TRIGGERED: probeEmailContactPath=fail, no tel:, no form, no mailto
+  EXPECTED FINDINGS: [no_email_path]
+  EXPECTED OBSERVATIONS: [limited_contact_paths]
+  EXPECTED GRADE: P2
+  NOTES: Unlike no-email-path.html, no call path in contactPathTypes so finding promotes.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pioneer Home Services &mdash; Northampton, MA</title>
+  <meta name="description" content="Reliable home services in Northampton, MA. Call (413) 555-0100 for a free estimate.">
+  <meta property="og:title" content="Pioneer Home Services">
+  <meta property="og:description" content="Reliable home services in Northampton, MA.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/favicon.ico">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Pioneer Home Services",
+    "telephone": "+14135550100",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Main Street",
+      "addressLocality": "Northampton",
+      "addressRegion": "MA"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="site-name">Pioneer Home Services</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu"
+        onclick="document.getElementById('nav-links').classList.toggle('open')">&#9776;</button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Pioneer Home Services</h1>
+      <p>Serving Northampton and the Pioneer Valley since 2005.</p>
+      <p class="phone-cta" style="font-size:1.1rem;font-weight:bold">Call us: (413) 555-0100</p>
+    </section>
+    <section>
+      <h2>Our Services</h2>
+      <p>We offer a full range of home services throughout Hampshire County.</p>
+    </section>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p><strong>Address:</strong> 123 Main Street, Northampton, MA 01060</p>
+      <p>To reach us, call <strong>(413) 555-0100</strong> during business hours. No email or form available.</p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Pioneer Home Services &mdash; 123 Main Street, Northampton, MA &mdash; (413) 555-0100</p>
+  </footer>
+</body>
+</html>

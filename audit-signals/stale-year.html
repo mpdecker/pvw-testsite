@@ -1,11 +1,10 @@
 <!--
   SCENARIO: stale-year
   CATEGORY: audit-signals
-  SIGNALS TRIGGERED: hasStaleYear=true
+  SIGNALS TRIGGERED: hasStaleYear=true, trustSignalCount<=1
   EXPECTED FINDINGS: [stale_year]
   EXPECTED GRADE: P2
-  NOTES: Footer copyright shows 2020. Auditor flags years more than 2 behind current.
-    All other signals match clean.html.
+  NOTES: Footer copyright 2020. trustSignalCount kept at 1 (business identity only) so stale_year promotes.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -38,8 +37,8 @@
       <a href="tel:+14135550100" class="btn">Call (413) 555-0100</a>
     </section>
     <section>
-      <h2>Our Services</h2>
-      <p>Full-service plumbing and home repair for Hampshire County residents.</p>
+      <h2>How We Help</h2>
+      <p>We help homeowners with repairs and maintenance. Call for a free estimate.</p>
     </section>
     <section id="contact">
       <h2>Contact</h2>

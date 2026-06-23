@@ -1,11 +1,11 @@
 <!--
   SCENARIO: popup-blocks-page
   CATEGORY: journey
-  SIGNALS TRIGGERED: ctaBlockedByOverlay=true
-  EXPECTED FINDINGS: [popup_blocks_cta]
+  SIGNALS TRIGGERED: primaryCtaBlocked=true, stickyOverlayBlockerCount>0
+  EXPECTED FINDINGS: [primary_cta_blocked]
+  EXPECTED OBSERVATIONS: [sticky_overlay_blocker]
   EXPECTED GRADE: P1
-  NOTES: Full-screen modal fires immediately on load. No dismiss button.
-         CTA button is rendered in the page beneath the overlay but is unreachable.
+  NOTES: Full-screen modal blocks CTA. No popup_blocks_cta FindingCode in engine.
 -->
 <!DOCTYPE html>
 <html lang="en">

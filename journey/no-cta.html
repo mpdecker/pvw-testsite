@@ -1,11 +1,11 @@
 <!--
   SCENARIO: no-cta
   CATEGORY: journey
-  SIGNALS TRIGGERED: primaryCtaVisible=false, contactCtaAboveFold=false, ctaCoverageScore=0
+  SIGNALS TRIGGERED: no CTA above fold, form buried below fold
   EXPECTED FINDINGS: [no_lead_form]
+  EXPECTED OBSERVATIONS: [primary_cta_hidden, contact_cta_buried]
   EXPECTED GRADE: P1
-  NOTES: Hero section has no button, tel link, or form. The contact section exists
-    but is 200vh below the fold — the journey probe finds no CTA in the visible viewport.
+  NOTES: Differs from no-lead-form.html: form exists but buried; journey probe finds no usable lead form in viewport.
 -->
 <!DOCTYPE html>
 <html lang="en">
