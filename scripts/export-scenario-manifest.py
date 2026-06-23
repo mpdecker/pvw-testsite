@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -72,6 +73,11 @@ def main() -> None:
         print(f"copied to {LEAD_CRM_FIXTURE}")
     else:
         print(f"skip lead-crm fixture (not found): {LEAD_CRM_FIXTURE}")
+
+    smoke_script = ROOT / "scripts" / "export-smoke-manifest.py"
+    if smoke_script.exists():
+        import subprocess
+        subprocess.run([sys.executable, str(smoke_script)], check=True)
 
 
 if __name__ == "__main__":

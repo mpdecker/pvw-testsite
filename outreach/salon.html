@@ -4,17 +4,11 @@
   INTENTIONAL FLAWS:
     1. Missing <title> tag                              -> FindingCode: seo_title
     2. Phone as plain text, no tel: link                -> FindingCode: no_click_to_call
+  EXPECTED FINDINGS: [no_click_to_call, seo_title]
+  EXPECTED OBSERVATIONS: []
   EXPECTED GRADE: P1
   OUTREACH ANGLE: Your salon doesn't appear in search results at all, and the phone
     number can't be tapped — two issues that cost you walk-in and call traffic every day.
-  NOTES: no_click_to_call fires because !hasClickToCall && hasPhone &&
-    !hasStrongAlternateContact. hasStrongAlternateContact=false requires no form AND no
-    email. This page has a contact form, which would normally set hasStrongAlternateContact=true
-    and block no_click_to_call. To isolate no_click_to_call while keeping the form:
-    use mailto: for the form action instead of POST, then remove the form and just have
-    a plain-text phone. Actually: per engine logic hasStrongAlternateContact = form OR email.
-    Since the form is present, no_click_to_call will NOT fire. Remove the form and keep
-    only the plain-text phone. Contact section has address/hours but no form, no mailto.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -61,7 +55,7 @@
       <h1>Studio 47 Salon</h1>
       <p>Full-service hair salon in downtown Northampton. Cuts, color, styling, and more.</p>
       <!-- Intentionally plain text: no tel: link so hasClickToCall=false -->
-      <p class="phone-cta" style="font-size:1.1rem;font-weight:bold">Call to book: (413) 555-0400</p>
+      <p class="phone-cta" style="font-size:1.1rem;font-weight:bold">Call to book: 413-555-0400</p>
     </section>
     <section>
       <h2>Our Services</h2>
@@ -99,12 +93,12 @@
       <p><strong>Service area:</strong> Northampton, Easthampton, Florence, Amherst, and surrounding Pioneer Valley towns</p>
       <!-- Intentionally plain text: no tel: link, no form, no email anywhere on page -->
       <!-- hasStrongAlternateContact=false (no form, no email), so no_click_to_call fires -->
-      <p>To book, call us at <strong>(413) 555-0400</strong> during business hours. Walk-ins welcome when we have availability.</p>
+      <p>To book, call us at <strong>413-555-0400</strong> during business hours. Walk-ins welcome when we have availability.</p>
     </section>
   </main>
   <footer>
     <!-- Intentionally plain text phone in footer -->
-    <p>&copy; 2025 Studio 47 Salon &mdash; 47 Center Street, Northampton, MA &mdash; (413) 555-0400</p>
+    <p>&copy; 2025 Studio 47 Salon &mdash; 47 Center Street, Northampton, MA &mdash; 413-555-0400</p>
   </footer>
 </body>
 </html>

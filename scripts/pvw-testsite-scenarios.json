@@ -3,7 +3,8 @@
     "path": "audit-signals/blank-above-fold.html",
     "url": "https://pvw-testsite.vercel.app/audit-signals/blank-above-fold.html",
     "expectedFindings": [
-      "blank_primary_content"
+      "broken_navigation_path",
+      "primary_cta_blocked"
     ],
     "expectedObservations": []
   },
@@ -131,7 +132,9 @@
     "path": "audit-signals/render-incomplete.html",
     "url": "https://pvw-testsite.vercel.app/audit-signals/render-incomplete.html",
     "expectedFindings": [
-      "render_incomplete"
+      "broken_images",
+      "render_incomplete",
+      "script_errors"
     ],
     "expectedObservations": []
   },
@@ -392,6 +395,14 @@
     ]
   },
   {
+    "path": "observations/critical-asset-failure.html",
+    "url": "https://pvw-testsite.vercel.app/observations/critical-asset-failure.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "critical_asset_failure"
+    ]
+  },
+  {
     "path": "observations/duplicate-contact-fields.html",
     "url": "https://pvw-testsite.vercel.app/observations/duplicate-contact-fields.html",
     "expectedFindings": [],
@@ -406,7 +417,8 @@
     "expectedObservations": [
       "duplicate_contact_fields",
       "overconstrained_form",
-      "misleading_submit_label"
+      "misleading_submit_label",
+      "required_field_overload"
     ]
   },
   {
@@ -470,6 +482,14 @@
     ]
   },
   {
+    "path": "observations/required-field-overload.html",
+    "url": "https://pvw-testsite.vercel.app/observations/required-field-overload.html",
+    "expectedFindings": [],
+    "expectedObservations": [
+      "required_field_overload"
+    ]
+  },
+  {
     "path": "observations/required-fields-excessive.html",
     "url": "https://pvw-testsite.vercel.app/observations/required-fields-excessive.html",
     "expectedFindings": [],
@@ -524,20 +544,30 @@
   {
     "path": "outreach/appliance-repair.html",
     "url": "https://pvw-testsite.vercel.app/outreach/appliance-repair.html",
-    "expectedFindings": [],
+    "expectedFindings": [
+      "form_validation_broken",
+      "layout_overflow"
+    ],
     "expectedObservations": []
   },
   {
     "path": "outreach/auto-repair.html",
     "url": "https://pvw-testsite.vercel.app/outreach/auto-repair.html",
-    "expectedFindings": [],
+    "expectedFindings": [
+      "no_click_to_call",
+      "small_tap_targets"
+    ],
     "expectedObservations": []
   },
   {
     "path": "outreach/catering.html",
     "url": "https://pvw-testsite.vercel.app/outreach/catering.html",
-    "expectedFindings": [],
-    "expectedObservations": []
+    "expectedFindings": [
+      "form_mobile_layout_blocker"
+    ],
+    "expectedObservations": [
+      "service_area_gap"
+    ]
   },
   {
     "path": "outreach/cleaning-service.html",
@@ -569,7 +599,10 @@
   {
     "path": "outreach/florist.html",
     "url": "https://pvw-testsite.vercel.app/outreach/florist.html",
-    "expectedFindings": [],
+    "expectedFindings": [
+      "no_directions_path",
+      "stale_year"
+    ],
     "expectedObservations": []
   },
   {
@@ -603,14 +636,23 @@
   {
     "path": "outreach/locksmith.html",
     "url": "https://pvw-testsite.vercel.app/outreach/locksmith.html",
-    "expectedFindings": [],
-    "expectedObservations": []
+    "expectedFindings": [
+      "seo_title",
+      "stale_year"
+    ],
+    "expectedObservations": [
+      "service_area_gap"
+    ]
   },
   {
     "path": "outreach/moving.html",
     "url": "https://pvw-testsite.vercel.app/outreach/moving.html",
-    "expectedFindings": [],
-    "expectedObservations": []
+    "expectedFindings": [
+      "small_tap_targets"
+    ],
+    "expectedObservations": [
+      "misleading_submit_label"
+    ]
   },
   {
     "path": "outreach/painter.html",
@@ -650,13 +692,22 @@
   {
     "path": "outreach/salon.html",
     "url": "https://pvw-testsite.vercel.app/outreach/salon.html",
-    "expectedFindings": [],
+    "expectedFindings": [
+      "no_click_to_call",
+      "seo_title"
+    ],
     "expectedObservations": []
   },
   {
     "path": "outreach/towing.html",
     "url": "https://pvw-testsite.vercel.app/outreach/towing.html",
-    "expectedFindings": [],
+    "expectedFindings": [
+      "broken_images",
+      "broken_navigation_path",
+      "no_click_to_call",
+      "no_email_path",
+      "seo_title"
+    ],
     "expectedObservations": []
   },
   {

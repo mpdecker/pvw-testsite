@@ -44,14 +44,26 @@ Finding and observation codes must match the lead-crm engine (`src/lib/audit-fin
 From the `lead-crm` repo root, after deploying pvw-testsite:
 
 ```bash
-# Regenerate manifest from HTML comment blocks (run in pvw-testsite)
+# Regenerate manifests from HTML comment blocks (run in pvw-testsite)
 python scripts/export-scenario-manifest.py
+python scripts/export-smoke-manifest.py
 
-# Run full audit regression against deployed URLs
-PVW_TESTSITE_AUDIT=1 npx vitest run src/lib/__tests__/pvw-testsite-scenarios.test.ts
+# CI smoke gate (10 scenarios, always runs in GitHub Actions)
+npm run test:pvw-smoke
+
+# Full audit regression against deployed URLs (manual / pre-release)
+PVW_TESTSITE_AUDIT=1 npm run test:pvw-full
+```
+
+Drift triage after changing scenarios:
+
+```bash
+python scripts/reconcile-audit-report.py
 ```
 
 The integration test runs HTTP + headless + journey audits per scenario. Findings must match exactly; observations use subset matching (expected codes must appear, extras allowed).
+
+**Smoke vs full:** CI runs the 10-scenario smoke subset only. The full 89-scenario suite is opt-in via `PVW_TESTSITE_AUDIT=1` because each page takes ~90s.
 
 ## Manual audit (single page)
 

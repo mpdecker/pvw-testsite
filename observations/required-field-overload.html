@@ -1,15 +1,12 @@
 <!--
-  SCENARIO: form-friction-combo
+  SCENARIO: required-field-overload
   CATEGORY: observations
-  SIGNALS TRIGGERED: duplicateContactFieldCount=1, excessiveRequiredFields=true,
-    primaryFormSuspiciousSubmitLabel=true, primaryFormConstraintScore>=4
+  SIGNALS TRIGGERED: primaryFormExcessiveRequiredFields=true (5+ required fields)
   EXPECTED FINDINGS: []
-  EXPECTED OBSERVATIONS: [duplicate_contact_fields, overconstrained_form, misleading_submit_label, required_field_overload]
+  EXPECTED OBSERVATIONS: [required_field_overload]
   EXPECTED GRADE: (no promoted finding)
-  NOTES: Overbuilt form: confirm-email duplicate, 6 required fields (including company
-    and zip), submit says "Continue", no message/textarea.
-    constraintScore: frictionScore(6 fields=+2, 5 required=+1) + excessiveRequired(+2)
-    + suspiciousLabel(+1) = 6 >= 4. All other enriched-template signals present.
+  NOTES: Single-step form with five required fields and a normal submit label.
+    Isolates required_field_overload from required_fields_excessive journey probe.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +14,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pioneer Home Services &mdash; Northampton, MA</title>
-  <meta name="description" content="Reliable home services in Northampton, MA. Call (413) 555-0100 for a free estimate.">
+  <meta name="description" content="Reliable home services in Northampton, MA. Call 413-555-0100 for a free estimate.">
   <meta property="og:title" content="Pioneer Home Services">
   <meta property="og:description" content="Reliable home services in Northampton, MA.">
   <meta property="og:type" content="website">
@@ -55,11 +52,11 @@
     <section class="hero">
       <h1>Pioneer Home Services</h1>
       <p>Serving Northampton and the Pioneer Valley since 2005.</p>
-      <a href="tel:+14135550100" class="btn">Call (413) 555-0100</a>
+      <a href="tel:+14135550100" class="btn">Call 413-555-0100</a>
     </section>
     <section>
       <h2>Our Services</h2>
-      <p>We offer a full range of home services throughout Hampshire County.</p>
+      <p>We offer plumbing, heating, and general home repairs throughout Hampshire County.</p>
       <ul>
         <li>Plumbing repairs and installation</li>
         <li>Water heater replacement</li>
@@ -73,44 +70,39 @@
         <p>"Fast, professional, and fairly priced. Would recommend to anyone in the Valley."</p>
         <cite>&mdash; Sarah M., Northampton</cite>
       </blockquote>
-      <blockquote>
-        <p>"Fixed our water heater same day. Very happy with the service."</p>
-        <cite>&mdash; Tom K., Easthampton</cite>
-      </blockquote>
     </section>
     <section>
       <h2>About Us</h2>
-      <p>Family-owned and operated since 2005. Our team of licensed technicians serves
-        Hampshire County with same-day availability and a 100% satisfaction guarantee.</p>
+      <p>Family-owned and operated since 2005. Our team serves Hampshire County with
+        same-day availability and a 100% satisfaction guarantee.</p>
     </section>
     <section id="contact">
-      <h2>Request a Quote</h2>
+      <h2>Request Service</h2>
       <p><strong>Address:</strong> 123 Main Street, Northampton, MA 01060</p>
       <p><strong>Hours:</strong> Mon&ndash;Fri 8am&ndash;6pm, Sat 9am&ndash;3pm</p>
       <p><strong>Service area:</strong> Northampton, Easthampton, Florence, Amherst, and surrounding Pioneer Valley towns</p>
-      <p class="phone-cta">Call us: <a href="tel:+14135550100">(413) 555-0100</a></p>
-      <p style="margin-bottom:1.5rem">Or complete the form below to request a quote.</p>
-      <!-- Overbuilt form: 6 fields, 5 required, confirm-email duplicate, no message, "Continue" submit -->
+      <p class="phone-cta">Call us: <a href="tel:+14135550100">413-555-0100</a></p>
+      <p style="margin-bottom:1.5rem">Or complete the form below.</p>
       <form class="contact-form" action="#" method="post">
         <label for="name">Full Name</label>
         <input type="text" id="name" name="name" required placeholder="Your full name">
-        <label for="company">Company Name</label>
-        <input type="text" id="company" name="company" required placeholder="Your company">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" required placeholder="413-555-xxxx">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="you@example.com">
         <label for="address">Service Address</label>
         <input type="text" id="address" name="address" required placeholder="Street address">
         <label for="zip">ZIP Code</label>
         <input type="text" id="zip" name="zip" required placeholder="01060">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required placeholder="you@example.com">
-        <label for="confirm_email">Confirm Email</label>
-        <input type="email" id="confirm_email" name="confirm_email" placeholder="you@example.com">
-        <button type="submit" class="btn">Continue</button>
+        <label for="message">Notes</label>
+        <textarea id="message" name="message" placeholder="Optional details..."></textarea>
+        <button type="submit" class="btn">Send Message</button>
       </form>
     </section>
   </main>
   <footer>
     <p>&copy; 2025 Pioneer Home Services &mdash; 123 Main Street, Northampton, MA &mdash;
-      <a href="tel:+14135550100">(413) 555-0100</a></p>
+      <a href="tel:+14135550100">413-555-0100</a></p>
   </footer>
 </body>
 </html>

@@ -5,12 +5,12 @@
     1. Missing <title> tag                             -> FindingCode: seo_title
     2. Phone as plain text, no tel: link               -> FindingCode: no_click_to_call
     3. Two broken image srcs (empty src)               -> FindingCode: broken_images
+  EXPECTED FINDINGS: [broken_images, broken_navigation_path, no_click_to_call, no_email_path, seo_title]
+  EXPECTED OBSERVATIONS: []
   EXPECTED GRADE: P0
   OUTREACH ANGLE: Three critical issues on an emergency-service site — invisible in
     search, phone untappable, and images broken.
-  NOTES: P0 = 3+ critical signals. no_click_to_call fires because no tel: link AND
-    no form AND no email (hasStrongAlternateContact=false). broken_images fires when
-    brokenImageCount >= 2 (both img srcs are empty strings or point to nonexistent paths).
+  NOTES: Live-audited composite. broken_navigation_path and no_email_path come from journey probes.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +18,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Intentionally missing: no <title> tag -->
-  <meta name="description" content="24/7 towing and roadside assistance in Northampton, MA. Call (413) 555-0500.">
+  <meta name="description" content="24/7 towing and roadside assistance in Northampton, MA. Call 413-555-0500.">
   <meta property="og:title" content="Pioneer Towing &amp; Recovery">
   <meta property="og:description" content="24/7 towing and roadside assistance in Northampton, MA.">
   <meta property="og:type" content="website">
@@ -57,7 +57,7 @@
       <h1>Pioneer Towing &amp; Recovery</h1>
       <p>24/7 towing and roadside assistance throughout the Pioneer Valley. Fast response times.</p>
       <!-- Intentionally plain text: no tel: link anywhere on page -->
-      <p class="phone-cta" style="font-size:1.1rem;font-weight:bold">Call 24/7: (413) 555-0500</p>
+      <p class="phone-cta" style="font-size:1.1rem;font-weight:bold">Call 24/7: 413-555-0500</p>
     </section>
     <section>
       <h2>Our Services</h2>
@@ -101,11 +101,11 @@
       <p><strong>Hours:</strong> 24 hours a day, 7 days a week</p>
       <p><strong>Service area:</strong> Northampton, Easthampton, Amherst, Florence, Hadley, and all Hampshire County</p>
       <!-- Intentionally no tel: link, no form, no email: hasStrongAlternateContact=false -->
-      <p>For immediate service, call us at <strong>(413) 555-0500</strong>. We respond to all calls around the clock.</p>
+      <p>For immediate service, call us at <strong>413-555-0500</strong>. We respond to all calls around the clock.</p>
     </section>
   </main>
   <footer>
-    <p>&copy; 2025 Pioneer Towing &amp; Recovery &mdash; 500 Bridge Road, Northampton, MA &mdash; (413) 555-0500</p>
+    <p>&copy; 2025 Pioneer Towing &amp; Recovery &mdash; 500 Bridge Road, Northampton, MA &mdash; 413-555-0500</p>
   </footer>
 </body>
 </html>

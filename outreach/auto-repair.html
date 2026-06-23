@@ -4,13 +4,11 @@
   INTENTIONAL FLAWS:
     1. Phone as plain text, no tel: link               -> FindingCode: no_click_to_call
     2. Nav has 7 links with font-size:11px/line-height:1 -> FindingCode: small_tap_targets
+  EXPECTED FINDINGS: [no_click_to_call, small_tap_targets]
+  EXPECTED OBSERVATIONS: []
   EXPECTED GRADE: P2
   OUTREACH ANGLE: Your phone number can't be tapped on mobile, and your nav links are
     too small for most thumbs — two quick fixes that could mean more calls.
-  NOTES: no_click_to_call fires when !hasClickToCall && hasPhone &&
-    !hasStrongAlternateContact. hasStrongAlternateContact=false because no email and
-    no form (only a hero anchor href="#contact"). small_tap_targets fires when >5 nav
-    items are styled below minimum tap-target size.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +16,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Metro Auto &amp; Service &mdash; Northampton, MA</title>
-  <meta name="description" content="Auto repair and service in Northampton, MA. Call (413) 555-0200 for an appointment.">
+  <meta name="description" content="Auto repair and service in Northampton, MA. Call 413-555-0200 for an appointment.">
   <meta property="og:title" content="Metro Auto &amp; Service">
   <meta property="og:description" content="Auto repair and service in Northampton, MA.">
   <meta property="og:type" content="website">
@@ -100,14 +98,14 @@
       <p><strong>Hours:</strong> Mon&ndash;Fri 7:30am&ndash;5:30pm, Sat 8am&ndash;1pm</p>
       <p><strong>Service area:</strong> Northampton, Easthampton, Florence, Amherst, and surrounding Hampshire County</p>
       <!-- Intentionally plain text: no tel: link anywhere on page -->
-      <p class="phone-cta">Call us: <strong>(413) 555-0200</strong></p>
+      <p class="phone-cta">Call us: <strong>413-555-0200</strong></p>
       <p>We are available Monday through Friday and Saturday morning for drop-ins and appointments.
         Call during business hours to schedule same-day or next-day service.</p>
     </section>
   </main>
   <footer>
     <!-- Intentionally plain text phone in footer too -->
-    <p>&copy; 2025 Metro Auto &amp; Service &mdash; 45 Industrial Drive, Northampton, MA &mdash; (413) 555-0200</p>
+    <p>&copy; 2025 Metro Auto &amp; Service &mdash; 45 Industrial Drive, Northampton, MA &mdash; 413-555-0200</p>
   </footer>
 </body>
 </html>
