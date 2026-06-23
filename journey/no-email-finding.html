@@ -6,6 +6,7 @@
   EXPECTED OBSERVATIONS: [limited_contact_paths]
   EXPECTED GRADE: P2
   NOTES: Unlike no-email-path.html, no call path in contactPathTypes so finding promotes.
+    Page intentionally has no phone number in visible content (JSON-LD telephone omitted).
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +24,6 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Pioneer Home Services",
-    "telephone": "+14135550100",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "123 Main Street",
@@ -51,7 +51,6 @@
     <section class="hero">
       <h1>Pioneer Home Services</h1>
       <p>Serving Northampton and the Pioneer Valley since 2005.</p>
-      <p class="phone-cta" style="font-size:1.1rem;font-weight:bold">Call us: 413-555-0100</p>
     </section>
     <section>
       <h2>Our Services</h2>
@@ -60,11 +59,11 @@
     <section id="contact">
       <h2>Contact Us</h2>
       <p><strong>Address:</strong> 123 Main Street, Northampton, MA 01060</p>
-      <p>To reach us, call <strong>413-555-0100</strong> during business hours. No email or form available.</p>
+      <p>We respond to written inquiries by mail only. No phone, email link, or form is available on this page.</p>
     </section>
   </main>
   <footer>
-    <p>&copy; 2025 Pioneer Home Services &mdash; 123 Main Street, Northampton, MA &mdash; 413-555-0100</p>
+    <p>&copy; 2025 Pioneer Home Services &mdash; 123 Main Street, Northampton, MA</p>
   </footer>
 </body>
 </html>
