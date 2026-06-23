@@ -284,6 +284,7 @@
     "path": "journey/no-email-finding.html",
     "url": "https://pvw-testsite.vercel.app/journey/no-email-finding.html",
     "expectedFindings": [
+      "no_contact_info",
       "no_email_path"
     ],
     "expectedObservations": [

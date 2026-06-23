@@ -2,7 +2,7 @@
   SCENARIO: no-email-finding
   CATEGORY: journey
   SIGNALS TRIGGERED: probeEmailContactPath=fail, no tel:, no form, no mailto
-  EXPECTED FINDINGS: [no_email_path]
+  EXPECTED FINDINGS: [no_contact_info, no_email_path]
   EXPECTED OBSERVATIONS: [limited_contact_paths]
   EXPECTED GRADE: P2
   NOTES: Unlike no-email-path.html, no call path in contactPathTypes so finding promotes.
