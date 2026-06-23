@@ -6,7 +6,7 @@
   EXPECTED OBSERVATIONS: [trust_signal_gap]
   EXPECTED GRADE: (no promoted finding)
   NOTES: Thin page with only title + h1 identity. Avoids service/menu/hours language
-    that would raise trustSignalCount to 2+.
+    that would raise trustSignalCount to 2+. Mailto link prevents no_contact_info promotion.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +40,7 @@
     </section>
     <section id="contact">
       <h2>Reach Us</h2>
-      <p>Send a note through your preferred channel and we will respond soon.</p>
+      <p>Email <a href="mailto:hello@acme.example">hello@acme.example</a> and we will respond soon.</p>
     </section>
   </main>
   <footer>
