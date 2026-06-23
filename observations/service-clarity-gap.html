@@ -1,0 +1,116 @@
+<!--
+  SCENARIO: service-clarity-gap
+  CATEGORY: observations
+  SIGNALS TRIGGERED: hasServiceClarity=false
+  EXPECTED FINDINGS: []
+  EXPECTED OBSERVATIONS: [service_clarity_gap]
+  EXPECTED GRADE: (no promoted finding)
+  NOTES: hasServiceClarity=false when no h1/h2/h3/nav element text matches SERVICE_RE
+    (/\b(service|services|what we do|menu|offerings)\b/i) and body text lacks "services",
+    "what we do", "menu", "offerings". All headings use generic phrasing. Page has >120
+    words so it is not thin. All other enriched-template signals present.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pioneer Home Services &mdash; Northampton, MA</title>
+  <meta name="description" content="Reliable home services in Northampton, MA. Call (413) 555-0100 for a free estimate.">
+  <meta property="og:title" content="Pioneer Home Services">
+  <meta property="og:description" content="Reliable home services in Northampton, MA.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/favicon.ico">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Pioneer Home Services",
+    "telephone": "+14135550100",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Main Street",
+      "addressLocality": "Northampton",
+      "addressRegion": "MA"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="site-name">Pioneer Home Services</a>
+      <ul class="nav-links" id="nav-links">
+        <!-- Intentionally vague nav labels: no "Services", "What We Do", etc. -->
+        <li><a href="#">How We Help</a></li>
+        <li><a href="#">Our Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu"
+        onclick="document.getElementById('nav-links').classList.toggle('open')">&#9776;</button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Pioneer Home Services</h1>
+      <p>Serving Northampton and the Pioneer Valley since 2005.</p>
+      <a href="tel:+14135550100" class="btn">Call (413) 555-0100</a>
+    </section>
+    <section>
+      <!-- Intentionally avoids SERVICE_RE words in headings and body -->
+      <h2>How We Help Homeowners</h2>
+      <p>We work with homeowners throughout Hampshire County to keep their homes running
+        smoothly. Our licensed technicians handle everything from routine maintenance to
+        emergency repairs, arriving on time with the parts they need to get the job done.</p>
+      <ul>
+        <li>Plumbing repairs and installation</li>
+        <li>Water heater replacement</li>
+        <li>Drain cleaning</li>
+        <li>Emergency repairs available 24/7</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Our Recent Work</h2>
+      <p>We've helped hundreds of families across Northampton, Easthampton, Florence, and
+        Amherst with everything from small fixes to full system replacements. Here's what
+        some of our recent customers had to say about working with us.</p>
+      <blockquote>
+        <p>"Fast, professional, and fairly priced. Would recommend to anyone in the Valley."</p>
+        <cite>&mdash; Sarah M., Northampton</cite>
+      </blockquote>
+      <blockquote>
+        <p>"Fixed our water heater same day. Very happy with the work."</p>
+        <cite>&mdash; Tom K., Easthampton</cite>
+      </blockquote>
+    </section>
+    <section>
+      <h2>About Our Team</h2>
+      <p>Family-owned and locally operated since 2005. Our team of licensed technicians
+        brings years of hands-on experience to every job. We are fully insured and stand
+        behind every project with a 100% satisfaction guarantee.</p>
+    </section>
+    <section id="contact">
+      <h2>Get in Touch</h2>
+      <p><strong>Address:</strong> 123 Main Street, Northampton, MA 01060</p>
+      <p><strong>Hours:</strong> Mon&ndash;Fri 8am&ndash;6pm, Sat 9am&ndash;3pm</p>
+      <p><strong>Coverage area:</strong> Northampton, Easthampton, Florence, Amherst, and surrounding Pioneer Valley towns</p>
+      <p class="phone-cta">Call us: <a href="tel:+14135550100">(413) 555-0100</a></p>
+      <p style="margin-bottom:1.5rem">Or fill out the form below and we'll get back to you within one business day.</p>
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your name">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="(413) 555-xxxx">
+        <label for="message">How can we help?</label>
+        <textarea id="message" name="message" placeholder="Describe the work you need..."></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Pioneer Home Services &mdash; 123 Main Street, Northampton, MA &mdash;
+      <a href="tel:+14135550100">(413) 555-0100</a></p>
+  </footer>
+</body>
+</html>

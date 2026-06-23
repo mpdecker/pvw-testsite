@@ -1,0 +1,103 @@
+<!--
+  SCENARIO: no-email-path
+  CATEGORY: journey
+  SIGNALS TRIGGERED: probeEmailContactPath=fail, contactPathTypes includes 'call' (tel: link present)
+  EXPECTED FINDINGS: []
+  EXPECTED OBSERVATIONS: [no_email_path, limited_contact_paths]
+  EXPECTED GRADE: (no promoted finding; engine grades on findings only)
+  NOTES: no_email_path FINDING requires: journeyCodes.has('no_email_path') &&
+    !hasContactForm && !contactPathTypes.includes('call'). This page has a tel: link,
+    so contactPathTypes includes 'call', blocking the promotion to a finding.
+    The probe still detects the missing email path as an observation. This page is
+    valuable for testing probeEmailContactPath detection even though no finding fires.
+    No mailto: link, no contact form, no /contact page link anywhere on this page.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pioneer Home Services &mdash; Northampton, MA</title>
+  <meta name="description" content="Reliable home services in Northampton, MA. Call (413) 555-0100 for a free estimate.">
+  <meta property="og:title" content="Pioneer Home Services">
+  <meta property="og:description" content="Reliable home services in Northampton, MA.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/favicon.ico">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Pioneer Home Services",
+    "telephone": "+14135550100",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Main Street",
+      "addressLocality": "Northampton",
+      "addressRegion": "MA"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="site-name">Pioneer Home Services</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu"
+        onclick="document.getElementById('nav-links').classList.toggle('open')">&#9776;</button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Pioneer Home Services</h1>
+      <p>Serving Northampton and the Pioneer Valley since 2005.</p>
+      <a href="tel:+14135550100" class="btn">Call (413) 555-0100</a>
+    </section>
+    <section>
+      <h2>Our Services</h2>
+      <p>We offer a full range of home services throughout Hampshire County.</p>
+      <ul>
+        <li>Plumbing repairs and installation</li>
+        <li>Water heater replacement</li>
+        <li>Drain cleaning</li>
+        <li>Emergency service available 24/7</li>
+      </ul>
+    </section>
+    <section>
+      <h2>What Our Customers Say</h2>
+      <blockquote>
+        <p>"Fast, professional, and fairly priced. Would recommend to anyone in the Valley."</p>
+        <cite>&mdash; Sarah M., Northampton</cite>
+      </blockquote>
+      <blockquote>
+        <p>"Fixed our water heater same day. Very happy with the service."</p>
+        <cite>&mdash; Tom K., Easthampton</cite>
+      </blockquote>
+    </section>
+    <section>
+      <h2>About Us</h2>
+      <p>Family-owned and operated since 2005. Our team serves Hampshire County with
+        same-day availability and a 100% satisfaction guarantee.</p>
+    </section>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p><strong>Address:</strong> 123 Main Street, Northampton, MA 01060</p>
+      <p><strong>Hours:</strong> Mon&ndash;Fri 8am&ndash;6pm, Sat 9am&ndash;3pm</p>
+      <p><strong>Service area:</strong> Northampton, Easthampton, Florence, Amherst, and surrounding Pioneer Valley towns</p>
+      <!-- Tel: link present (adds 'call' to contactPathTypes, blocks no_email_path finding) -->
+      <p class="phone-cta">Call us: <a href="tel:+14135550100">(413) 555-0100</a></p>
+      <!-- Intentionally no form, no mailto:, no /contact link anywhere on page -->
+      <p>We are available by phone during business hours. No online form available at this time.</p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Pioneer Home Services &mdash; 123 Main Street, Northampton, MA &mdash;
+      <a href="tel:+14135550100">(413) 555-0100</a></p>
+  </footer>
+</body>
+</html>

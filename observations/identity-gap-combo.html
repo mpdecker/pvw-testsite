@@ -1,0 +1,110 @@
+<!--
+  SCENARIO: identity-gap-combo
+  CATEGORY: observations
+  SIGNALS TRIGGERED: hasConsistentBusinessIdentity=false, hasServiceAreaSignal=false,
+    hasAboutTeamSignal=false
+  EXPECTED FINDINGS: []
+  EXPECTED OBSERVATIONS: [business_identity_mismatch, service_area_gap, about_team_gap]
+  EXPECTED GRADE: (no promoted finding)
+  NOTES: Title/H1 name clash: title says "Ridgeline Property Group", H1 says
+    "Your Local Home Repair Experts" — no shared 3+ char tokens. No geographic
+    coverage text (hasServiceAreaSignal=false). No team/about language anywhere
+    (hasAboutTeamSignal=false). All other signals present.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Intentionally mismatched: title tokens [ridgeline, property, group, northampton]
+       share no 3+ char tokens with H1 tokens [your, local, home, repair, experts] -->
+  <title>Ridgeline Property Group &mdash; Northampton, MA</title>
+  <meta name="description" content="Home repair and maintenance in Northampton, MA. Call (413) 555-0100.">
+  <meta property="og:title" content="Ridgeline Property Group">
+  <meta property="og:description" content="Home repair and maintenance in Northampton, MA.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/favicon.ico">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Ridgeline Property Group",
+    "telephone": "+14135550100",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Main Street",
+      "addressLocality": "Northampton",
+      "addressRegion": "MA"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="site-name">Ridgeline Property Group</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu"
+        onclick="document.getElementById('nav-links').classList.toggle('open')">&#9776;</button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <!-- Intentionally mismatched H1 -->
+      <h1>Your Local Home Repair Experts</h1>
+      <p>Fast, reliable repairs and maintenance for homeowners in the Pioneer Valley.</p>
+      <a href="tel:+14135550100" class="btn">Call (413) 555-0100</a>
+    </section>
+    <section>
+      <h2>Services</h2>
+      <!-- Intentionally no service area coverage text -->
+      <p>We provide a full range of home repair and maintenance services. Our licensed
+        technicians handle everything from small fixes to large repairs with professional
+        equipment and a commitment to quality workmanship on every job.</p>
+      <ul>
+        <li>Plumbing repairs and installation</li>
+        <li>Water heater replacement</li>
+        <li>Drain cleaning</li>
+        <li>Emergency repairs available 24/7</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Customer Reviews</h2>
+      <blockquote>
+        <p>"Fast, professional, and fairly priced. Would recommend to anyone."</p>
+        <cite>&mdash; Sarah M.</cite>
+      </blockquote>
+      <blockquote>
+        <p>"Fixed our water heater same day. Very happy with the service."</p>
+        <cite>&mdash; Tom K.</cite>
+      </blockquote>
+    </section>
+    <!-- Intentionally no about-us or team section -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p><strong>Address:</strong> 123 Main Street, Northampton, MA 01060</p>
+      <p><strong>Hours:</strong> Mon&ndash;Fri 8am&ndash;6pm, Sat 9am&ndash;3pm</p>
+      <!-- Intentionally no service area: no city/town coverage text -->
+      <p class="phone-cta">Call us: <a href="tel:+14135550100">(413) 555-0100</a></p>
+      <p style="margin-bottom:1.5rem">Or fill out the form below.</p>
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your name">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="(413) 555-xxxx">
+        <label for="message">How can we help?</label>
+        <textarea id="message" name="message" placeholder="Describe what you need..."></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Ridgeline Property Group &mdash; 123 Main Street, Northampton, MA &mdash;
+      <a href="tel:+14135550100">(413) 555-0100</a></p>
+  </footer>
+</body>
+</html>

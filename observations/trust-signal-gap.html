@@ -1,0 +1,88 @@
+<!--
+  SCENARIO: trust-signal-gap
+  CATEGORY: observations
+  SIGNALS TRIGGERED: trustSignalCount=1 (only hasBusinessIdentity=true)
+  EXPECTED FINDINGS: []
+  EXPECTED OBSERVATIONS: [trust_signal_gap]
+  EXPECTED GRADE: (no promoted finding)
+  NOTES: trust_signal_gap fires when trustSignalCount < 2. The 7 trust signals are:
+    hasBusinessIdentity, hasAddressSignal, hasHoursSignal, hasTestimonialSignal,
+    hasServiceClarity, hasServiceAreaSignal, hasAboutTeamSignal.
+    This page has title + h1 (hasBusinessIdentity=true, count=1) but lacks all others:
+    no address, no hours, no testimonials, no "services" language, no service area,
+    no about-team language. Has a contact form to remain non-thin (>120 words total).
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pioneer Home Services &mdash; Northampton, MA</title>
+  <meta name="description" content="We can help with all your home needs. Call us today.">
+  <meta property="og:title" content="Pioneer Home Services">
+  <meta property="og:description" content="We can help with all your home needs.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/favicon.ico">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Pioneer Home Services",
+    "telephone": "+14135550100"
+  }
+  </script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="site-name">Pioneer Home Services</a>
+      <ul class="nav-links" id="nav-links">
+        <!-- Intentionally vague: avoids service/area/team language -->
+        <li><a href="#">What We Do</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu"
+        onclick="document.getElementById('nav-links').classList.toggle('open')">&#9776;</button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Pioneer Home Services</h1>
+      <!-- Intentionally generic: no service/area/team/trust language -->
+      <p>We can help with your home. Get in touch today.</p>
+      <a href="tel:+14135550100" class="btn">Call (413) 555-0100</a>
+    </section>
+    <section>
+      <!-- Intentionally avoids all trust signal language -->
+      <h2>How It Works</h2>
+      <p>Call us or fill out the form below. We will get back to you promptly to
+        discuss your needs and schedule a visit at a time that works for you. We aim
+        to make the process as straightforward as possible from the first call to job
+        completion. Our goal is to leave every customer satisfied with the result.</p>
+      <p>We handle all types of work around the home. If you have a question about
+        whether we can help with something specific, just give us a call and we will
+        let you know right away. We are happy to provide guidance even if the job
+        turns out to be outside our current scope.</p>
+    </section>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <!-- Intentionally no address, no hours, no service area -->
+      <p class="phone-cta">Call us: <a href="tel:+14135550100">(413) 555-0100</a></p>
+      <p style="margin-bottom:1.5rem">Or fill out the form and we'll be in touch.</p>
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your name">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="(413) 555-xxxx">
+        <label for="message">How can we help?</label>
+        <textarea id="message" name="message" placeholder="Describe what you need..."></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Pioneer Home Services &mdash; <a href="tel:+14135550100">(413) 555-0100</a></p>
+  </footer>
+</body>
+</html>

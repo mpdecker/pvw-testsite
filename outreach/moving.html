@@ -1,0 +1,121 @@
+<!--
+  SCENARIO: moving
+  CATEGORY: outreach
+  INTENTIONAL FLAWS:
+    1. 7 nav links with font-size:11px/line-height:1   -> FindingCode: small_tap_targets
+    2. Form submit says "Continue"                     -> ObservationCode: misleading_submit_label
+  EXPECTED GRADE: P3
+  OUTREACH ANGLE: Several buttons are too small to tap reliably, and your form's submit
+    button doesn't clearly signal "send my request."
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pioneer Moving Co &mdash; Northampton, MA</title>
+  <meta name="description" content="Local and long-distance moving in Northampton, MA. Call (413) 555-1100 for a free quote.">
+  <meta property="og:title" content="Pioneer Moving Co">
+  <meta property="og:description" content="Local and long-distance moving in Northampton, MA.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/favicon.ico">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MovingCompany",
+    "name": "Pioneer Moving Co",
+    "telephone": "+14135551100",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "150 Hatfield Street",
+      "addressLocality": "Northampton",
+      "addressRegion": "MA"
+    }
+  }
+  </script>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#" class="site-name">Pioneer Moving Co</a>
+      <!-- Intentionally 7 small nav links: font-size:11px + line-height:1 = small_tap_targets -->
+      <ul class="nav-links" id="nav-links" style="font-size:11px; line-height:1">
+        <li><a href="#">Local Moving</a></li>
+        <li><a href="#">Long Distance</a></li>
+        <li><a href="#">Packing</a></li>
+        <li><a href="#">Storage</a></li>
+        <li><a href="#">Commercial</a></li>
+        <li><a href="#">Piano Moving</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menu"
+        onclick="document.getElementById('nav-links').classList.toggle('open')">&#9776;</button>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Pioneer Moving Co</h1>
+      <p>Local and long-distance moving services for homes and businesses in the Pioneer Valley.</p>
+      <a href="tel:+14135551100" class="btn">Call (413) 555-1100</a>
+    </section>
+    <section>
+      <h2>Our Services</h2>
+      <p>Pioneer Moving Co offers professional moving services for residential and commercial
+        clients. Licensed, insured, and equipped for moves of any size.</p>
+      <ul>
+        <li>Local moves in Hampshire and Franklin counties</li>
+        <li>Long-distance moves statewide and out of state</li>
+        <li>Full-service packing and unpacking</li>
+        <li>Short and long-term storage</li>
+        <li>Commercial and office relocations</li>
+        <li>Specialty moving: pianos, antiques, fine art</li>
+        <li>Free in-home estimates</li>
+      </ul>
+    </section>
+    <section>
+      <h2>What Our Customers Say</h2>
+      <blockquote>
+        <p>"Three-bedroom move handled in one day. Crew was careful, fast, and professional."</p>
+        <cite>&mdash; Barbara H., Northampton</cite>
+      </blockquote>
+      <blockquote>
+        <p>"Moved our office over a weekend with zero downtime. Excellent team."</p>
+        <cite>&mdash; Steven N., Amherst</cite>
+      </blockquote>
+    </section>
+    <section>
+      <h2>About Pioneer Moving</h2>
+      <p>Family-owned since 2007. Our crew of professional movers serves Hampshire and
+        Franklin counties with a commitment to careful handling and on-time delivery.
+        We carry full cargo insurance and offer binding estimates.</p>
+    </section>
+    <section id="contact">
+      <h2>Get a Free Quote</h2>
+      <p><strong>Address:</strong> 150 Hatfield Street, Northampton, MA 01060</p>
+      <p><strong>Hours:</strong> Mon&ndash;Fri 8am&ndash;6pm, Sat 9am&ndash;3pm</p>
+      <p><strong>Service area:</strong> Northampton, Easthampton, Florence, Amherst, and surrounding Pioneer Valley towns</p>
+      <p class="phone-cta">Call us: <a href="tel:+14135551100">(413) 555-1100</a></p>
+      <p style="margin-bottom:1.5rem">Or fill out the form below for a free moving quote.</p>
+      <form class="contact-form" action="#" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Your name">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="(413) 555-xxxx">
+        <label for="move_from">Moving From</label>
+        <input type="text" id="move_from" name="move_from" placeholder="Current address or city">
+        <label for="move_to">Moving To</label>
+        <input type="text" id="move_to" name="move_to" placeholder="Destination address or city">
+        <label for="message">Additional details</label>
+        <textarea id="message" name="message" placeholder="Approximate move date, size of home, special items..."></textarea>
+        <!-- Intentionally misleading label: "Continue" does not match FINAL_SUBMIT_RE -->
+        <button type="submit" class="btn">Continue</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Pioneer Moving Co &mdash; 150 Hatfield Street, Northampton, MA &mdash;
+      <a href="tel:+14135551100">(413) 555-1100</a></p>
+  </footer>
+</body>
+</html>
